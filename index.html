@@ -55,7 +55,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #007AFF 100%);
             color: white;
             padding: 40px;
             text-align: center;
@@ -119,7 +119,7 @@
 
         .subsection-title {
             font-size: 1.3em;
-            color: #2a5298;
+            color: #007AFF;
             margin-bottom: 15px;
             font-weight: bold;
         }
@@ -442,43 +442,68 @@
             .days-bar{display:none;}
         }
 
-    </style>
+    
+
+/* ===== ترقيم تلقائي داخل كل وحدة ===== */
+.section{ counter-reset:item; --unit-color:#667eea; border-right-color: var(--unit-color); }
+.section-title .section-number{ background: var(--unit-color); }
+h3.subsection-title.item-title{
+    position: relative;
+    padding-right: 54px;
+}
+h3.subsection-title.item-title::before{
+    content: counter(item);
+    counter-increment: item;
+    position:absolute;
+    right:0;
+    top: 50%;
+    transform: translateY(-50%);
+    width:38px;
+    height:38px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-weight:800;
+    background: var(--unit-color);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+</style>
 </head>
 <body>
 <button class="print-button" onclick="window.print()">
         🖨️ طباعة الدليل كـ PDF
     </button>
 <div class="container">
-
-<div class="days-bar" aria-label="تنقّل أيام البرنامج">
-  <a class="day-btn active" href="index.html" title="اليوم الأول">
-    <span class="day-ico" aria-hidden="true">①</span>
-    <span class="day-txt">اليوم الأول</span>
-  </a>
-  <a class="day-btn" href="day2.html" title="اليوم الثاني">
-    <span class="day-ico" aria-hidden="true">②</span>
-    <span class="day-txt">اليوم الثاني</span>
-  </a>
-  <a class="day-btn" href="day3.html" title="اليوم الثالث">
-    <span class="day-ico" aria-hidden="true">③</span>
-    <span class="day-txt">اليوم الثالث</span>
-  </a>
-  <a class="day-btn" href="day4.html" title="اليوم الرابع">
-    <span class="day-ico" aria-hidden="true">④</span>
-    <span class="day-txt">اليوم الرابع</span>
-  </a>
-  <a class="day-btn" href="day5.html" title="اليوم الخامس">
-    <span class="day-ico" aria-hidden="true">⑤</span>
-    <span class="day-txt">اليوم الخامس</span>
-  </a>
+<div aria-label="تنقّل أيام البرنامج" class="days-bar">
+<a class="day-btn active" href="index.html" title="اليوم الأول">
+<span aria-hidden="true" class="day-ico">①</span>
+<span class="day-txt">اليوم الأول</span>
+</a>
+<a class="day-btn" href="day2.html" title="اليوم الثاني">
+<span aria-hidden="true" class="day-ico">②</span>
+<span class="day-txt">اليوم الثاني</span>
+</a>
+<a class="day-btn" href="day3.html" title="اليوم الثالث">
+<span aria-hidden="true" class="day-ico">③</span>
+<span class="day-txt">اليوم الثالث</span>
+</a>
+<a class="day-btn" href="day4.html" title="اليوم الرابع">
+<span aria-hidden="true" class="day-ico">④</span>
+<span class="day-txt">اليوم الرابع</span>
+</a>
+<a class="day-btn" href="day5.html" title="اليوم الخامس">
+<span aria-hidden="true" class="day-ico">⑤</span>
+<span class="day-txt">اليوم الخامس</span>
+</a>
 </div>
-
 <div class="header">
 <h1>📘 الملخص التدريبي المعتمد</h1>
 <p>إدارة الفعاليات وسلامة الحشود</p>
 </div>
-<div class="content"><div class="section"><h2 class="section-title"><span class="section-number">📘 الوحدة الأولى</span> مقدمة في إدارة الفعاليات وسلامة الحشود</h2><div class="subsection"><h3 class="subsection-title">🔹 1.1 مفهوم إدارة الفعاليات وأهميتها الاستراتيجية</h3><div class="subsection">
-<h3 class="subsection-title">8️⃣ تعريف إدارة الفعاليات</h3>
+<div class="content"><div class="section" style="--unit-color:#1e3a8a;"><h2 class="section-title"><span class="section-number">📘 الوحدة الأولى</span> مقدمة في إدارة الفعاليات وسلامة الحشود</h2><div class="subsection"><h3 class="subsection-title">🔹 1.1 مفهوم إدارة الفعاليات وأهميتها الاستراتيجية</h3><div class="subsection">
+<h3 class="subsection-title item-title">تعريف إدارة الفعاليات</h3>
 <div class="info-box">
                         عملية تخطيط وتنظيم وتنفيذ ومراقبة الفعاليات بالتنسيق مع جميع القطاعات:
                         <ul style="margin-top: 15px;">
@@ -489,14 +514,14 @@
 </ul>
 </div>
 </div><div class="subsection">
-<h3 class="subsection-title">9️⃣ عناصر إدارة الفعاليات</h3>
+<h3 class="subsection-title item-title">عناصر إدارة الفعاليات</h3>
 <ul>
 <li>✅ التنسيق والتكامل مع القطاعات الأخرى</li>
 <li>✅ العلاقات العامة (عنصر أساسي)</li>
 <li>✅ توجيه جميع الموارد بشكل متكامل</li>
 </ul>
 </div><div class="subsection">
-<h3 class="subsection-title">🔟 أنواع الموارد السبعة</h3>
+<h3 class="subsection-title item-title">أنواع الموارد السبعة</h3>
 <div class="resources-grid">
 <div class="resource-item">💰 الموارد المالية</div>
 <div class="resource-item">🏗️ الموارد المادية</div>
@@ -507,12 +532,12 @@
 <div class="resource-item">⏰ الموارد الزمنية</div>
 </div>
 </div></div><div class="subsection"><h3 class="subsection-title">🔹 1.2 أساسيات سلامة الحشود</h3><div class="subsection">
-<h3 class="subsection-title">1️⃣ تعريف الحشد</h3>
+<h3 class="subsection-title item-title">تعريف الحشد</h3>
 <div class="info-box">
                         الحشد هو تجمع بشري في مكان وزمان محددين، يتأثر بعوامل نفسية، ومكانية، وتنظيمية، وتزداد خطورته كلما ساءت إدارة التدفق والكثافة.
                     </div>
 </div><div class="subsection">
-<h3 class="subsection-title">2️⃣ أنواع الحشود (Types of Crowds)</h3>
+<h3 class="subsection-title item-title">أنواع الحشود (Types of Crowds)</h3>
 <p>تصنَّف الحشود حسب الهدف، السلوك، ونمط الحركة إلى:</p>
 <div class="crowd-types-grid">
 <div class="crowd-type-card">
@@ -537,7 +562,7 @@
 </div>
 </div>
 </div><div class="subsection">
-<h3 class="subsection-title">3️⃣ الكثافة البشرية (Crowd Density)</h3>
+<h3 class="subsection-title item-title">الكثافة البشرية (Crowd Density)</h3>
 <p>عدد الأشخاص في كل متر مربع (شخص/م²)، وتُعد أكبر مؤشر خطر في إدارة الحشود.</p>
 <h4 style="margin: 20px 0 15px; color: #1e3c72; font-size: 1.1em;">المستويات التشغيلية للكثافة:</h4>
 <div class="density-levels">
@@ -571,13 +596,13 @@
 <p style="margin-top: 15px; font-weight: bold; color: #721c24;">⚠️ غياب قائد واحد واضح = فشل مؤكد</p>
 </div>
 </div><div class="subsection">
-<h3 class="subsection-title">4️⃣ وقت الوفاة في حالات الكثافة الحرجة</h3>
+<h3 class="subsection-title item-title">وقت الوفاة في حالات الكثافة الحرجة</h3>
 <div class="danger-box">
 <p>⏱️ يبدأ الاختناق خلال: <strong>30 ثانية</strong></p>
 <p style="margin-top: 10px;">☠️ الوفاة المحتملة: <strong>دقيقة إلى دقيقتين</strong></p>
 </div>
 </div><div class="subsection">
-<h3 class="subsection-title">5️⃣ سلامة الحشود علم متكامل</h3>
+<h3 class="subsection-title item-title">سلامة الحشود علم متكامل</h3>
 <div class="success-box">
 <p style="font-weight: bold; margin-bottom: 15px;">سلامة الحشود ليست اجتهادًا، بل علم قائم على:</p>
 <ul>
@@ -588,7 +613,7 @@
 </ul>
 </div>
 </div><div class="subsection">
-<h3 class="subsection-title">6️⃣ إدارة سلوك الجمهور</h3>
+<h3 class="subsection-title item-title">إدارة سلوك الجمهور</h3>
 <p>علم متخصص يدرس:</p>
 <ul>
 <li>👥 ردود الفعل الجماعية</li>
@@ -597,7 +622,7 @@
 <li>⚠️ الاستجابة للخطر والطوارئ</li>
 </ul>
 </div></div><div class="subsection"><h3 class="subsection-title">🔹 1.3 التحديات الشائعة والسيناريوهات البديلة</h3><div class="subsection">
-<h3 class="subsection-title">7️⃣ أحداث الحشود (Crowd Events)</h3>
+<h3 class="subsection-title item-title">أحداث الحشود (Crowd Events)</h3>
 <div class="info-box">
 <p style="font-weight: bold; margin-bottom: 15px;">ما يحدث داخل الحشد نتيجة تفاعل: المكان + الإدارة + السلوك</p>
 <p style="font-weight: bold; margin-top: 20px; margin-bottom: 10px;">أهم أحداث الحشود:</p>
@@ -609,7 +634,7 @@
 </ul>
 </div>
 </div><div class="subsection">
-<h3 class="subsection-title">2️⃣9️⃣ مثال واقعي: حادثة سيول - كوريا الجنوبية</h3>
+<h3 class="subsection-title item-title">مثال واقعي: حادثة سيول - كوريا الجنوبية</h3>
 <div class="alert-box">
 <p style="font-weight: bold; color: #dc3545; font-size: 1.2em; margin-bottom: 15px;">💔 النتيجة المأساوية: 158 وفاة</p>
 <p style="font-weight: bold; margin-top: 20px; margin-bottom: 10px;">الأسباب الرئيسية:</p>
@@ -624,14 +649,14 @@
 <p style="margin-top: 10px;">التخطيط السليم والإدارة الاستباقية للكثافة كان من الممكن أن ينقذ الأرواح</p>
 </div>
 </div>
-</div></div></div><div class="section"><h2 class="section-title"><span class="section-number">📘 الوحدة الثانية</span> التخطيط المسبق وتنظيم الفعاليات</h2><div class="subsection"><h3 class="subsection-title">🔹 2.1 تحليل نوع الفعالية وتحديد الأهداف</h3><div class="subsection">
-<h3 class="subsection-title">1️⃣1️⃣ لماذا التخطيط المسبق؟</h3>
+</div></div></div><div class="section" style="--unit-color:#007AFF;"><h2 class="section-title"><span class="section-number">📘 الوحدة الثانية</span> التخطيط المسبق وتنظيم الفعاليات</h2><div class="subsection"><h3 class="subsection-title">🔹 2.1 تحليل نوع الفعالية وتحديد الأهداف</h3><div class="subsection">
+<h3 class="subsection-title item-title">لماذا التخطيط المسبق؟</h3>
 <div class="success-box">
 <strong>💡 المبدأ الأساسي:</strong>
 <p style="margin-top: 10px;">تصور السيناريوهات أفضل من معالجة الكوارث</p>
 </div>
 </div><div class="subsection">
-<h3 class="subsection-title">1️⃣2️⃣ التخطيط عملية ديناميكية</h3>
+<h3 class="subsection-title item-title">التخطيط عملية ديناميكية</h3>
 <div class="info-box">
 <ul style="margin-right: 0;">
 <li>📥 مدخلات مستمرة</li>
@@ -641,7 +666,7 @@
 </ul>
 </div>
 </div></div><div class="subsection"><h3 class="subsection-title">🔹 2.2 اختيار الموقع والتقييم الميداني</h3><div class="subsection">
-<h3 class="subsection-title">1️⃣7️⃣ خرائط التدفق (Flow Mapping)</h3>
+<h3 class="subsection-title item-title">خرائط التدفق (Flow Mapping)</h3>
 <div class="info-box">
 <p style="font-weight: bold; margin-bottom: 15px;">تمثيل مسارات الحركة لتحديد:</p>
 <ul>
@@ -657,7 +682,7 @@
 </ul>
 </div>
 </div><div class="info-box"><p style="font-weight: bold; margin-bottom: 10px;">📌 نقاط تقييم ميداني مرتبطة بالموقع:</p><ul style="margin-right: 0;"><li>📈 مناطق زيادة الكثافة المحتملة</li><li>⚠️ نقاط الاختناق الخطرة</li><li>🌡️ إمكانية استخدام خرائط حرارية للكثافة عند توفر بيانات حية</li></ul></div></div><div class="subsection"><h3 class="subsection-title">🔹 2.3 تصميم خطة تنظيمية متكاملة</h3><div class="subsection">
-<h3 class="subsection-title">1️⃣3️⃣ هندسة التخطيط (Planning Engineering)</h3>
+<h3 class="subsection-title item-title">هندسة التخطيط (Planning Engineering)</h3>
 <div class="info-box">
 <p style="font-weight: bold; margin-bottom: 15px;">تحويل الخطة إلى تصميم قابل للتنفيذ عبر:</p>
 <ul>
@@ -668,7 +693,7 @@
 </ul>
 </div>
 </div><div class="subsection">
-<h3 class="subsection-title">1️⃣4️⃣ أدوات التخطيط الاحترافية</h3>
+<h3 class="subsection-title item-title">أدوات التخطيط الاحترافية</h3>
 <div class="tools-grid">
 <div class="tool-card">
 <div class="tool-title">📊 Risk Matrix</div>
@@ -692,7 +717,7 @@
 </div>
 </div>
 </div><div class="subsection">
-<h3 class="subsection-title">1️⃣5️⃣ محاكاة ما قبل الحدث (Pre-event Simulation)</h3>
+<h3 class="subsection-title item-title">محاكاة ما قبل الحدث (Pre-event Simulation)</h3>
 <div class="alert-box">
 <p style="font-weight: bold; margin-bottom: 15px;">اختبار سيناريوهات "ماذا لو؟" مثل:</p>
 <ul>
@@ -702,8 +727,8 @@
 </ul>
 <p style="margin-top: 15px; font-weight: bold;">🎯 الهدف: اكتشاف نقطة الانهيار قبل حدوثها</p>
 </div>
-</div></div></div><div class="section"><h2 class="section-title"><span class="section-number">📘 الوحدة الثالثة</span> التنسيق مع الجهات المعنية</h2><div class="subsection"><h3 class="subsection-title">🔹 3.1 بناء الشراكات مع الجهات الأمنية والشرطة</h3><div class="subsection">
-<h3 class="subsection-title">2️⃣1️⃣ الأمن والسلامة - الفرق الجوهري</h3>
+</div></div></div><div class="section" style="--unit-color:#16a34a;"><h2 class="section-title"><span class="section-number">📘 الوحدة الثالثة</span> التنسيق مع الجهات المعنية</h2><div class="subsection"><h3 class="subsection-title">🔹 3.1 بناء الشراكات مع الجهات الأمنية والشرطة</h3><div class="subsection">
+<h3 class="subsection-title item-title">الأمن والسلامة - الفرق الجوهري</h3>
 <div class="success-box">
 <p style="font-weight: bold; color: #28a745; font-size: 1.1em;">🛡️ السلامة (Safety)</p>
 <p style="margin-top: 10px;">حماية الأرواح من الحوادث غير المتعمدة</p>
@@ -713,7 +738,7 @@
 <p style="margin-top: 10px;">الحماية من التهديدات المتعمدة</p>
 </div>
 </div><div class="subsection">
-<h3 class="subsection-title">2️⃣2️⃣ مبادئ أساسية في الأمن والسلامة</h3>
+<h3 class="subsection-title item-title">مبادئ أساسية في الأمن والسلامة</h3>
 <ul>
 <li>✅ الأمن جزء رئيسي من التخطيط المسبق</li>
 <li>✅ الأمن الناجح يقلل الاحتكاك قبل أن يرتفع الصوت</li>
@@ -722,8 +747,8 @@
 <div class="danger-box" style="margin-top: 20px;">
 <strong>🔴 قاعدة ذهبية:</strong> الأمن الذي لا يتكيف مع البيانات مصدر خطر وليس مصدر أمان
                     </div>
-</div><div class="subsection"><h3 class="subsection-title">📌 نموذج ST Five لإدارة الحشود (الصيغة المعتمدة)</h3><div class="info-box"><p style="font-weight: bold; margin-bottom: 15px;">ST Five هو إطار تشغيلي متكامل لإدارة الحشود يركّز على الوقاية، التحكم، والاستجابة الفعّالة أثناء الفعاليات.</p><ul><li><strong>1️⃣ Source – الموارد:</strong> تأمين وتكامل الموارد البشرية، المادية، المعلوماتية، والتقنية كأساس للتشغيل الآمن واستمرارية الحدث.</li><li><strong>2️⃣ Type – النموذج:</strong> توظيف نماذج التدفق، الكثافة، والإخلاء لفهم سلوك الحشود والتنبؤ بالمخاطر قبل وقوعها.</li><li><strong>3️⃣ Target &amp; Goal – الهدف:</strong> تحديد الفئة المستهدفة بوضوح، وربطها بالغاية التشغيلية (انسيابية – أمان – احتواء – إخلاء).</li><li><strong>4️⃣ Time – الوقت:</strong> إدارة زمن الذروة، سرعة الاستجابة، ومدة الضغط الزمني باعتبار الوقت عاملًا حاسمًا في تقليل المخاطر.</li><li><strong>5️⃣ Services – الخدمات:</strong> توفير الخدمات الأساسية (مياه، إرشاد، إسعاف، مرافق) لتخفيف الضغط ومنع التوتر والسلوكيات الخطرة.</li><li><strong>6️⃣ Safety – السلامة (الإضافة المعتمدة):</strong> تطبيق منظومة شاملة للسلامة تشمل: تقييم المخاطر، أنظمة الإنذار المبكر، حماية الأرواح والممتلكات، الجاهزية للطوارئ، باعتبار السلامة الهدف الأعلى لجميع العناصر السابقة.</li></ul></div></div></div><div class="subsection"><h3 class="subsection-title">🔹 3.2 التعاون الطبي وتنسيق فرق الطوارئ</h3><div class="subsection">
-<h3 class="subsection-title">2️⃣6️⃣ الاستجابة السريعة للطوارئ</h3>
+</div><div class="subsection"><h3 class="subsection-title item-title">📌 نموذج ST Five لإدارة الحشود (الصيغة المعتمدة)</h3><div class="info-box"><p style="font-weight: bold; margin-bottom: 15px;">ST Five هو إطار تشغيلي متكامل لإدارة الحشود يركّز على الوقاية، التحكم، والاستجابة الفعّالة أثناء الفعاليات.</p><ul><li><strong>1️⃣ Source – الموارد:</strong> تأمين وتكامل الموارد البشرية، المادية، المعلوماتية، والتقنية كأساس للتشغيل الآمن واستمرارية الحدث.</li><li><strong>2️⃣ Type – النموذج:</strong> توظيف نماذج التدفق، الكثافة، والإخلاء لفهم سلوك الحشود والتنبؤ بالمخاطر قبل وقوعها.</li><li><strong>3️⃣ Target &amp; Goal – الهدف:</strong> تحديد الفئة المستهدفة بوضوح، وربطها بالغاية التشغيلية (انسيابية – أمان – احتواء – إخلاء).</li><li><strong>4️⃣ Time – الوقت:</strong> إدارة زمن الذروة، سرعة الاستجابة، ومدة الضغط الزمني باعتبار الوقت عاملًا حاسمًا في تقليل المخاطر.</li><li><strong>5️⃣ Services – الخدمات:</strong> توفير الخدمات الأساسية (مياه، إرشاد، إسعاف، مرافق) لتخفيف الضغط ومنع التوتر والسلوكيات الخطرة.</li><li><strong>6️⃣ Safety – السلامة (الإضافة المعتمدة):</strong> تطبيق منظومة شاملة للسلامة تشمل: تقييم المخاطر، أنظمة الإنذار المبكر، حماية الأرواح والممتلكات، الجاهزية للطوارئ، باعتبار السلامة الهدف الأعلى لجميع العناصر السابقة.</li></ul></div></div></div><div class="subsection"><h3 class="subsection-title">🔹 3.2 التعاون الطبي وتنسيق فرق الطوارئ</h3><div class="subsection">
+<h3 class="subsection-title item-title">الاستجابة السريعة للطوارئ</h3>
 <div class="alert-box">
 <ul style="margin-right: 0;">
 <li>🚑 فرق تدخل سريع متجولة في الموقع</li>
@@ -732,8 +757,8 @@
 <li>📞 قنوات اتصال مفتوحة ومباشرة</li>
 </ul>
 </div>
-</div></div><div class="subsection"><h3 class="subsection-title">🔹 3.3 إدارة العلاقات مع الجهات الحكومية والخاصة</h3><div class="info-box"><p style="font-weight: bold; margin-bottom: 10px;">📌 التنسيق مع الجهات المعنية يشمل (ضمن منظومة إدارة الفعاليات):</p><ul><li>🔒 الجهات الأمنية</li><li>🏥 الجهات الطبية</li><li>💻 الجهات التقنية</li><li>📢 الجهات الإعلامية</li></ul><p style="margin-top: 10px;"><strong>📞</strong> خطة الاتصالات تحدد: من يتواصل مع من ومتى.</p></div></div></div><div class="section"><h2 class="section-title"><span class="section-number">📘 الوحدة الرابعة</span> تصميم وتنفيذ تدابير السلامة</h2><div class="subsection"><h3 class="subsection-title">🔹 4.1 تقييم المخاطر (مصفوفة المخاطر) وإعداد الخطط</h3><div class="subsection">
-<h3 class="subsection-title">2️⃣0️⃣ تقييم التهديدات (Threat Assessment)</h3>
+</div></div><div class="subsection"><h3 class="subsection-title">🔹 3.3 إدارة العلاقات مع الجهات الحكومية والخاصة</h3><div class="info-box"><p style="font-weight: bold; margin-bottom: 10px;">📌 التنسيق مع الجهات المعنية يشمل (ضمن منظومة إدارة الفعاليات):</p><ul><li>🔒 الجهات الأمنية</li><li>🏥 الجهات الطبية</li><li>💻 الجهات التقنية</li><li>📢 الجهات الإعلامية</li></ul><p style="margin-top: 10px;"><strong>📞</strong> خطة الاتصالات تحدد: من يتواصل مع من ومتى.</p></div></div></div><div class="section" style="--unit-color:#7c3aed;"><h2 class="section-title"><span class="section-number">📘 الوحدة الرابعة</span> تصميم وتنفيذ تدابير السلامة</h2><div class="subsection"><h3 class="subsection-title">🔹 4.1 تقييم المخاطر (مصفوفة المخاطر) وإعداد الخطط</h3><div class="subsection">
+<h3 class="subsection-title item-title">تقييم التهديدات (Threat Assessment)</h3>
 <div class="danger-box">
 <strong>⚠️ تحذير حاسم:</strong> غياب نظام تقييم التهديدات خطر بحد ذاته
                     </div>
@@ -751,7 +776,7 @@
 <div class="tool-title">📊 Risk Matrix</div>
 <p>تقييم المخاطر وخطط الطوارئ</p>
 </div></div></div><div class="subsection"><h3 class="subsection-title">🔹 4.2 تركيب وفحص أنظمة السلامة والإنذار</h3><div class="alert-box"><p style="font-weight: bold; margin-bottom: 10px;">📌 نقطة تشغيلية مرتبطة بالإنذار والسلامة:</p><ul style="margin-right: 0;"><li>❌ غياب نظام الإنذار المبكر يعد مؤشر خطر تشغيلي.</li><li>اختبار الجاهزية عبر محاكاة ما قبل الحدث يتضمن سيناريو: تعطل نظام الإنذار.</li></ul></div></div><div class="subsection"><h3 class="subsection-title">🔹 4.3 هندسة وتخصيص مداخل ومخارج الحشود</h3><div class="subsection">
-<h3 class="subsection-title">1️⃣6️⃣ المسارات وأنواعها</h3>
+<h3 class="subsection-title item-title">المسارات وأنواعها</h3>
 <p style="margin-bottom: 15px;">المسارات هي قنوات الحركة داخل الموقع وتشمل:</p>
 <div class="info-box">
 <ul>
@@ -763,7 +788,7 @@
 </ul>
 </div>
 </div><div class="subsection">
-<h3 class="subsection-title">1️⃣8️⃣ تصميم المداخل والمخارج</h3>
+<h3 class="subsection-title item-title">تصميم المداخل والمخارج</h3>
 <div class="success-box">
 <p style="font-weight: bold; margin-bottom: 15px;">يتم باستخدام معادلات رياضية تحسب سعة التدفق</p>
 <p style="margin-top: 15px;"><strong>التعرف على المداخل يكون عبر:</strong></p>
@@ -779,13 +804,13 @@
 <p style="margin-top: 10px; font-size: 1.2em; text-align: center; color: #1e3c72; font-weight: bold;">66-82 شخص/م/دقيقة</p>
 </div>
 </div><div class="subsection">
-<h3 class="subsection-title">1️⃣9️⃣ قواعد تشغيلية حرجة</h3>
+<h3 class="subsection-title item-title">قواعد تشغيلية حرجة</h3>
 <div class="danger-box">
 <p>⏱️ فتح مسارات تصريف كل: <strong>12-15 ثانية</strong></p>
 <p style="margin-top: 10px;">🚪 فتح بوابة إضافية كل: <strong>45 ثانية</strong></p>
 </div>
-</div></div></div><div class="section"><h2 class="section-title"><span class="section-number">📘 الوحدة الخامسة</span> إدارة الحشود أثناء الفعالية</h2><div class="subsection"><h3 class="subsection-title">🔹 5.1 تقنيات تقسيم الموقع (Zoning) والمراقبة</h3><div class="subsection">
-<h3 class="subsection-title">2️⃣4️⃣ المراقبة والتوجيه</h3>
+</div></div></div><div class="section" style="--unit-color:#ea580c;"><h2 class="section-title"><span class="section-number">📘 الوحدة الخامسة</span> إدارة الحشود أثناء الفعالية</h2><div class="subsection"><h3 class="subsection-title">🔹 5.1 تقنيات تقسيم الموقع (Zoning) والمراقبة</h3><div class="subsection">
+<h3 class="subsection-title item-title">المراقبة والتوجيه</h3>
 <div class="info-box">
 <p style="font-weight: bold; font-size: 1.1em; margin-bottom: 15px;">🎯 غرفة التحكم تتحول إلى العقل المدبر</p>
 <p style="font-weight: bold; margin-top: 20px; margin-bottom: 10px;">مراقبة مستمرة لـ:</p>
@@ -797,7 +822,7 @@
 </ul>
 </div>
 </div><div class="danger-box"><p style="font-weight: bold; margin-bottom: 10px;">🔴 مؤشر فشل تشغيلي مرتبط بالمراقبة وتقسيم الموقع:</p><ul style="margin-right: 0;"><li>❌ غياب خطة تقسيم القطاعات (Zoning)</li><li>❌ غياب غرفة القيادة (Command Room)</li></ul></div></div><div class="subsection"><h3 class="subsection-title">🔹 5.2 توظيف التكنولوجيا في إدارة التدفقات</h3><div class="subsection">
-<h3 class="subsection-title">2️⃣5️⃣ استخدام التكنولوجيا المتقدمة</h3>
+<h3 class="subsection-title item-title">استخدام التكنولوجيا المتقدمة</h3>
 <div class="tools-grid">
 <div class="tool-card">
 <div class="tool-title">🌡️ كاميرات حرارية</div>
@@ -813,7 +838,7 @@
 </div>
 </div>
 </div></div><div class="subsection"><h3 class="subsection-title">🔹 5.3 بروتوكولات الاستجابة السريعة للطوارئ</h3><div class="subsection">
-<h3 class="subsection-title">2️⃣3️⃣ التفريق الناعم (Soft Dispersal)</h3>
+<h3 class="subsection-title item-title">التفريق الناعم (Soft Dispersal)</h3>
 <div class="success-box">
 <p style="font-weight: bold; margin-bottom: 15px;">أسلوب تفريق حديث يعتمد على:</p>
 <ul>
@@ -824,7 +849,7 @@
 </ul>
 </div>
 </div><div class="subsection">
-<h3 class="subsection-title">2️⃣7️⃣ تعريف الأزمات وأنواعها</h3>
+<h3 class="subsection-title item-title">تعريف الأزمات وأنواعها</h3>
 <div class="danger-box">
 <p style="font-weight: bold; margin-bottom: 15px;">الأزمة: حدث يهدد الأرواح أو السمعة أو الاستمرارية ويتطلب قرارًا فوريًا</p>
 </div>
@@ -839,7 +864,7 @@
 </ul>
 </div>
 </div><div class="subsection">
-<h3 class="subsection-title">2️⃣8️⃣ الإجراءات عند حدوث كارثة</h3>
+<h3 class="subsection-title item-title">الإجراءات عند حدوث كارثة</h3>
 <div class="danger-box">
 <p style="font-weight: bold; margin-bottom: 15px;">⚠️ الخطوات الحاسمة بالترتيب:</p>
 <ul style="margin-right: 0;">
@@ -851,7 +876,7 @@
 </ul>
 </div>
 </div><div class="subsection">
-<h3 class="subsection-title">2️⃣6️⃣ الاستجابة السريعة للطوارئ</h3>
+<h3 class="subsection-title item-title">الاستجابة السريعة للطوارئ</h3>
 <div class="alert-box">
 <ul style="margin-right: 0;">
 <li>🚑 فرق تدخل سريع متجولة في الموقع</li>
@@ -860,7 +885,7 @@
 <li>📞 قنوات اتصال مفتوحة ومباشرة</li>
 </ul>
 </div>
-</div></div></div><div class="section">
+</div></div></div><div class="section" style="--unit-color:#dc2626;">
 <h2 class="section-title">
 <span class="section-icon">🎯</span>
                     الخاتمة التدريبية
