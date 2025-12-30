@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>دليل إدارة الفعاليات وسلامة الحشود</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.8;
+            direction: rtl;
+        }
+
+        .print-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .print-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(40, 167, 69, 0.6);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-right: 5px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+        }
+
+        .subsection {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .subsection-title {
+            font-size: 1.3em;
+            color: #2a5298;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-right: 4px solid #667eea;
+        }
+
+        .alert-box {
+            background: #fff3cd;
+            border-right: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .danger-box {
+            background: #f8d7da;
+            border-right: 4px solid #dc3545;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border-right: 4px solid #28a745;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        ul {
+            margin-right: 30px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 10px 0;
+            padding-right: 10px;
+        }
+
+        .density-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .density-card {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .density-low {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        }
+
+        .density-medium {
+            background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
+        }
+
+        .density-high {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .resource-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .resource-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .crowd-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .crowd-type-card {
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            border-right: 4px solid #667eea;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .crowd-type-title {
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .footer {
+            background: #1e3c72;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        .quote {
+            font-size: 1.3em;
+            font-style: italic;
+            color: #667eea;
+            text-align: center;
+            padding: 30px;
+            margin: 30px 0;
+            background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+            border-radius: 15px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .tool-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-right: 4px solid #28a745;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .tool-title {
+            font-weight: bold;
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin-bottom: 30px;
+            }
+
+            .subsection {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .header {
+                page-break-after: avoid;
+            }
+
+            .section-title {
+                page-break-after: avoid;
+            }
+
+            .density-levels,
+            .resources-grid,
+            .crowd-types-grid,
+            .tools-grid {
+                page-break-inside: avoid;
+            }
+
+            @page {
+                size: A4;
+                margin: 2cm;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+
+            .print-button {
+                font-size: 0.9em;
+                padding: 12px 20px;
+            }
+        }
+    
+        /* ===== برنامج 5 أيام: شريط التنقل ===== */
+        .day-nav{
+            display:flex;
+            gap:10px;
+            justify-content:center;
+            flex-wrap:wrap;
+            padding:15px 20px;
+            background: rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+        .day-nav a{
+            text-decoration:none;
+            padding:10px 16px;
+            border-radius:999px;
+            background: rgba(255,255,255,0.18);
+            color:#fff;
+            font-weight:700;
+            transition: all 0.2s ease;
+        }
+        .day-nav a:hover{
+            background: rgba(255,255,255,0.28);
+            transform: translateY(-1px);
+        }
+        .day-nav a.active{
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.35);
+        }
+
+        @media print{
+            .day-nav{display:none;}
+        }
+
+    
+        /* ===== برنامج 5 أيام: أيقونات تنقل أعلى الصفحة ===== */
+        .days-bar{
+            display:flex;
+            justify-content:center;
+            gap:12px;
+            flex-wrap:wrap;
+            padding:14px 18px;
+            background: rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+        .day-btn{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            width:120px;
+            min-height:74px;
+            padding:10px 12px;
+            border-radius:18px;
+            text-decoration:none;
+            background: rgba(255,255,255,0.16);
+            color:#fff;
+            font-weight:800;
+            transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+        }
+        .day-btn:hover{
+            background: rgba(255,255,255,0.24);
+            transform: translateY(-2px);
+        }
+        .day-ico{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            width:36px;
+            height:36px;
+            border-radius:12px;
+            background: rgba(0,0,0,0.18);
+            margin-bottom:6px;
+            font-size:20px;
+            line-height:1;
+        }
+        .day-txt{
+            font-size:14px;
+            line-height:1.1;
+            text-align:center;
+        }
+        .day-btn.active{
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            box-shadow: 0 10px 20px rgba(40, 167, 69, 0.35);
+        }
+        .day-btn.active .day-ico{
+            background: rgba(255,255,255,0.25);
+        }
+        @media (max-width: 560px){
+            .day-btn{width:104px;}
+        }
+        @media print{
+            .days-bar{display:none;}
+        }
+
+    </style>
+</head>
+<body>
+<button class="print-button" onclick="window.print()">
+        🖨️ طباعة الدليل كـ PDF
+    </button>
+<div class="container">
+
+<div class="days-bar" aria-label="تنقّل أيام البرنامج">
+  <a class="day-btn active" href="index.html" title="اليوم الأول">
+    <span class="day-ico" aria-hidden="true">①</span>
+    <span class="day-txt">اليوم الأول</span>
+  </a>
+  <a class="day-btn" href="day2.html" title="اليوم الثاني">
+    <span class="day-ico" aria-hidden="true">②</span>
+    <span class="day-txt">اليوم الثاني</span>
+  </a>
+  <a class="day-btn" href="day3.html" title="اليوم الثالث">
+    <span class="day-ico" aria-hidden="true">③</span>
+    <span class="day-txt">اليوم الثالث</span>
+  </a>
+  <a class="day-btn" href="day4.html" title="اليوم الرابع">
+    <span class="day-ico" aria-hidden="true">④</span>
+    <span class="day-txt">اليوم الرابع</span>
+  </a>
+  <a class="day-btn" href="day5.html" title="اليوم الخامس">
+    <span class="day-ico" aria-hidden="true">⑤</span>
+    <span class="day-txt">اليوم الخامس</span>
+  </a>
+</div>
+
+<div class="header">
+<h1>📘 الملخص التدريبي المعتمد</h1>
+<p>إدارة الفعاليات وسلامة الحشود</p>
+</div>
+<div class="content"><div class="section"><h2 class="section-title"><span class="section-number">📘 الوحدة الأولى</span> مقدمة في إدارة الفعاليات وسلامة الحشود</h2><div class="subsection"><h3 class="subsection-title">🔹 1.1 مفهوم إدارة الفعاليات وأهميتها الاستراتيجية</h3><div class="subsection">
+<h3 class="subsection-title">8️⃣ تعريف إدارة الفعاليات</h3>
+<div class="info-box">
+                        عملية تخطيط وتنظيم وتنفيذ ومراقبة الفعاليات بالتنسيق مع جميع القطاعات:
+                        <ul style="margin-top: 15px;">
+<li>🔒 الأمنية</li>
+<li>🏥 الطبية</li>
+<li>💻 التقنية</li>
+<li>📢 الإعلامية</li>
+</ul>
+</div>
+</div><div class="subsection">
+<h3 class="subsection-title">9️⃣ عناصر إدارة الفعاليات</h3>
+<ul>
+<li>✅ التنسيق والتكامل مع القطاعات الأخرى</li>
+<li>✅ العلاقات العامة (عنصر أساسي)</li>
+<li>✅ توجيه جميع الموارد بشكل متكامل</li>
+</ul>
+</div><div class="subsection">
+<h3 class="subsection-title">🔟 أنواع الموارد السبعة</h3>
+<div class="resources-grid">
+<div class="resource-item">💰 الموارد المالية</div>
+<div class="resource-item">🏗️ الموارد المادية</div>
+<div class="resource-item">💻 الموارد التقنية</div>
+<div class="resource-item">👥 الموارد البشرية</div>
+<div class="resource-item">🌿 الموارد الطبيعية</div>
+<div class="resource-item">📋 الموارد التخطيطية</div>
+<div class="resource-item">⏰ الموارد الزمنية</div>
+</div>
+</div></div><div class="subsection"><h3 class="subsection-title">🔹 1.2 أساسيات سلامة الحشود</h3><div class="subsection">
+<h3 class="subsection-title">1️⃣ تعريف الحشد</h3>
+<div class="info-box">
+                        الحشد هو تجمع بشري في مكان وزمان محددين، يتأثر بعوامل نفسية، ومكانية، وتنظيمية، وتزداد خطورته كلما ساءت إدارة التدفق والكثافة.
+                    </div>
+</div><div class="subsection">
+<h3 class="subsection-title">2️⃣ أنواع الحشود (Types of Crowds)</h3>
+<p>تصنَّف الحشود حسب الهدف، السلوك، ونمط الحركة إلى:</p>
+<div class="crowd-types-grid">
+<div class="crowd-type-card">
+<div class="crowd-type-title">🧍 حشود واقفة (Static)</div>
+<p>خطورة الكثافة أعلى بسبب عدم الحركة</p>
+</div>
+<div class="crowd-type-card">
+<div class="crowd-type-title">➡️ حشود متحركة باتجاه واحد</div>
+<p>Unidirectional Flow - تدفق منتظم نسبيًا</p>
+</div>
+<div class="crowd-type-card">
+<div class="crowd-type-title">↔️ حشود متقاطعة / متعاكسة</div>
+<p>Bidirectional / Intersecting - تزيد نقاط الاحتكاك</p>
+</div>
+<div class="crowd-type-card">
+<div class="crowd-type-title">🔻 حشود عنق الزجاجة</div>
+<p>Bottleneck - أخطر بيئة لتوليد التدافع</p>
+</div>
+<div class="crowd-type-card">
+<div class="crowd-type-title">🚨 حشود اندفاع / هروب</div>
+<p>Panic / Emergency Egress - حالة طوارئ</p>
+</div>
+</div>
+</div><div class="subsection">
+<h3 class="subsection-title">3️⃣ الكثافة البشرية (Crowd Density)</h3>
+<p>عدد الأشخاص في كل متر مربع (شخص/م²)، وتُعد أكبر مؤشر خطر في إدارة الحشود.</p>
+<h4 style="margin: 20px 0 15px; color: #1e3c72; font-size: 1.1em;">المستويات التشغيلية للكثافة:</h4>
+<div class="density-levels">
+<div class="density-card density-low">
+<div style="font-size: 2em; margin-bottom: 10px;">2</div>
+<div>أشخاص/م²</div>
+<div style="margin-top: 10px; font-size: 0.9em;">ازدحام يمكن السيطرة عليه</div>
+</div>
+<div class="density-card density-medium">
+<div style="font-size: 2em; margin-bottom: 10px;">4</div>
+<div>أشخاص/م²</div>
+<div style="margin-top: 10px; font-size: 0.9em;">خطر متوسط وبداية فقدان المرونة</div>
+</div>
+<div class="density-card density-high">
+<div style="font-size: 2em; margin-bottom: 10px;">6</div>
+<div>أشخاص/م²</div>
+<div style="margin-top: 10px; font-size: 0.9em;">فقدان السيطرة بالكامل - حالة حرجة</div>
+</div>
+</div>
+<div class="alert-box">
+<strong>📌 تحذير مهم:</strong> غياب الحوادث السابقة ليس دليل أمان
+                    </div>
+<div class="danger-box" style="margin-top: 20px;">
+<p style="font-weight: bold; font-size: 1.1em; margin-bottom: 15px;">🔴 قاعدة حاسمة عند الوصول لـ 6 أشخاص/م²</p>
+<p style="margin-bottom: 10px;">هذا يدل على التالي:</p>
+<ul style="margin-right: 0; margin-top: 10px;">
+<li>❌ غياب غرفة القيادة (Command Room)</li>
+<li>❌ غياب خطة تقسيم القطاعات (Zoning)</li>
+<li>❌ غياب نظام الإنذار المبكر</li>
+</ul>
+<p style="margin-top: 15px; font-weight: bold; color: #721c24;">⚠️ غياب قائد واحد واضح = فشل مؤكد</p>
+</div>
+</div><div class="subsection">
+<h3 class="subsection-title">4️⃣ وقت الوفاة في حالات الكثافة الحرجة</h3>
+<div class="danger-box">
+<p>⏱️ يبدأ الاختناق خلال: <strong>30 ثانية</strong></p>
+<p style="margin-top: 10px;">☠️ الوفاة المحتملة: <strong>دقيقة إلى دقيقتين</strong></p>
+</div>
+</div><div class="subsection">
+<h3 class="subsection-title">5️⃣ سلامة الحشود علم متكامل</h3>
+<div class="success-box">
+<p style="font-weight: bold; margin-bottom: 15px;">سلامة الحشود ليست اجتهادًا، بل علم قائم على:</p>
+<ul>
+<li>📐 معادلات رياضية متخصصة</li>
+<li>🌊 نماذج تدفق وحركة</li>
+<li>🧠 علم النفس الجماعي</li>
+<li>🏛️ هندسة المكان والتصميم</li>
+</ul>
+</div>
+</div><div class="subsection">
+<h3 class="subsection-title">6️⃣ إدارة سلوك الجمهور</h3>
+<p>علم متخصص يدرس:</p>
+<ul>
+<li>👥 ردود الفعل الجماعية</li>
+<li>🤝 لغة الجسد والإشارات</li>
+<li>🔊 مستويات الصوت والضجيج</li>
+<li>⚠️ الاستجابة للخطر والطوارئ</li>
+</ul>
+</div></div><div class="subsection"><h3 class="subsection-title">🔹 1.3 التحديات الشائعة والسيناريوهات البديلة</h3><div class="subsection">
+<h3 class="subsection-title">7️⃣ أحداث الحشود (Crowd Events)</h3>
+<div class="info-box">
+<p style="font-weight: bold; margin-bottom: 15px;">ما يحدث داخل الحشد نتيجة تفاعل: المكان + الإدارة + السلوك</p>
+<p style="font-weight: bold; margin-top: 20px; margin-bottom: 10px;">أهم أحداث الحشود:</p>
+<ul>
+<li>📈 زيادة الكثافة (Density Build-up)</li>
+<li>🌊 توقف التدفق ثم موجات ضغط (Shock Waves)</li>
+<li>⚠️ نقاط اختناق (Pinch Points)</li>
+<li>🚫 فقدان التحكم الفردي عند الكثافات العالية</li>
+</ul>
+</div>
+</div><div class="subsection">
+<h3 class="subsection-title">2️⃣9️⃣ مثال واقعي: حادثة سيول - كوريا الجنوبية</h3>
+<div class="alert-box">
+<p style="font-weight: bold; color: #dc3545; font-size: 1.2em; margin-bottom: 15px;">💔 النتيجة المأساوية: 158 وفاة</p>
+<p style="font-weight: bold; margin-top: 20px; margin-bottom: 10px;">الأسباب الرئيسية:</p>
+<ul>
+<li>⚠️ نقاط اختناق حرجة في المسارات</li>
+<li>📈 كثافة عالية غير منضبطة</li>
+<li>🚫 غياب التخطيط المسبق المناسب</li>
+<li>📉 ضعف في إدارة التدفق</li>
+</ul>
+<div style="margin-top: 20px; padding: 15px; background: rgba(220, 53, 69, 0.1); border-radius: 8px;">
+<p style="font-weight: bold;">💡 الدرس المستفاد:</p>
+<p style="margin-top: 10px;">التخطيط السليم والإدارة الاستباقية للكثافة كان من الممكن أن ينقذ الأرواح</p>
+</div>
+</div>
+</div></div></div><div class="section"><h2 class="section-title"><span class="section-number">📘 الوحدة الثانية</span> التخطيط المسبق وتنظيم الفعاليات</h2><div class="subsection"><h3 class="subsection-title">🔹 2.1 تحليل نوع الفعالية وتحديد الأهداف</h3><div class="subsection">
+<h3 class="subsection-title">1️⃣1️⃣ لماذا التخطيط المسبق؟</h3>
+<div class="success-box">
+<strong>💡 المبدأ الأساسي:</strong>
+<p style="margin-top: 10px;">تصور السيناريوهات أفضل من معالجة الكوارث</p>
+</div>
+</div><div class="subsection">
+<h3 class="subsection-title">1️⃣2️⃣ التخطيط عملية ديناميكية</h3>
+<div class="info-box">
+<ul style="margin-right: 0;">
+<li>📥 مدخلات مستمرة</li>
+<li>⚙️ معالجة وتحليل</li>
+<li>📤 مخرجات قابلة للقياس</li>
+<li>🔄 تحديث مستمر بالبيانات</li>
+</ul>
+</div>
+</div></div><div class="subsection"><h3 class="subsection-title">🔹 2.2 اختيار الموقع والتقييم الميداني</h3><div class="subsection">
+<h3 class="subsection-title">1️⃣7️⃣ خرائط التدفق (Flow Mapping)</h3>
+<div class="info-box">
+<p style="font-weight: bold; margin-bottom: 15px;">تمثيل مسارات الحركة لتحديد:</p>
+<ul>
+<li>📈 مناطق زيادة الكثافة المحتملة</li>
+<li>⚠️ نقاط الاختناق الخطرة</li>
+<li>🌡️ خرائط حرارية للكثافة (عند توفر بيانات حية)</li>
+</ul>
+<p style="font-weight: bold; margin-top: 20px; margin-bottom: 10px;">الأدوات المستخدمة:</p>
+<ul>
+<li>🗺️ خريطة الموقع + أسهم الحركة</li>
+<li>📍 طبقات (مداخل، مخارج، بوابات، حواجز)</li>
+<li>🌡️ خرائط حرارية للكثافة عند توفر بيانات حية</li>
+</ul>
+</div>
+</div><div class="info-box"><p style="font-weight: bold; margin-bottom: 10px;">📌 نقاط تقييم ميداني مرتبطة بالموقع:</p><ul style="margin-right: 0;"><li>📈 مناطق زيادة الكثافة المحتملة</li><li>⚠️ نقاط الاختناق الخطرة</li><li>🌡️ إمكانية استخدام خرائط حرارية للكثافة عند توفر بيانات حية</li></ul></div></div><div class="subsection"><h3 class="subsection-title">🔹 2.3 تصميم خطة تنظيمية متكاملة</h3><div class="subsection">
+<h3 class="subsection-title">1️⃣3️⃣ هندسة التخطيط (Planning Engineering)</h3>
+<div class="info-box">
+<p style="font-weight: bold; margin-bottom: 15px;">تحويل الخطة إلى تصميم قابل للتنفيذ عبر:</p>
+<ul>
+<li>📊 حساب السعات والقدرة الاستيعابية</li>
+<li>📍 توزيع الموارد بشكل استراتيجي</li>
+<li>🚧 تصميم الحواجز والبوابات والممرات</li>
+<li>⚠️ إدارة عنق الزجاجة قبل أن يتكون</li>
+</ul>
+</div>
+</div><div class="subsection">
+<h3 class="subsection-title">1️⃣4️⃣ أدوات التخطيط الاحترافية</h3>
+<div class="tools-grid">
+<div class="tool-card">
+<div class="tool-title">📊 Risk Matrix</div>
+<p>تقييم المخاطر وخطط الطوارئ</p>
+</div>
+<div class="tool-card">
+<div class="tool-title">🗺️ خرائط التدفق</div>
+<p>تحديد نقاط التحكم والمسارات</p>
+</div>
+<div class="tool-card">
+<div class="tool-title">📅 Gantt Chart</div>
+<p>الجدولة الزمنية للمهام</p>
+</div>
+<div class="tool-card">
+<div class="tool-title">✅ Checklists</div>
+<p>قوائم تدقيق تشغيلية</p>
+</div>
+<div class="tool-card">
+<div class="tool-title">📞 خطة اتصالات</div>
+<p>من يتواصل مع من ومتى</p>
+</div>
+</div>
+</div><div class="subsection">
+<h3 class="subsection-title">1️⃣5️⃣ محاكاة ما قبل الحدث (Pre-event Simulation)</h3>
+<div class="alert-box">
+<p style="font-weight: bold; margin-bottom: 15px;">اختبار سيناريوهات "ماذا لو؟" مثل:</p>
+<ul>
+<li>❓ ماذا لو أغلق مدخل رئيسي؟</li>
+<li>❓ ماذا لو تعطل نظام الإنذار؟</li>
+<li>❓ ماذا لو تضاعف التدفق خلال 10 دقائق؟</li>
+</ul>
+<p style="margin-top: 15px; font-weight: bold;">🎯 الهدف: اكتشاف نقطة الانهيار قبل حدوثها</p>
+</div>
+</div></div></div><div class="section"><h2 class="section-title"><span class="section-number">📘 الوحدة الثالثة</span> التنسيق مع الجهات المعنية</h2><div class="subsection"><h3 class="subsection-title">🔹 3.1 بناء الشراكات مع الجهات الأمنية والشرطة</h3><div class="subsection">
+<h3 class="subsection-title">2️⃣1️⃣ الأمن والسلامة - الفرق الجوهري</h3>
+<div class="success-box">
+<p style="font-weight: bold; color: #28a745; font-size: 1.1em;">🛡️ السلامة (Safety)</p>
+<p style="margin-top: 10px;">حماية الأرواح من الحوادث غير المتعمدة</p>
+</div>
+<div class="danger-box" style="margin-top: 15px;">
+<p style="font-weight: bold; color: #dc3545; font-size: 1.1em;">🔒 الأمن (Security)</p>
+<p style="margin-top: 10px;">الحماية من التهديدات المتعمدة</p>
+</div>
+</div><div class="subsection">
+<h3 class="subsection-title">2️⃣2️⃣ مبادئ أساسية في الأمن والسلامة</h3>
+<ul>
+<li>✅ الأمن جزء رئيسي من التخطيط المسبق</li>
+<li>✅ الأمن الناجح يقلل الاحتكاك قبل أن يرتفع الصوت</li>
+<li>✅ الأمن والسلامة مسؤولية الشخص قبل الجميع</li>
+</ul>
+<div class="danger-box" style="margin-top: 20px;">
+<strong>🔴 قاعدة ذهبية:</strong> الأمن الذي لا يتكيف مع البيانات مصدر خطر وليس مصدر أمان
+                    </div>
+</div><div class="subsection"><h3 class="subsection-title">📌 نموذج ST Five لإدارة الحشود (الصيغة المعتمدة)</h3><div class="info-box"><p style="font-weight: bold; margin-bottom: 15px;">ST Five هو إطار تشغيلي متكامل لإدارة الحشود يركّز على الوقاية، التحكم، والاستجابة الفعّالة أثناء الفعاليات.</p><ul><li><strong>1️⃣ Source – الموارد:</strong> تأمين وتكامل الموارد البشرية، المادية، المعلوماتية، والتقنية كأساس للتشغيل الآمن واستمرارية الحدث.</li><li><strong>2️⃣ Type – النموذج:</strong> توظيف نماذج التدفق، الكثافة، والإخلاء لفهم سلوك الحشود والتنبؤ بالمخاطر قبل وقوعها.</li><li><strong>3️⃣ Target &amp; Goal – الهدف:</strong> تحديد الفئة المستهدفة بوضوح، وربطها بالغاية التشغيلية (انسيابية – أمان – احتواء – إخلاء).</li><li><strong>4️⃣ Time – الوقت:</strong> إدارة زمن الذروة، سرعة الاستجابة، ومدة الضغط الزمني باعتبار الوقت عاملًا حاسمًا في تقليل المخاطر.</li><li><strong>5️⃣ Services – الخدمات:</strong> توفير الخدمات الأساسية (مياه، إرشاد، إسعاف، مرافق) لتخفيف الضغط ومنع التوتر والسلوكيات الخطرة.</li><li><strong>6️⃣ Safety – السلامة (الإضافة المعتمدة):</strong> تطبيق منظومة شاملة للسلامة تشمل: تقييم المخاطر، أنظمة الإنذار المبكر، حماية الأرواح والممتلكات، الجاهزية للطوارئ، باعتبار السلامة الهدف الأعلى لجميع العناصر السابقة.</li></ul></div></div></div><div class="subsection"><h3 class="subsection-title">🔹 3.2 التعاون الطبي وتنسيق فرق الطوارئ</h3><div class="subsection">
+<h3 class="subsection-title">2️⃣6️⃣ الاستجابة السريعة للطوارئ</h3>
+<div class="alert-box">
+<ul style="margin-right: 0;">
+<li>🚑 فرق تدخل سريع متجولة في الموقع</li>
+<li>📟 بروتوكولات استجابة برموز مشفرة</li>
+<li>🚧 عزل المنطقة المتضررة فورًا</li>
+<li>📞 قنوات اتصال مفتوحة ومباشرة</li>
+</ul>
+</div>
+</div></div><div class="subsection"><h3 class="subsection-title">🔹 3.3 إدارة العلاقات مع الجهات الحكومية والخاصة</h3><div class="info-box"><p style="font-weight: bold; margin-bottom: 10px;">📌 التنسيق مع الجهات المعنية يشمل (ضمن منظومة إدارة الفعاليات):</p><ul><li>🔒 الجهات الأمنية</li><li>🏥 الجهات الطبية</li><li>💻 الجهات التقنية</li><li>📢 الجهات الإعلامية</li></ul><p style="margin-top: 10px;"><strong>📞</strong> خطة الاتصالات تحدد: من يتواصل مع من ومتى.</p></div></div></div><div class="section"><h2 class="section-title"><span class="section-number">📘 الوحدة الرابعة</span> تصميم وتنفيذ تدابير السلامة</h2><div class="subsection"><h3 class="subsection-title">🔹 4.1 تقييم المخاطر (مصفوفة المخاطر) وإعداد الخطط</h3><div class="subsection">
+<h3 class="subsection-title">2️⃣0️⃣ تقييم التهديدات (Threat Assessment)</h3>
+<div class="danger-box">
+<strong>⚠️ تحذير حاسم:</strong> غياب نظام تقييم التهديدات خطر بحد ذاته
+                    </div>
+<div class="info-box" style="margin-top: 20px;">
+<p style="font-weight: bold; margin-bottom: 15px;">أبعاد التقييم الخمسة:</p>
+<ul>
+<li>⚖️ <strong>البعد القانوني:</strong> التشريعات والأنظمة</li>
+<li>🕵️ <strong>البعد الاستخباراتي:</strong> جمع المعلومات والتحليل</li>
+<li>💻 <strong>البعد التقني:</strong> الأنظمة والتقنيات</li>
+<li>🧠 <strong>البعد النفسي:</strong> السلوك والتوقعات</li>
+<li>🤖 <strong>بعد الذكاء الصناعي:</strong> التحليل التنبؤي</li>
+</ul>
+</div>
+</div><div class="tools-grid"><div class="tool-card">
+<div class="tool-title">📊 Risk Matrix</div>
+<p>تقييم المخاطر وخطط الطوارئ</p>
+</div></div></div><div class="subsection"><h3 class="subsection-title">🔹 4.2 تركيب وفحص أنظمة السلامة والإنذار</h3><div class="alert-box"><p style="font-weight: bold; margin-bottom: 10px;">📌 نقطة تشغيلية مرتبطة بالإنذار والسلامة:</p><ul style="margin-right: 0;"><li>❌ غياب نظام الإنذار المبكر يعد مؤشر خطر تشغيلي.</li><li>اختبار الجاهزية عبر محاكاة ما قبل الحدث يتضمن سيناريو: تعطل نظام الإنذار.</li></ul></div></div><div class="subsection"><h3 class="subsection-title">🔹 4.3 هندسة وتخصيص مداخل ومخارج الحشود</h3><div class="subsection">
+<h3 class="subsection-title">1️⃣6️⃣ المسارات وأنواعها</h3>
+<p style="margin-bottom: 15px;">المسارات هي قنوات الحركة داخل الموقع وتشمل:</p>
+<div class="info-box">
+<ul>
+<li>🚪 <strong>مسارات دخول (Ingress):</strong> نقاط الوصول الرئيسية</li>
+<li>🔄 <strong>مسارات تداول داخلية (Circulation):</strong> الحركة بين المناطق</li>
+<li>🚶 <strong>مسارات خروج (Egress):</strong> نقاط المغادرة العادية</li>
+<li>🚨 <strong>مسارات طوارئ (Emergency Routes):</strong> للحالات الحرجة</li>
+<li>🚑 <strong>مسارات خدمات وإسناد:</strong> (طبي / أمني / إطفاء) - يمنع تداخلها مع الجمهور</li>
+</ul>
+</div>
+</div><div class="subsection">
+<h3 class="subsection-title">1️⃣8️⃣ تصميم المداخل والمخارج</h3>
+<div class="success-box">
+<p style="font-weight: bold; margin-bottom: 15px;">يتم باستخدام معادلات رياضية تحسب سعة التدفق</p>
+<p style="margin-top: 15px;"><strong>التعرف على المداخل يكون عبر:</strong></p>
+<ul>
+<li>🚩 الأعلام والرايات</li>
+<li>🚦 الإشارات الضوئية</li>
+<li>🎨 الألوان والتمييز البصري</li>
+<li>➡️ التوجيه البصري الواضح</li>
+</ul>
+</div>
+<div class="info-box" style="margin-top: 15px;">
+<strong>📊 معدل التدفق المرجعي الشائع:</strong>
+<p style="margin-top: 10px; font-size: 1.2em; text-align: center; color: #1e3c72; font-weight: bold;">66-82 شخص/م/دقيقة</p>
+</div>
+</div><div class="subsection">
+<h3 class="subsection-title">1️⃣9️⃣ قواعد تشغيلية حرجة</h3>
+<div class="danger-box">
+<p>⏱️ فتح مسارات تصريف كل: <strong>12-15 ثانية</strong></p>
+<p style="margin-top: 10px;">🚪 فتح بوابة إضافية كل: <strong>45 ثانية</strong></p>
+</div>
+</div></div></div><div class="section"><h2 class="section-title"><span class="section-number">📘 الوحدة الخامسة</span> إدارة الحشود أثناء الفعالية</h2><div class="subsection"><h3 class="subsection-title">🔹 5.1 تقنيات تقسيم الموقع (Zoning) والمراقبة</h3><div class="subsection">
+<h3 class="subsection-title">2️⃣4️⃣ المراقبة والتوجيه</h3>
+<div class="info-box">
+<p style="font-weight: bold; font-size: 1.1em; margin-bottom: 15px;">🎯 غرفة التحكم تتحول إلى العقل المدبر</p>
+<p style="font-weight: bold; margin-top: 20px; margin-bottom: 10px;">مراقبة مستمرة لـ:</p>
+<ul>
+<li>🤝 لغة الجسد والسلوك الجماعي</li>
+<li>🔊 مستويات الصوت والضجيج</li>
+<li>📊 معدلات التدفق والكثافة</li>
+<li>🚧 استخدام الحواجز الذكية لتغيير المسارات ديناميكيًا</li>
+</ul>
+</div>
+</div><div class="danger-box"><p style="font-weight: bold; margin-bottom: 10px;">🔴 مؤشر فشل تشغيلي مرتبط بالمراقبة وتقسيم الموقع:</p><ul style="margin-right: 0;"><li>❌ غياب خطة تقسيم القطاعات (Zoning)</li><li>❌ غياب غرفة القيادة (Command Room)</li></ul></div></div><div class="subsection"><h3 class="subsection-title">🔹 5.2 توظيف التكنولوجيا في إدارة التدفقات</h3><div class="subsection">
+<h3 class="subsection-title">2️⃣5️⃣ استخدام التكنولوجيا المتقدمة</h3>
+<div class="tools-grid">
+<div class="tool-card">
+<div class="tool-title">🌡️ كاميرات حرارية</div>
+<p>لقياس الكثافة والحرارة</p>
+</div>
+<div class="tool-card">
+<div class="tool-title">📱 تطبيقات تتبع</div>
+<p>رصد الكثافة اللحظية</p>
+</div>
+<div class="tool-card">
+<div class="tool-title">📊 Live Data</div>
+<p>بيانات حية ومعالجة فورية</p>
+</div>
+</div>
+</div></div><div class="subsection"><h3 class="subsection-title">🔹 5.3 بروتوكولات الاستجابة السريعة للطوارئ</h3><div class="subsection">
+<h3 class="subsection-title">2️⃣3️⃣ التفريق الناعم (Soft Dispersal)</h3>
+<div class="success-box">
+<p style="font-weight: bold; margin-bottom: 15px;">أسلوب تفريق حديث يعتمد على:</p>
+<ul>
+<li>➡️ التوجيه الذكي والإرشاد</li>
+<li>😌 التهدئة والطمأنة النفسية</li>
+<li>🔄 إعادة توزيع التدفق بشكل طبيعي</li>
+<li><strong>✅ بدون استخدام القوة أو الإكراه</strong></li>
+</ul>
+</div>
+</div><div class="subsection">
+<h3 class="subsection-title">2️⃣7️⃣ تعريف الأزمات وأنواعها</h3>
+<div class="danger-box">
+<p style="font-weight: bold; margin-bottom: 15px;">الأزمة: حدث يهدد الأرواح أو السمعة أو الاستمرارية ويتطلب قرارًا فوريًا</p>
+</div>
+<div class="info-box" style="margin-top: 20px;">
+<p style="font-weight: bold; margin-bottom: 15px;">أنواع الأزمات:</p>
+<ul>
+<li>👥 أزمات سلامة الحشود</li>
+<li>🏥 أزمات طبية وصحية</li>
+<li>🔒 أزمات أمنية</li>
+<li>💻 أزمات تقنية</li>
+<li>🌍 أزمات بيئية</li>
+</ul>
+</div>
+</div><div class="subsection">
+<h3 class="subsection-title">2️⃣8️⃣ الإجراءات عند حدوث كارثة</h3>
+<div class="danger-box">
+<p style="font-weight: bold; margin-bottom: 15px;">⚠️ الخطوات الحاسمة بالترتيب:</p>
+<ul style="margin-right: 0;">
+<li><strong>1️⃣</strong> عزل المنطقة المتضررة فورًا</li>
+<li><strong>2️⃣</strong> إيقاف التدفق نحو المنطقة</li>
+<li><strong>3️⃣</strong> تفعيل الإنذار والإخلاء</li>
+<li><strong>4️⃣</strong> فتح مسارات الطوارئ</li>
+<li><strong>5️⃣</strong> التنسيق الأمني والطبي (الأهم)</li>
+</ul>
+</div>
+</div><div class="subsection">
+<h3 class="subsection-title">2️⃣6️⃣ الاستجابة السريعة للطوارئ</h3>
+<div class="alert-box">
+<ul style="margin-right: 0;">
+<li>🚑 فرق تدخل سريع متجولة في الموقع</li>
+<li>📟 بروتوكولات استجابة برموز مشفرة</li>
+<li>🚧 عزل المنطقة المتضررة فورًا</li>
+<li>📞 قنوات اتصال مفتوحة ومباشرة</li>
+</ul>
+</div>
+</div></div></div><div class="section">
+<h2 class="section-title">
+<span class="section-icon">🎯</span>
+                    الخاتمة التدريبية
+                </h2>
+<div class="quote">
+                    إدارة الحشود = علم + هندسة + نفس + قرار
+                </div>
+<div class="subsection">
+<div class="success-box">
+<p style="font-weight: bold; font-size: 1.2em; margin-bottom: 15px;">✅ المبادئ الثلاثة الأساسية</p>
+<ul>
+<li><strong>1️⃣</strong> إدارة الحشود علم متكامل يجمع بين الرياضيات والهندسة وعلم النفس</li>
+<li><strong>2️⃣</strong> الخطط القابلة للتنفيذ أهم من الخطط المثالية</li>
+<li><strong>3️⃣</strong> التخطيط للطوارئ ليس تشاؤمًا بل احتراف</li>
+</ul>
+</div>
+</div>
+<div class="alert-box" style="margin-top: 30px;">
+<p style="font-weight: bold; font-size: 1.1em; text-align: center;">
+                        🎓 النجاح في إدارة الحشود يبدأ بالفهم الصحيح للمفاهيم وينتهي بالتطبيق الدقيق للمعايير
+                    </p>
+</div>
+</div></div>
+<!-- التذييل: المصدر التعليمي -->
+<div class="footer">
+<div class="footer-section">
+<h3 style="font-size: 1.5em; margin-bottom: 20px;">📚 المصدر التعليمي</h3>
+<div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px; margin: 20px 0;">
+<p style="font-size: 1.1em; margin-bottom: 10px;"><strong>مصدر المعلومات:</strong></p>
+<p>مقرر إدارة الفعاليات – المرحلة الثانوية (السنة الثالثة) – مسار إدارة الأعمال</p>
+<p style="margin-top: 10px;"><strong>الموضوع:</strong> الغاية من إقامة فعالية</p>
+<p style="margin-top: 10px;"><strong>الاستخدام:</strong> مصدر معلومات للاطلاع والدراسة</p>
+</div>
+<div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
+<p style="font-weight: bold; margin-bottom: 10px;">📌 يُستخدم المصدر لفهم:</p>
+<ul style="text-align: right; list-style-position: inside;">
+<li>أهداف الفعاليات ودوافع التنظيم</li>
+<li>مبررات التنظيم والجدوى</li>
+<li>البعد الإداري والتخطيطي للفعالية</li>
+</ul>
+</div>
+<div style="background: rgba(255,204,0,0.2); padding: 20px; border-radius: 10px; margin: 20px 0;">
+<p style="font-weight: bold; margin-bottom: 10px;">🧠 ملاحظة أكاديمية مهمة:</p>
+<p>هذا المصدر ليس مرجع سلامة حشود متخصص، لكنه قاعدة معرفية لفهم الهدف الإداري قبل الانتقال إلى:</p>
+<ul style="text-align: right; list-style-position: inside; margin-top: 10px;">
+<li>سلامة الحشود المتخصصة</li>
+<li>إدارة المخاطر الشاملة</li>
+<li>التخطيط الأمني المتقدم</li>
+</ul>
+</div>
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 10px; margin: 30px 0;">
+<p style="font-size: 1.3em; font-weight: bold; margin-bottom: 15px;">✍️ إعداد</p>
+<p style="font-size: 1.4em; font-weight: bold; margin-bottom: 10px;">أنس العضيبي</p>
+<p style="font-size: 1.1em; margin-top: 10px;">
+                        📱 جوال: <span style="font-weight: bold; direction: ltr; display: inline-block;">0505530803</span>
+</p>
+</div>
+<p style="margin-top: 30px; font-size: 1.2em; opacity: 0.9;">
+                    تم إعداد هذا الدليل لأغراض تدريبية وتعليمية
+                </p>
+<p style="margin-top: 10px; font-size: 0.9em; opacity: 0.7;">
+                    © 2025 - دليل إدارة الفعاليات وسلامة الحشود
+                </p>
+</div>
+</div>
+</div>
+</body>
+</html>
