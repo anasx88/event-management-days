@@ -442,45 +442,414 @@
             .days-bar{display:none;}
         }
 
-    </style>
+    /* === Practice Tests Bar (Injected) === */
+        .tests-bar{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:10px;
+            padding:14px 18px;
+            background: rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+        .tests-title{
+            font-weight:800;
+            letter-spacing:0.2px;
+            color:#ffffff;
+            opacity:0.95;
+            display:flex;
+            align-items:center;
+            gap:8px;
+        }
+        .tests-links{
+            display:flex;
+            justify-content:center;
+            gap:12px;
+            flex-wrap:wrap;
+        }
+        .test-btn{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            min-width:160px;
+            padding:10px 14px;
+            border-radius:16px;
+            text-decoration:none;
+            font-weight:800;
+            border:1px solid rgba(255,255,255,0.20);
+            background: rgba(255,255,255,0.10);
+            color:#ffffff;
+            transition: transform .12s ease, background .12s ease;
+        }
+        .test-btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,0.14); }
+        .test-btn.t1{ border-color: rgba(46, 204, 113, 0.45); }
+        .test-btn.t2{ border-color: rgba(52, 152, 219, 0.45); }
+        .test-btn.t3{ border-color: rgba(155, 89, 182, 0.45); }
+        .test-btn.t4{ border-color: rgba(241, 196, 15, 0.45); }
+
+        /* === Infographic (Injected) === */
+        .infographic-card{ padding: 14px; }
+        .infographic-img{
+            width:100%;
+            height:auto;
+            display:block;
+            border-radius:16px;
+        }
+
+
+
+/* === Practice Quizzes Row (Second line) === */
+.practice-quizzes {
+  margin: 14px 0 18px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f7faf7;
+  border: 1px solid #e3efe3;
+}
+
+.practice-quizzes .pq-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  font-weight: 800;
+  color: #1f3a2e;
+}
+
+.practice-quizzes .pq-title .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #2ecc71;
+}
+
+.practice-quizzes .pq-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.practice-quizzes a.pq-card {
+  text-decoration: none;
+  border-radius: 14px;
+  padding: 12px 10px;
+  background: #ffffff;
+  border: 1px solid #e7ece7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.practice-quizzes a.pq-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.06);
+}
+
+.practice-quizzes .pq-emoji {
+  font-size: 22px;
+}
+
+.practice-quizzes .pq-text {
+  font-weight: 800;
+  color: #173024;
+  line-height: 1.1;
+}
+
+.practice-quizzes .pq-sub {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #5b6b62;
+}
+
+@media (max-width: 780px) {
+  .practice-quizzes .pq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+</style>
 </head>
 <body>
 <button class="print-button" onclick="window.print()">
         🖨️ طباعة الدليل كـ PDF
     </button>
 <div class="container">
-
-<div class="days-bar" aria-label="تنقّل أيام البرنامج">
-  <a class="day-btn" href="index.html" title="اليوم الأول">
-    <span class="day-ico" aria-hidden="true">①</span>
-    <span class="day-txt">اليوم الأول</span>
-  </a>
-  <a class="day-btn" href="day2.html" title="اليوم الثاني">
-    <span class="day-ico" aria-hidden="true">②</span>
-    <span class="day-txt">اليوم الثاني</span>
-  </a>
-  <a class="day-btn active" href="day3.html" title="اليوم الثالث">
-    <span class="day-ico" aria-hidden="true">③</span>
-    <span class="day-txt">اليوم الثالث</span>
-  </a>
-  <a class="day-btn" href="day4.html" title="اليوم الرابع">
-    <span class="day-ico" aria-hidden="true">④</span>
-    <span class="day-txt">اليوم الرابع</span>
-  </a>
-  <a class="day-btn" href="day5.html" title="اليوم الخامس">
-    <span class="day-ico" aria-hidden="true">⑤</span>
-    <span class="day-txt">اليوم الخامس</span>
-  </a>
+<div aria-label="تنقّل أيام البرنامج" class="days-bar">
+<a class="day-btn" href="index.html" title="اليوم الأول">
+<span aria-hidden="true" class="day-ico">①</span>
+<span class="day-txt">اليوم الأول</span>
+</a>
+<a class="day-btn" href="day2.html" title="اليوم الثاني">
+<span aria-hidden="true" class="day-ico">②</span>
+<span class="day-txt">اليوم الثاني</span>
+</a>
+<a class="day-btn active" href="day3.html" title="اليوم الثالث">
+<span aria-hidden="true" class="day-ico">③</span>
+<span class="day-txt">اليوم الثالث</span>
+</a>
+<a class="day-btn" href="day4.html" title="اليوم الرابع">
+<span aria-hidden="true" class="day-ico">④</span>
+<span class="day-txt">اليوم الرابع</span>
+</a>
+<a class="day-btn" href="day5.html" title="اليوم الخامس">
+<span aria-hidden="true" class="day-ico">⑤</span>
+<span class="day-txt">اليوم الخامس</span>
+</a>
 </div>
 
+<!-- =========================
+     Practice Quizzes (Row 2)
+========================== -->
+<section class="practice-quizzes" aria-label="اختبارات تجريبية">
+  <div class="pq-title">
+    <span class="dot" aria-hidden="true"></span>
+    <span>اختبارات تجريبية</span>
+  </div>
+
+  <div class="pq-grid">
+    <a class="pq-card" href="quiz1.html">
+      <span class="pq-emoji">🧪</span>
+      <span class="pq-text">الدفعة الأولى<span class="pq-sub">45 سؤال</span></span>
+    </a>
+
+    <a class="pq-card" href="quiz2.html">
+      <span class="pq-emoji">🧪</span>
+      <span class="pq-text">الدفعة الثانية<span class="pq-sub">45 سؤال</span></span>
+    </a>
+
+    <a class="pq-card" href="quiz3.html">
+      <span class="pq-emoji">🧠</span>
+      <span class="pq-text">الدفعة الثالثة<span class="pq-sub">45 سؤال</span></span>
+    </a>
+
+    <a class="pq-card" href="quiz4.html">
+      <span class="pq-emoji">🧠</span>
+      <span class="pq-text">الدفعة الرابعة<span class="pq-sub">70 سؤال</span></span>
+    </a>
+  </div>
+</section>
 <div class="header">
 <h1>📘 اليوم الثالث</h1>
 <p>التشغيل الطارئ + التقنيات الحديثة + الإطار القانوني والتنظيمي</p>
 </div>
-
-<div class="content"><div class="section"><h2 class="section-title"><span class="section-number">🎯</span> نظرة عامة على اليوم الثالث</h2><div class="info-box"><p>📘 اليوم الثالث</p><p>التشغيل الطارئ + التقنيات الحديثة + الإطار القانوني والتنظيمي</p><p>(إدارة الفعاليات وسلامة الحشود – اليوم الثالث)</p></div></div><div class="section"><h2 class="section-title"><span class="section-number">📘 الوحدة الثامنة</span> إدارة الحالات الطارئة والاستجابة السريعة</h2><div class="info-box"><p>الهدف العام للوحدة</p><p>رفع جاهزية الفرق للتعامل مع الحوادث الطبية والطوارئ التشغيلية عبر الإخلاء المنظّم، الإسعاف السريع، والتواصل الميداني المشفّر.</p></div><div class="subsection"><h3 class="subsection-title">8.1 إجراءات الإسعاف والإخلاء</h3><div class="info-box"><p><strong>الفكرة الأساسية: الإخلاء الناجح = تصميم مسبق + تنفيذ فوري + تقليل التكدس.</strong></p></div><p>نطور إجراءات إخلاء دقيقة.</p><p>نقسم الموقع إلى مربعات إخلاء (Evacuation Zones).</p><p>في الحالات الطبية نطبق نظام الفرز "Triage".</p><p>نضمن أن تفتح الأبواب للخارج تلقائيًا في حالات الطوارئ.</p><div class="alert-box"><p><strong>تعريف Triage (الفرز الطبي):</strong></p></div><p>هو نظام طبي لتصنيف المصابين حسب الأولوية العلاجية بهدف إنقاذ أكبر عدد ممكن بأسرع وقت.</p></div><div class="subsection"><h3 class="subsection-title">8.2 تدريب الفرق على الاستجابة للطوارئ</h3><div class="info-box"><p><strong>الفكرة الأساسية: التدريب يحوّل الخطة من ورق إلى سلوك.</strong></p></div><p>نقوم بإجراء تجارب إخلاء وهمية "Drills".</p><p>ندرب الموظفين على كيفية الحفاظ على هدوئهم واستخدام نبرة صوت آمرة لتوجيه الجمهور.</p><p>ارتباك الموظف يعني ارتباك الجمهور.</p><div class="alert-box"><p><strong>تعريف Drills:</strong></p></div><p>تمارين ميدانية محاكية للطوارئ لاختبار الجاهزية واكتشاف نقاط الفشل قبل وقوع الحدث الحقيقي.</p></div><div class="subsection"><h3 class="subsection-title">8.3 تحديد النقاط الحيوية والإشارات الهامة</h3><div class="info-box"><p><strong>الفكرة الأساسية: الطوارئ تحتاج “لغة مشتركة” موحدة بين الفرق.</strong></p></div><p>نستخدم لغة إشارات وأكواد لونية موحدة بين الفرق الطبية والأمنية لتسهيل التواصل السريع وتحديد المواقع بدقة عالية "Grid System".</p><div class="alert-box"><p><strong>تعريف Grid System:</strong></p></div><p>نظام تقسيم الموقع إلى مربعات/شبكات مرقّمة لتحديد أي نقطة بدقة عالية أثناء الطوارئ (بدل الوصف العشوائي للمكان).</p><div class="danger-box"><p><strong>قاعدة مهمة: الأكواد الأمنية الموحدة</strong></p></div><p>أكواد أمنية خاصة تستخدم حسب الحالة (أمنية أو طوارئ أو كوارث) ويجب أن تكون موحدة.</p><ul><li>شروطها:</li></ul><p>تسهيل التواصل السريع</p><p>تحديد المواقع بدقة عالية</p><div class="success-box"><p><strong>دروس مستفادة (خلاصة الوحدة 8)</strong></p></div><p>مسارات الإخلاء واضحة</p><p>تدريب الموظفين على الإخلاء للجمهور</p><p>أن تفتح الأبواب تلقائيًا ويجب أن تكون للخارج أو عن طريق الموظفين وإزالة التكدس</p></div><div class="subsection"><h3 class="subsection-title">8.4 حلول مقترحة لتعزيز الجاهزية</h3><p>المطلوب: “اريدك ان توجد حلول، والتالي احد الحلول: تقنية المحاكاة المتقدمة والتدريب خطوات الخمس”</p><p>حل رئيسي: تقنية المحاكاة المتقدمة + التدريب (الخطوات الخمس)</p><p>تصميم السيناريو (ازدحام/حريق/انقطاع كهرباء/حالة تدافع)</p><p>تحديد نقطة الانهيار المحتملة (اختناق – Bottleneck – توقف تدفق)</p><p>تشغيل محاكاة/تمرين ميداني (Drill أو Digital Simulation)</p><p>قياس الأداء (زمن استجابة – وضوح أوامر – نجاح الإخلاء)</p><p>تحسين الخطة وإعادة التدريب حتى تصبح الاستجابة تلقائية</p><div class="success-box"><p><strong>إدارة الفعاليات والحشود</strong></p></div><p>منظومة تخطيط وتشغيل وتحكم تُعنى بتنظيم الحدث وإدارة حركة الجمهور وسلوكهم وموارد الموقع بهدف تحقيق الانسيابية والسلامة وتقليل المخاطر قبل وأثناء وبعد الفعالية.</p></div><div class="subsection"><h3 class="subsection-title">🧪 أسئلة الوحدة الثامنة (اختبار سريع)</h3><div class="info-box"><p><strong>سؤال 1: جوهر إدارة المخاطر</strong></p><ul style="margin-right: 0;"><li>A) منع المشاكل بالكامل</li><li>B) توقع الضرر وتقليل أثره</li><li>C) اعتماد كاميرات حرارية</li><li>D) تأمين في الموقع</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة: (B)</strong></p></div><div class="info-box"><p><strong>سؤال 2: أخطر خطأ هو</strong></p><ul style="margin-right: 0;"><li>A) الاعتماد على الأمن فقط</li><li>B) غياب تحليل سيناريو المخاطر</li><li>C) لبس الزي</li><li>D) توفير الإسعافات</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة: (B)</strong></p></div><div class="info-box"><p><strong>سؤال 3: السلامة تعني</strong></p><ul style="margin-right: 0;"><li>A) وجود طفايات حريق</li><li>B) نظام شامل حماية، وقاية، وتدخل</li><li>C) خروج سريع</li><li>D) تدريب أولي فقط</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة: (B)</strong></p></div><div class="info-box"><p><strong>سؤال 4: إدارة الحشود جزء من</strong></p><ul style="margin-right: 0;"><li>A) التشغيل فقط</li><li>B) منظومة السلامة والمخاطر</li><li>C) التسويق</li><li>D) التواصل</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة: (B)</strong></p></div></div></div><div class="section"><h2 class="section-title"><span class="section-number">📘 الوحدة التاسعة</span> التقنيات والأدوات الحديثة في إدارة الفعاليات</h2><div class="info-box"><p>الهدف العام للوحدة</p><p>تحويل التقنية من “وجود شكلي” إلى “قرار تشغيلي قابل للتنفيذ” ضمن منظومة متكاملة.</p></div><div class="subsection"><h3 class="subsection-title">9.1 أنظمة الكاميرات والمراقبة الذكية</h3><p>نستخدم كاميرات مرتبطة بالذكاء الاصطناعي (AI) لكشف السلوكيات العدوانية والتجمعات غير الطبيعية، مما يحول نظام المراقبة إلى أداة وقائية.</p><div class="danger-box"><p><strong>قاعدة/ملاحظة تابعة:</strong></p></div><p>الكاميرات الحرارية دون منظومة ليست ذات منفعة.</p></div><div class="subsection"><h3 class="subsection-title">9.2 برامج إدارة الفعاليات والحد من المخاطر</h3><p>ندير العمليات عبر منصات سحابية تتيح تتبع التذاكر وجداول الموظفين، وتسجيل المخاطر (Incident Logging) لضمان توثيق كل حدث وحله.</p><ul><li>أمثلة مذكورة:</li></ul><p>Event Management Systems مثل Cvent</p><p>Eventbrite لإدارة التسجيل/التذاكر</p><p>إدارة المتطوعين والجداول الزمنية علميًا</p></div><div class="subsection"><h3 class="subsection-title">9.3 تحليلات البيانات لاتخاذ القرارات</h3><p>نحلل أوقات الذروة وسلوك الشراء لاتخاذ قرارات فورية، مثل إعادة توزيع الموظفين أو فتح منافذ إضافية، مما يرفع الكفاءة التشغيلية.</p><div class="danger-box"><p><strong>قاعدة مهمة:</strong></p></div><p>تحليلات البيانات لاتخاذ القرارات دون فائدة إذا لم تقترن بـ:</p><p>تحليل أوقات الذروة</p><p>التوزيع المناسب للأفراد والموظفين والكفاءات</p><p>رفع الكفاءة التشغيلية</p></div><div class="subsection"><h3 class="subsection-title">9.4 تقنيات متقدمة (ملاحظات موسعة – تُحفظ داخل الوحدة)</h3><p>AI في التنبؤ بالحشود Crowd Prediction:</p><p>(توقع حجم التواجد – نقاط الازدحام – توزيع الأفراد – اللحظي)</p><p>فعال بشرط توفر بيانات تاريخية، وغير صالح بلا بيانات سياقية.</p><p>AR الخرائط الرقمية والواقع المعزز:</p><p>توجيه الجمهور وتحسين تجربة التنقل</p><p>فعال في الفعاليات الكبرى فقط.</p><p>IoT إنترنت الأشياء (حساسات/عدادات):</p><p>الرطوبة – الصوت – الحرارة – قياس تدفق الحشود</p><p>فعال لكنه مكلف ولا ينصح به دون دراسة عائد.</p><p>RFID / NFC / QR منصات البيانات اللحظية:</p><p>تتبع الدخول – معدل الانتظار – تحركات المجموعات</p><p>أثر واضح في تحليل ما بعد الحدث.</p><p>Digital Twin التوأمة الرقمية:</p><p>اختبار ومحاكاة الحدث قبل تنفيذه + سيناريوهات المخاطر</p><p>جديد نسبيًا، ولا تتوفر دراسات كافية في الشرق الأوسط تثبت جدواه.</p><p>Drone الرقابة الجوية:</p><p>دعم الأمن ومراقبة الكثافة</p><p>فعال لكن عليه قيود تنظيمية وتشريعية.</p><p>تحليل المشاعر والتجربة صوتيًا ومرئيًا:</p><p>قياس رضا الحضور لحظيًا</p><p>مثير للجدل وقد يكون غير قانوني بلا إذن، أخلاقيًا يجب أن يكون صريحًا.</p></div><div class="subsection"><h3 class="subsection-title">🧪 أسئلة الوحدة التاسعة (أسئلة مفاهيم + تفسير الإجابة الصحيحة)</h3><div class="info-box"><p><strong>سؤال 1</strong></p><p>أي من الآتي يعد شرطًا أساسيا لاعتبار استخدام كاميرات الذكاء الاصطناعي ذا قيمة تشغيلية؟</p><ul style="margin-right: 0;"><li>A) توفر عدد كبير من الكاميرات</li><li>B) قدرة النظام على إرسال إنذار مبكر</li><li>C) استخدام تقنية باهظة الثمن لضمان الجودة</li><li>D) وجود مركز تحكم بصري فقط</li></ul></div><div class="success-box"><p><strong>✅ الإجابة: (B)</strong></p></div><div class="alert-box"><p><strong>لماذا (B) صحيحة؟</strong></p></div><p>لأن القيمة التشغيلية للتقنية لا تأتي من “وجودها”، بل من قدرتها على توليد قرار قابل للتنفيذ قبل وقوع الخطر (إنذار مبكر → تدخل → منع تصعيد).</p><div class="info-box"><p><strong>سؤال 2</strong></p><p>أكثر عامل يؤدي إلى فشل الاستفادة من أنظمة الكاميرات في إدارة الحشود هو:</p><ul style="margin-right: 0;"><li>A) عدم وضوح أهداف الاستخدام قبل التركيب</li><li>B) حجم الذاكرة التخزينية</li><li>C) ارتفاع التكلفة</li><li>D) عدد الكاميرات القليل</li></ul></div><div class="success-box"><p><strong>✅ الإجابة: (A)</strong></p></div><div class="alert-box"><p><strong>لماذا (A) صحيحة؟</strong></p></div><p>لأن التقنية بلا هدف تشغيلي واضح تتحول إلى “تسجيل” لا “حماية”، فتضيع قرارات التدخل: أين؟ متى؟ من يتدخل؟ وكيف؟</p><div class="info-box"><p><strong>سؤال 3</strong></p><p>في حال استخدام كاميرات التعرف على الوجوه داخل فعالية رسمية، ما المتطلب النظامي الأكثر حساسية؟</p><ul style="margin-right: 0;"><li>A) تدريب رجال الأمن</li><li>B) موافقة الحضور الخطية أو الرقمية على الاستخدام</li><li>C) نوعية الأسلاك المستخدمة</li><li>D) عدد الموظفين في غرفة التحكم</li></ul></div><div class="success-box"><p><strong>✅ الإجابة: (B)</strong></p></div><div class="alert-box"><p><strong>لماذا (B) صحيحة؟</strong></p></div><p>لأن التعرف على الوجه يلامس الخصوصية وحماية البيانات، وأي استخدام دون موافقة/إطار نظامي يعرض الجهة لمخالفات ونزاعات.</p><div class="info-box"><p><strong>سؤال 4</strong></p><p>استخدام الكاميرات الحرارية في فعالية دينية مزدحمة يصبح ذا فائدة فقط إذا:</p><ul style="margin-right: 0;"><li>A) تم دمجه بمسار تدخل صحي سريع عند رصد الحالات</li><li>B) تم تركيبه عند كافة المداخل</li><li>C) كان هناك مختبر طبي داخل الفعالية</li><li>D) كانت الإضاءة ممتازة</li></ul></div><div class="success-box"><p><strong>✅ الإجابة: (A)</strong></p></div><div class="alert-box"><p><strong>لماذا (A) صحيحة؟</strong></p></div><p>لأن رصد الحالة دون مسار تدخل = “معلومة بلا إجراء”، بينما دمجه بمسار صحي سريع يحول الرصد إلى قرار فوري يقلل الضرر.</p></div><div class="subsection"><h3 class="subsection-title">🧪 أسئلة مفاهيم إضافية (كما وردت)</h3><p>التقنية تصبح ذات قيمة عندما:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) وجودها في المكان</li><li>B) تولد قرارًا قابلا للتنفيذ</li><li>C) تكون جديدة</li><li>D) تقلد الغرب</li></ul></div><div class="success-box"><p><strong>✅ الإجابة: (B)</strong></p></div><p>أكبر خطأ في استخدام التقنية:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) قلة التدريب</li><li>B) التكلفة</li><li>C) ندرة الخيارات</li><li>D) عدم التسويق</li></ul></div><div class="success-box"><p><strong>✅ الإجابة: (A)</strong></p></div><p>الذكاء الاصطناعي في الفعاليات دوره:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) تصوير فقط</li><li>B) التنبؤ واتخاذ القرار الوقائي</li><li>C) الديكور</li><li>D) التذاكر</li></ul></div><div class="success-box"><p><strong>✅ الإجابة: (B)</strong></p></div><p>الاختيار العلمي للتقنية يعتمد على:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) ذوق المدير</li><li>B) تحليل العائد مقابل التكلفة والهدف</li><li>C) رغبة الجمهور</li><li>D) أحدث صيحة</li></ul></div><div class="success-box"><p><strong>✅ الإجابة: (B)</strong></p></div><p>التقنية الأخطر قانونيا:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) كاميرات التعرف على الوجه</li><li>B) مكبرات الصوت</li><li>C) منصة التذاكر</li><li>D) الإنارة</li></ul></div><div class="success-box"><p><strong>✅ الإجابة: (A)</strong></p></div></div></div><div class="section"><h2 class="section-title"><span class="section-number">📘 الوحدة العاشرة</span> إدارة الجوانب القانونية والتنظيمية</h2><div class="info-box"><p>الهدف العام للوحدة</p><p>ضمان نظامية الفعالية وتقليل النزاعات عبر الامتثال، إدارة التصاريح، حماية البيانات، والتوثيق القانوني.</p></div><div class="subsection"><h3 class="subsection-title">10.0 ملاحظة تمهيدية مهمة</h3><p>يجب أن يكون لديك مصفوفة المسؤوليات بين الجهات المشاركة والمشاركين.</p><p>أنظمة وزارة الداخلية</p><p>أنظمة وزارة التجارة</p><p>أنظمة وزارة الحج والعمرة</p></div><div class="subsection"><h3 class="subsection-title">10.1 الامتثال للاشتراطات الصحية والأمنية</h3><p>نلتزم باشتراطات الدفاع المدني والصحة العامة.</p><p>وجود مسؤول امتثال يضمن حماية المؤسسة من المخالفات.</p><div class="danger-box"><p><strong>ملاحظة: بدون تصريح تكون الفعالية غير نظامية.</strong></p></div></div><div class="subsection"><h3 class="subsection-title">10.2 احتراف إدارة ملف التصاريح والتراخيص</h3><p>نجهز ملفات متكاملة تشمل المخططات ووثائق التأمين لاستخراج التصاريح مبكرًا، مما يبني الثقة مع السلطات.</p><div class="success-box"><p><strong>(مهمة) ما الذي تحتاجه فعليًا ضمن ملف التصاريح؟</strong></p></div><p>تصاريح الفعالية</p><p>العقود والاتفاقيات</p><p>الامتثال الأمني والصحي: لا يصح الفصل بين الأمن والسلامة</p><p>حماية البيانات والخصوصية</p><p>المسؤولية القانونية والتعويض</p><p>التأمين على الفعالية</p><p>إدارة الأدلة والتوثيق القانوني: الصور والتسجيلات والنزاعات والمشاكل موثقة</p></div><div class="subsection"><h3 class="subsection-title">10.3 التوثيق القانوني والتعامل مع النزاعات</h3><p>نوثق كل الحوادث بتقارير رسمية.</p><p>نتعامل مع المطالبات القانونية بالاعتماد على العقود وشروط التذاكر كمرجعية أساسية.</p><div class="danger-box"><p><strong>قاعدة قانونية</strong></p></div><p>الدور الأساسي للمسؤول القانوني الميداني هو حماية مصالح المؤسسة وضمان امتثالها للقوانين، وتقديم الاستشارات القانونية الفورية في الموقع، ومراجعة العقود، وإدارة النزاعات، وتقليل المخاطر، والعمل كحلقة وصل بين الإدارة العليا والأنظمة التشريعية أثناء تنفيذ العمليات اليومية.</p><div class="danger-box"><p><strong>ملاحظة:</strong></p></div><p>المستند القانوني هو ما يحسم النزاعات لاحقًا.</p></div><div class="subsection"><h3 class="subsection-title">🧪 أسئلة الوحدة العاشرة</h3><p>جمع بيانات الحضور (وجوه/بصمة/رقم هاتف) دون إعلان سياسة خصوصية مكتوبة يعد:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) ممارسة تشغيلية</li><li>B) مخالفة قانونية</li><li>C) خيار تنظيمي</li><li>D) قرار إداري</li></ul></div><div class="success-box"><p><strong>✅ الإجابة: (B)</strong></p></div><p>أكبر فجوة قانونية في الفعاليات العربية غالبًا تتعلق بـ:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) توفير المقاعد</li><li>B) عدم توثيق المسؤولية بين الجهات</li><li>C) ضعف التذاكر</li><li>D) نقص الدعاية</li></ul></div><div class="success-box"><p><strong>✅ الإجابة: (B)</strong></p></div><p>التأمين على الفعالية يصبح غير ذي قيمة إذا:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) كان مكلفًا</li><li>B) لم تحدد البنود التي تعتبر “حادثًا” ضمن العقد</li><li>C) لم يتواجد طبيب إسعاف</li><li>D) لم توضع بوابات خروج كافية</li></ul></div><div class="success-box"><p><strong>✅ الإجابة: (B)</strong></p></div><p>أكثر عنصر قانوني يرتبط مباشرة بالتقنيات الحديثة (AI/كاميرات) هو:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) جودة الصورة</li><li>B) قانون حماية البيانات والخصوصية</li><li>C) عدد الفنيين</li><li>D) حجم الذاكرة</li></ul></div><div class="success-box"><p><strong>✅ الإجابة: (B)</strong></p></div><p>المسؤول القانوني الميداني دوره الأساسي هو:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) كتابة تقارير إعلامية</li><li>B) توثيق القرارات والمخالفات وحماية الجهة</li><li>C) إنهاء خلافات الجمهور</li><li>D) تدريب المتطوعين</li></ul></div><div class="success-box"><p><strong>✅ الإجابة: (B)</strong></p></div><p>غياب بند “الالتزام الزمني للتسليم” في عقد جهة داعمة يؤدي إلى:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) خلاف مالي فقط</li><li>B) تعطيل الحدث دون إمكانية التعويض قانونيًا</li><li>C) زيادة عدد الحضور</li><li>D) جودة أعلى</li></ul></div><div class="success-box"><p><strong>✅ الإجابة: (B)</strong></p></div></div><div class="subsection"><h3 class="subsection-title">✅ سؤال مهم (مهارة نجاة شخصية)</h3><p>إذا حدث تدافع ووصل إليك ماذا تفعل؟ (إجابة المدرب – معتمدة)</p><p>احمِ تنفسك أولًا</p><p>ارفع ذراعيك أمام صدرك كأنك تحتضن نفسك لخلق فراغ للتنفس، وابق رأسك مرفوعًا.</p><p>لا تقاوم التيار</p><p>لا تدفع بعكس اتجاه الحشد، وخذ خطوات قصيرة ثابتة، وتحرك مع الموجة.</p><p>تحرك بزاوية لا بخط مستقيم</p><p>إذا رأيت مخرجًا اتجه إليه بزاوية تدريجية، واقترب من الحواف أو الجدران حيث الضغط أقل.</p><p>ثبت قدميك</p><p>قف بثبات والقدمين متباعدتين قليلًا، وتجنب الانحناء أو الانزلاق.</p><p>إذا سقطت لا قدر الله</p><p>اتخذ وضعية الكرة لحماية الرأس والصدر، وغط رأسك وانهض بأسرع ما يمكن عندما يخف الضغط.</p><p>انتبه لإشارات الخطر</p><p>توقف مفاجئ، صراخ، سقوط متتالٍ، أو فقدان توازن عام → ابحث فورًا عن أقرب مساحة مفتوحة.</p><ul><li>نصائح مهمة</li></ul><p>لا تحمل أطفالًا على الأكتاف وسط الزحام، تجنب الوقوف قرب البوابات الضيقة، وإذا شعرت بالاختناق أو الدوخة ارفع يدك واطلب المساعدة بصوت واضح.</p></div></div></div>
-
+<div class="content">
+<div class="section">
+<h2 class="section-title"><span class="section-number">📌</span> تمهيد اليوم الثالث – ربط تشغيلي</h2>
+<div class="info-box">
+<p><strong>في اليومين السابقين</strong> تم بناء الأساس: فهم الحشد كمنظومة + قراءة المؤشرات + اتخاذ القرار.</p>
+<p><strong>في هذا اليوم</strong> ننتقل إلى قلب “الاستجابة” وما يثبت أنك تعمل بشكل احترافي أثناء الحدث:</p>
+<ul>
+<li><strong>التشغيل الطارئ:</strong> إخلاء منظم + إسعاف سريع + لغة اتصال موحدة.</li>
+<li><strong>التقنيات الحديثة:</strong> ليست للعرض، بل لتوليد قرار قابل للتنفيذ (إنذار مبكر → تدخل → منع تصعيد).</li>
+<li><strong>الإطار القانوني والتنظيمي:</strong> الامتثال + التوثيق + حماية الجهة من النزاعات.</li>
+</ul>
+<p><strong>قاعدة اليوم:</strong> المعلومة التي لا تتحول إلى إجراء = خطر مؤجل.</p>
+</div>
+<div class="danger-box">
+<p><strong>مثال واقعي – The Station Nightclub Fire (2003):</strong></p>
+<p><strong>ماذا حدث؟</strong> أثناء حفل موسيقي داخل نادٍ ليلي، وقع اشتعال سريع أدى إلى تدافعٍ نحو مخارج محدودة خلال دقائق.</p>
+<p><strong>ماذا فشل؟</strong> فشل الإخلاء المنظّم وظهرت نقاط اختناق حادة عند المخارج مع ضعف التوجيه والتواصل لحظة الطوارئ.</p>
+<p><strong>ما النتيجة؟</strong> وفيات وإصابات واسعة خلال وقت قصير نتيجة الاختناق والتكدس عند مسارات الخروج.</p>
+</div>
+</div>
+<div class="section">
+<h2 class="section-title"><span class="section-number">🎯</span> أهداف اليوم الثالث (Learning Objectives)</h2>
+<div class="subsection">
+<h3 class="subsection-title">أ) أهداف معرفية</h3>
+<ul>
+<li>يفهم مكونات الاستجابة الطارئة (إخلاء/فرز طبي/تواصل ميداني) ودورها في تقليل الإصابات.</li>
+<li>يميّز بين “تقنية للتوثيق” و“تقنية للقرار التشغيلي”.</li>
+<li>يفهم أثر الامتثال والتوثيق على تقليل النزاعات والمسؤولية القانونية.</li>
+</ul>
+</div>
+<div class="subsection">
+<h3 class="subsection-title">ب) أهداف مهارية</h3>
+<ul>
+<li>يحدد نقاط الاختناق (Bottleneck) ونقاط الانهيار المحتملة ويقترح تدخّلًا مناسبًا.</li>
+<li>يبني لغة إشارات/أكواد موحدة (Grid System + Codes) لتسريع التوجيه أثناء الطوارئ.</li>
+<li>يربط كل أداة تقنية بخطوة قرار تشغيلية واضحة (متى؟ من؟ ماذا يفعل؟).</li>
+</ul>
+</div>
+<div class="subsection">
+<h3 class="subsection-title">ج) أهداف سلوكية</h3>
+<ul>
+<li>يتعامل مع الطوارئ بعقل “قرار” لا عقل “شرح”.</li>
+<li>يلتزم بالتوثيق والامتثال كجزء من السلامة لا كإجراء إداري ثانوي.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h2 class="section-title"><span class="section-number">👥</span> لمن هذا المحتوى؟ ولمن ليس؟</h2>
+<div class="info-box">
+<p><strong>مناسب لـ:</strong> قادة ميدانيون، مشرفو سلامة، غرفة القيادة/التحكم، مسؤولو الامتثال، منسقو الفعاليات الكبيرة.</p>
+<p><strong>غير مناسب كمرجع وحيد لـ:</strong> التخطيط التفصيلي للفعاليات العملاقة، النمذجة المتقدمة، أو التفاصيل القانونية المحلية المتخصصة.</p>
+</div>
+</div>
+<div class="section">
+<h2 class="section-title"><span class="section-number">❓</span> أسئلة ذهنية متوقعة قبل البدء</h2>
+<div class="subsection">
+<ul>
+<li>لماذا نحتاج “Triage” إذا كان لدينا إسعاف؟</li>
+<li>كيف تصبح التقنية “قرارًا” بدل أن تكون “تسجيلًا”؟</li>
+<li>لماذا التوثيق القانوني جزء من السلامة وليس مجرد أوراق؟</li>
+<li>ما الذي ينهار أولًا في الطوارئ: الخطة أم التواصل؟</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h2 class="section-title"><span class="section-number">🧷</span> قاعدة لغة القرار والمسؤولية (Decision Language)</h2>
+<div class="success-box">
+<p><strong>في اليوم الثالث لا يكفي أن “تعرف” — المطلوب أن “تقرّر”.</strong></p>
+<p><strong>صيغة التشغيل المعتمدة:</strong> (مؤشر → قرار → تنفيذ → توثيق)</p>
+</div>
+</div>
+<div class="section"><h2 class="section-title"><span class="section-number">🎯</span> نظرة عامة على اليوم الثالث</h2><div class="info-box"><p>📘 اليوم الثالث</p><p>التشغيل الطارئ + التقنيات الحديثة + الإطار القانوني والتنظيمي</p><p>(إدارة الفعاليات وسلامة الحشود – اليوم الثالث)</p></div></div><div class="section"><h2 class="section-title"><span class="section-number">📘 الوحدة الثامنة</span> إدارة الحالات الطارئة والاستجابة السريعة</h2><div class="info-box"><p>الهدف العام للوحدة</p><p>رفع جاهزية الفرق للتعامل مع الحوادث الطبية والطوارئ التشغيلية عبر الإخلاء المنظّم، الإسعاف السريع، والتواصل الميداني المشفّر.</p></div><div class="subsection"><h3 class="subsection-title">8.1 إجراءات الإسعاف والإخلاء</h3><p><strong>الفكرة الأساسية:</strong> الإخلاء الناجح = تصميم مسبق + تنفيذ فوري + تقليل التكدس.</p><ul><li>نطوّر إجراءات إخلاء دقيقة.</li><li>نقسّم الموقع إلى مربعات إخلاء (Evacuation Zones).</li><li>في الحالات الطبية نطبّق نظام الفرز (Triage).</li><li>نضمن أن تُفتح الأبواب للخارج تلقائيًا في حالات الطوارئ.</li></ul></div><div class="subsection"><h3 class="subsection-title">8.2 تدريب الفرق على الاستجابة للطوارئ</h3><p><strong>الفكرة الأساسية:</strong> التدريب يحوّل الخطة من ورق إلى سلوك.</p><ul><li>إجراء تجارب إخلاء وهمية (Drills).</li><li>تدريب الموظفين على الحفاظ على هدوئهم واستخدام نبرة صوت آمرة لتوجيه الجمهور.</li><li>ارتباك الموظف يعني ارتباك الجمهور.</li></ul></div><div class="subsection"><h3 class="subsection-title">8.3 تحديد النقاط الحيوية والإشارات الهامة</h3><div class="info-box"><p><strong>الفكرة الأساسية: الطوارئ تحتاج “لغة مشتركة” موحدة بين الفرق.  <p>نستخدم لغة إشارات وأكواد لونية موحدة بين الفرق الطبية والأمنية لتسهيل التواصل السريع وتحديد المواقع بدقة عالية "Grid System".</p></strong></p></div><div class="alert-box"><p><strong>تعريف Grid System : <p>نظام تقسيم الموقع إلى مربعات/شبكات مرقّمة لتحديد أي نقطة بدقة عالية أثناء الطوارئ (بدل الوصف العشوائي للمكان).</p></strong></p></div><div class="danger-box"><p><strong>قاعدة الأكواد الأمنية الموحدة:</strong></p><p>أكواد أمنية خاصة تستخدم حسب الحالة (أمنية أو طوارئ أو كوارث) ويجب أن تكون موحدة.<h4>شروطها:</h4>
+<ul>
+<li>تسهيل التواصل السريع</li>
+<li>تحديد المواقع بدقة عالية</li>
+</ul>
+</p></div><div class="success-box"><p><strong>دروس مستفادة (خلاصة الوحدة 8)</strong></p><ul><li>مسارات الإخلاء واضحة</li><li>تدريب الموظفين على الإخلاء للجمهور</li><li>أن تفتح الأبواب تلقائيًا ويجب أن تكون للخارج أو عن طريق الموظفين وإزالة التكدس</li></ul></div></div><div class="subsection"><h3 class="subsection-title">8.4 حلول مقترحة لتعزيز الجاهزية</h3><p>حل رئيسي: تقنية المحاكاة المتقدمة + التدريب (الخطوات الخمس)</p><ul><li>تصميم السيناريو (ازدحام / حريق / انقطاع كهرباء / حالة تدافع).</li><li>تحديد نقطة الانهيار المحتملة (اختناق – Bottleneck – توقف تدفق).</li><li>تشغيل محاكاة/تمرين ميداني (Drill أو Digital Simulation).</li><li>قياس الأداء (زمن استجابة – وضوح أوامر – نجاح الإخلاء).</li><li>تحسين الخطة وإعادة التدريب حتى تصبح الاستجابة تلقائية.</li></ul><div class="info-box"><p><strong>📚 مرجع علمي:</strong> يُستند في فهم نقاط الاختناق (Bottleneck) وتراكم الضغط الخلفي إلى أبحاث <strong>Helbing</strong> في Dynamics of Crowds التي تشرح كيف تتحول المساحات غير المتسامحة إلى انهيار سريع في التدفق.</p></div></div><div class="subsection"><h3 class="subsection-title">🧪 أسئلة الوحدة الثامنة (اختبار سريع)</h3><div class="info-box"><p><strong>سؤال 1: جوهر إدارة المخاطر</strong></p><ul style="margin-right: 0;"><li>A) منع المشاكل بالكامل</li><li>B) توقع الضرر وتقليل أثره</li><li>C) اعتماد كاميرات حرارية</li><li>D) تأمين في الموقع</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن إدارة المخاطر تعني توقّع الضرر وتقليل أثره عبر إجراءات وقائية واستجابة، لا ادعاء منع كل شيء. </strong></p></div><div class="info-box"><p><strong>سؤال 2: أخطر خطأ هو</strong></p><ul style="margin-right: 0;"><li>A) الاعتماد على الأمن فقط</li><li>B) غياب تحليل سيناريو المخاطر</li><li>C) لبس الزي</li><li>D) توفير الإسعافات</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن غياب تحليل السيناريوهات يمنع اكتشاف نقاط الفشل قبل الحدث، فتتحول المخاطر إلى مفاجآت. </strong></p></div><div class="info-box"><p><strong>سؤال 3: السلامة تعني</strong></p><ul style="margin-right: 0;"><li>A) وجود طفايات حريق</li><li>B) نظام شامل حماية، وقاية، وتدخل</li><li>C) خروج سريع</li><li>D) تدريب أولي فقط</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن السلامة منظومة متكاملة (وقاية + حماية + تدخل) وليست تجهيزًا منفردًا أو إجراءً واحدًا. </strong></p></div><div class="info-box"><p><strong>سؤال 4: إدارة الحشود جزء من</strong></p><ul style="margin-right: 0;"><li>A) التشغيل فقط</li><li>B) منظومة السلامة والمخاطر</li><li>C) التسويق</li><li>D) التواصل</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن إدارة الحشود جزء مباشر من منظومة السلامة وإدارة المخاطر، وليس نشاطًا تشغيليًا منفصلًا. </strong></p></div></div></div><div class="section"><h2 class="section-title"><span class="section-number">📘 الوحدة التاسعة</span> التقنيات والأدوات الحديثة في إدارة الفعاليات</h2><div class="info-box"><p>الهدف العام للوحدة</p><p>تحويل التقنية من “وجود شكلي” إلى “قرار تشغيلي قابل للتنفيذ” ضمن منظومة متكاملة.</p></div><div class="subsection"><h3 class="subsection-title">9.1 أنظمة الكاميرات والمراقبة الذكية</h3><p>نستخدم كاميرات مرتبطة بالذكاء الاصطناعي (AI) لكشف السلوكيات العدوانية والتجمعات غير الطبيعية، مما يحول نظام المراقبة إلى أداة وقائية.</p><div class="danger-box"><p><strong>قاعدة و ملاحظة مهمة:</strong></p><p>الكاميرات الحرارية دون منظومة ليست ذات منفعة.</p></div></div><div class="subsection"><h3 class="subsection-title">9.2 برامج إدارة الفعاليات والحد من المخاطر</h3><p>ندير العمليات عبر منصات سحابية تتيح تتبع التذاكر وجداول الموظفين، وتسجيل المخاطر (Incident Logging) لضمان توثيق كل حدث وحله.</p>
+<div class="info-box">
+<p><strong>📚 مرجع إداري:</strong> توثيق الحوادث (Incident Logging) يُعد من ركائز حوكمة السلامة وإدارة المخاطر وفق منهجيات <strong>HSE</strong>، لأنه يدعم المتابعة، التحسين، وإثبات العناية الواجبة.</p>
+</div>
+<p><strong>أمثلة :</strong></p><ul><li>Cvent</li><li>Eventbrite</li><li>إدارة المتطوعين والجداول الزمنية</li></ul></div><div class="subsection"><h3 class="subsection-title">9.3 تحليلات البيانات لاتخاذ القرارات</h3><p>نحلل أوقات الذروة وسلوك الشراء لاتخاذ قرارات فورية، مثل إعادة توزيع الموظفين أو فتح منافذ إضافية، مما يرفع الكفاءة التشغيلية.</p><div class="danger-box"><p><strong>قاعدة مهمة:</strong></p><p>تحليلات البيانات لاتخاذ القرارات دون فائدة إذا لم تقترن بـ:</p><p>تحليل أوقات الذروة</p><p>التوزيع المناسب للأفراد والموظفين والكفاءات</p><p>رفع الكفاءة التشغيلية</p></div></div><div class="subsection"><h3 class="subsection-title">9.4 تقنيات متقدمة (ملاحظات موسعة – تُحفظ داخل الوحدة)<ul></ul></h3><p><li><strong>AI في التنبؤ بالحشود Crowd Prediction</strong>:</li></p><p>(توقع حجم التواجد – نقاط الازدحام – توزيع الأفراد – اللحظي)</p><p>فعال بشرط توفر بيانات تاريخية، وغير صالح بلا بيانات سياقية.</p><p><li><strong>AR الخرائط الرقمية والواقع المعزز</strong>:</li></p><p>توجيه الجمهور وتحسين تجربة التنقل</p><p>فعال في الفعاليات الكبرى فقط.</p><p><li><strong>IoT إنترنت الأشياء</strong> (حساسات/عدادات):</li></p><p>الرطوبة – الصوت – الحرارة – قياس تدفق الحشود</p><p>فعال لكنه مكلف ولا ينصح به دون دراسة عائد.</p><p><li><strong>RFID / NFC / QR منصات البيانات اللحظية</strong>:</li></p><p>تتبع الدخول – معدل الانتظار – تحركات المجموعات</p><p>أثر واضح في تحليل ما بعد الحدث.</p><p><li><strong>Digital Twin التوأمة الرقمية</strong>:</li></p><p>اختبار ومحاكاة الحدث قبل تنفيذه + سيناريوهات المخاطر</p><p>جديد نسبيًا، ولا تتوفر دراسات كافية في الشرق الأوسط تثبت جدواه.</p><p><li><strong>Drone الرقابة الجوية</strong>:</li></p><p>دعم الأمن ومراقبة الكثافة</p><p>فعال لكن عليه قيود تنظيمية وتشريعية.</p><p><li><strong>تحليل المشاعر والتجربة صوتيًا ومرئيًا</strong>:</li></p><p>قياس رضا الحضور لحظيًا</p><p>مثير للجدل وقد يكون غير قانوني بلا إذن، أخلاقيًا يجب أن يكون صريحًا.</p></div><div class="subsection"><h3 class="subsection-title">🧪 أسئلة الوحدة التاسعة (أسئلة مفاهيم + تفسير الإجابة الصحيحة)</h3><div class="info-box"><p><strong>سؤال 1</strong></p><p>أي من الآتي يعد شرطًا أساسيا لاعتبار استخدام كاميرات الذكاء الاصطناعي ذا قيمة تشغيلية؟</p><ul style="margin-right: 0;"><li>A) توفر عدد كبير من الكاميرات</li><li>B) قدرة النظام على إرسال إنذار مبكر</li><li>C) استخدام تقنية باهظة الثمن لضمان الجودة</li><li>D) وجود مركز تحكم بصري فقط</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن القيمة التشغيلية للتقنية لا تأتي من “وجودها”، بل من قدرتها على توليد قرار قابل للتنفيذ قبل وقوع الخطر "إنذار مبكر → تدخل → منع تصعيد" </strong></p></div><div class="info-box"><p><strong>سؤال 2</strong></p><p>أكثر عامل يؤدي إلى فشل الاستفادة من أنظمة الكاميرات في إدارة الحشود هو:</p><ul style="margin-right: 0;"><li>A) عدم وضوح أهداف الاستخدام قبل التركيب</li><li>B) حجم الذاكرة التخزينية</li><li>C) ارتفاع التكلفة</li><li>D) عدد الكاميرات القليل</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(A) لماذا ؟: لأن التقنية بلا هدف تشغيلي واضح تتحول إلى “تسجيل” لا “حماية”، فتضيع قرارات التدخل: أين؟ متى؟ من يتدخل؟ وكيف؟ </strong></p></div><div class="info-box"><p><strong>سؤال 3</strong></p><p>في حال استخدام كاميرات التعرف على الوجوه داخل فعالية رسمية، ما المتطلب النظامي الأكثر حساسية؟</p><ul style="margin-right: 0;"><li>A) تدريب رجال الأمن</li><li>B) موافقة الحضور الخطية أو الرقمية على الاستخدام</li><li>C) نوعية الأسلاك المستخدمة</li><li>D) عدد الموظفين في غرفة التحكم</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن التعرف على الوجه يلامس الخصوصية وحماية البيانات، وأي استخدام دون موافقة/إطار نظامي يعرض الجهة لمخالفات ونزاعات </strong></p></div><div class="info-box"><p><strong>سؤال 4</strong></p><p>استخدام الكاميرات الحرارية في فعالية دينية مزدحمة يصبح ذا فائدة فقط إذا:</p><ul style="margin-right: 0;"><li>A) تم دمجه بمسار تدخل صحي سريع عند رصد الحالات</li><li>B) تم تركيبه عند كافة المداخل</li><li>C) كان هناك مختبر طبي داخل الفعالية</li><li>D) كانت الإضاءة ممتازة</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(A) لماذا ؟: لأن رصد الحالة دون مسار تدخل = “معلومة بلا إجراء”، بينما دمجه بمسار صحي سريع يحول الرصد إلى قرار فوري يقلل الضرر. </strong></p></div></div><div class="subsection"><h3 class="subsection-title">🧪 أسئلة مفاهيم إضافية (كما وردت)</h3><p>التقنية تصبح ذات قيمة عندما:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) وجودها في المكان</li><li>B) تولد قرارًا قابلا للتنفيذ</li><li>C) تكون جديدة</li><li>D) تقلد الغرب</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن هذا الخيار يحقق الهدف التشغيلي للمحور ويحوّل المعرفة إلى قرار قابل للتنفيذ في الميدان. </strong></p></div><p>أكبر خطأ في استخدام التقنية:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) قلة التدريب</li><li>B) التكلفة</li><li>C) ندرة الخيارات</li><li>D) عدم التسويق</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(A) لماذا ؟: لأن هذا الخيار يحقق الهدف التشغيلي للمحور ويحوّل المعرفة إلى قرار قابل للتنفيذ في الميدان. </strong></p></div><p>الذكاء الاصطناعي في الفعاليات دوره:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) تصوير فقط</li><li>B) التنبؤ واتخاذ القرار الوقائي</li><li>C) الديكور</li><li>D) التذاكر</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن هذا الخيار يحقق الهدف التشغيلي للمحور ويحوّل المعرفة إلى قرار قابل للتنفيذ في الميدان. </strong></p></div><p>الاختيار العلمي للتقنية يعتمد على:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) ذوق المدير</li><li>B) تحليل العائد مقابل التكلفة والهدف</li><li>C) رغبة الجمهور</li><li>D) أحدث صيحة</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن هذا الخيار يحقق الهدف التشغيلي للمحور ويحوّل المعرفة إلى قرار قابل للتنفيذ في الميدان. </strong></p></div><p>التقنية الأخطر قانونيا:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) كاميرات التعرف على الوجه</li><li>B) مكبرات الصوت</li><li>C) منصة التذاكر</li><li>D) الإنارة</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(A) لماذا ؟: لأن هذا الخيار يحقق الهدف التشغيلي للمحور ويحوّل المعرفة إلى قرار قابل للتنفيذ في الميدان. </strong></p></div></div></div><div class="section"><h2 class="section-title"><span class="section-number">📘 الوحدة العاشرة</span> إدارة الجوانب القانونية والتنظيمية</h2><div class="info-box"><p>الهدف العام للوحدة</p><p>ضمان نظامية الفعالية وتقليل النزاعات عبر الامتثال، إدارة التصاريح، حماية البيانات، والتوثيق القانوني.</p></div><div class="subsection"><h3 class="subsection-title">10.0 ملاحظة تمهيدية مهمة</h3><p>يجب أن يكون لديك مصفوفة المسؤوليات بين الجهات المشاركة والمشاركين، وتشمل على الأقل:</p><ul><li>أنظمة وزارة الداخلية</li><li>أنظمة وزارة الحج والعمرة</li><li>أنظمة وزارة التجارة</li><li>أنظمة وزارة الإعلام</li><li>أنظمة إدارة الفعاليات السعودية</li><li>أنظمة الجهات ذات الاختصاص</li></ul><p><strong>بدون مراجعة هذه الأنظمة مع الجهات المختصة لن تنجح الفعالية مهما كان مستوى التخطيط.</strong></p></div><div class="subsection"><h3 class="subsection-title">10.1 الامتثال للاشتراطات الصحية والأمنية</h3><p>نلتزم باشتراطات الدفاع المدني والصحة العامة.</p><p>وجود مسؤول امتثال يضمن حماية المؤسسة من المخالفات.</p>
+<div class="info-box">
+<p><strong>📚 مرجع حوكمة:</strong> يرتبط مفهوم مسؤول الامتثال بأفضل الممارسات التنظيمية في <strong>HSE</strong>، كما أن متطلبات السلامة التشغيلية ومسارات الإخلاء تُؤطرها معايير <strong>NFPA</strong> عند الحديث عن سلامة الخروج وإدارة الطوارئ.</p>
+</div>
+<div class="danger-box"><p><strong>ملاحظة: بدون تصريح تكون الفعالية غير نظامية.</strong></p></div></div><div class="subsection"><h3 class="subsection-title">10.2 احتراف إدارة ملف التصاريح والتراخيص</h3><p>نجهز ملفات متكاملة تشمل المخططات ووثائق التأمين لاستخراج التصاريح مبكرًا، مما يبني الثقة مع السلطات.</p><div class="success-box"><p><strong>(مهمة) ما الذي تحتاجه فعليًا ضمن ملف التصاريح؟</strong></p></div><ol><li>تصاريح الفعالية</li><li>العقود والاتفاقيات</li><li>الامتثال الأمني والصحي: لا يصح الفصل بين الأمن والسلامة</li><li>حماية البيانات والخصوصية</li><li>المسؤولية القانونية والتعويض</li><li>التأمين على الفعالية</li><li>إدارة الأدلة والتوثيق القانوني: الصور والتسجيلات والنزاعات والمشاكل موثقة</li></ol></div><div class="subsection"><h3 class="subsection-title">10.3 التوثيق القانوني والتعامل مع النزاعات</h3><p>نوثق كل الحوادث بتقارير رسمية.</p><p>نتعامل مع المطالبات القانونية بالاعتماد على العقود وشروط التذاكر كمرجعية أساسية.</p><div class="danger-box"><p><strong> قاعدة قانونية : الدور الأساسي للمسؤول القانوني الميداني هو حماية مصالح المؤسسة وضمان امتثالها للقوانين، وتقديم الاستشارات القانونية الفورية في الموقع، ومراجعة العقود، وإدارة النزاعات، وتقليل المخاطر، والعمل كحلقة وصل بين الإدارة العليا والأنظمة التشريعية أثناء تنفيذ العمليات اليومية.</strong></p></div><div class="danger-box"><p><strong>ملاحظة: المستند القانوني هو ما يحسم النزاعات لاحقًا.</strong></p></div></div><div class="subsection"><h3 class="subsection-title">🧪 أسئلة الوحدة العاشرة</h3><p>جمع بيانات الحضور (وجوه/بصمة/رقم هاتف) دون إعلان سياسة خصوصية مكتوبة يعد:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) ممارسة تشغيلية</li><li>B) مخالفة قانونية</li><li>C) خيار تنظيمي</li><li>D) قرار إداري</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن هذا الخيار يحقق الهدف التشغيلي للمحور ويحوّل المعرفة إلى قرار قابل للتنفيذ في الميدان. </strong></p></div><p>أكبر فجوة قانونية في الفعاليات العربية غالبًا تتعلق بـ:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) توفير المقاعد</li><li>B) عدم توثيق المسؤولية بين الجهات</li><li>C) ضعف التذاكر</li><li>D) نقص الدعاية</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن هذا الخيار يحقق الهدف التشغيلي للمحور ويحوّل المعرفة إلى قرار قابل للتنفيذ في الميدان. </strong></p></div><p>التأمين على الفعالية يصبح غير ذي قيمة إذا:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) كان مكلفًا</li><li>B) لم تحدد البنود التي تعتبر “حادثًا” ضمن العقد</li><li>C) لم يتواجد طبيب إسعاف</li><li>D) لم توضع بوابات خروج كافية</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن هذا الخيار يحقق الهدف التشغيلي للمحور ويحوّل المعرفة إلى قرار قابل للتنفيذ في الميدان. </strong></p></div><p>أكثر عنصر قانوني يرتبط مباشرة بالتقنيات الحديثة (AI/كاميرات) هو:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) جودة الصورة</li><li>B) قانون حماية البيانات والخصوصية</li><li>C) عدد الفنيين</li><li>D) حجم الذاكرة</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن ذلك يمس الخصوصية وحماية البيانات، وأي جمع دون إعلان/إطار نظامي يعرّض الجهة لمخالفة ونزاع. </strong></p></div><p>المسؤول القانوني الميداني دوره الأساسي هو:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) كتابة تقارير إعلامية</li><li>B) توثيق القرارات والمخالفات وحماية الجهة</li><li>C) إنهاء خلافات الجمهور</li><li>D) تدريب المتطوعين</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن هذا الخيار يحقق الهدف التشغيلي للمحور ويحوّل المعرفة إلى قرار قابل للتنفيذ في الميدان. </strong></p></div><p>غياب بند “الالتزام الزمني للتسليم” في عقد جهة داعمة يؤدي إلى:</p><div class="info-box"><ul style="margin-right: 0;"><li>A) خلاف مالي فقط</li><li>B) تعطيل الحدث دون إمكانية التعويض قانونيًا</li><li>C) زيادة عدد الحضور</li><li>D) جودة أعلى</li></ul></div><div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن هذا الخيار يحقق الهدف التشغيلي للمحور ويحوّل المعرفة إلى قرار قابل للتنفيذ في الميدان. </strong></p></div></div><div class="subsection"><h3 class="subsection-title">✅ سؤال مهم (مهارة نجاة شخصية)</h3><p>إذا حدث تدافع ووصل إليك ماذا تفعل؟ (إجابة المدرب – معتمدة)</p><ol><li><strong>احمِ تنفسك أولًا: </strong>ارفع ذراعيك أمام صدرك كأنك تحتضن نفسك لخلق فراغ للتنفس، وابق رأسك مرفوعًا.</li><li><strong>لا تقاوم التيار: </strong>لا تدفع بعكس اتجاه الحشد، وخذ خطوات قصيرة ثابتة، وتحرك مع الموجة.</li><li><strong>تحرك بزاوية لا بخط مستقيم: </strong>إذا رأيت مخرجًا اتجه إليه بزاوية تدريجية، واقترب من الحواف أو الجدران حيث الضغط أقل.</li><li><strong>ثبت قدميك: </strong>قف بثبات والقدمين متباعدتين قليلًا، وتجنب الانحناء أو الانزلاق.</li><li><strong>إذا سقطت لا قدر الله: </strong>اتخذ وضعية الكرة لحماية الرأس والصدر، وغط رأسك وانهض بأسرع ما يمكن عندما يخف الضغط.</li><li><strong>انتبه لإشارات الخطر: </strong>توقف مفاجئ، صراخ، سقوط متتالٍ، أو فقدان توازن عام → ابحث فورًا عن أقرب مساحة مفتوحة.</li></ol></div></div></div>
 <!-- التذييل: المصدر التعليمي -->
+<div class="section">
+<h2 class="section-title"><span class="section-number">🚦</span> مؤشرات الفشل المبكر في اليوم الثالث</h2>
+<div class="danger-box">
+<ul>
+<li>وجود خطة إخلاء مكتوبة دون تمارين (Drills) = فشل جاهزية.</li>
+<li>عدم وجود لغة موقع موحدة (Grid System) = فشل في التوجيه أثناء الطوارئ.</li>
+<li>تقنيات مراقبة موجودة دون مسار قرار/تدخل = “معلومة بلا إجراء”.</li>
+<li>غياب مسؤول امتثال/توثيق أو عدم وضوح ملف التصاريح = فجوة نظامية قد تتحول إلى نزاع.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h2 class="section-title"><span class="section-number">🧪</span> سيناريو تطبيقي قصير (تمرين ذهني)</h2>
+<div class="info-box">
+<p><strong>سيناريو:</strong> أثناء ذروة الفعالية ظهر توقف مفاجئ في ممر ضيق + ارتفاع صراخ + سقوط متتالٍ.</p>
+<p><strong>مطلوب منك خلال دقيقتين:</strong></p>
+<ul>
+<li>ما المؤشر الأخطر الذي تؤكده أولًا؟</li>
+<li>ما قرارك التشغيلي الأول (إيقاف/تحويل/تفريغ جانبي/تدخل طبي)؟</li>
+<li>كيف تستخدم Grid System لطلب الدعم بدقة؟</li>
+<li>ما أول عنصر توثيق تسجله لحماية القرار لاحقًا؟</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h2 class="section-title"><span class="section-number">📎</span> Glossary – قاموس مصطلحات اليوم الثالث</h2>
+<div class="subsection">
+<ul>
+<li><strong>Triage:</strong> فرز طبي لتحديد أولوية العلاج لإنقاذ أكبر عدد ممكن بأسرع وقت.</li>
+<li><strong>Drills:</strong> تمارين محاكاة للطوارئ لاختبار الجاهزية واكتشاف نقاط الفشل قبل الحدث الحقيقي.</li>
+<li><strong>Grid System:</strong> تقسيم الموقع إلى مربعات/شبكات مرقّمة لتحديد المواقع بدقة أثناء الطوارئ.</li>
+<li><strong>Bottleneck:</strong> نقطة اختناق يتراجع فيها التدفق وتزداد فيها الضغوط الخلفية بسرعة.</li>
+<li><strong>Incident Logging:</strong> تسجيل الحوادث والملاحظات بشكل رسمي لدعم المتابعة والتحسين وإثبات العناية الواجبة.</li>
+<li><strong>Compliance:</strong> الامتثال للاشتراطات والأنظمة (صحي/أمني/تشريعي) لتقليل المخالفات والنزاعات.</li>
+<li><strong>Privacy &amp; Data Protection:</strong> إطار حماية بيانات الحضور (خاصة مع AI/التعرف على الوجه) لتجنب المخالفات.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h2 class="section-title"><span class="section-number">📚</span> ربط المحاور بالمراجع الدولية (تأصيل مختصر)</h2>
+<div class="info-box">
+<ul>
+<li><strong>NFPA:</strong> مسارات الخروج، اتجاه فتح الأبواب، مبادئ الإخلاء وتقليل نقاط الاختناق.</li>
+<li><strong>HSE (UK):</strong> إدارة المخاطر، الجاهزية، التوثيق، العناية الواجبة، والتحسين المستمر.</li>
+<li><strong>Helbing:</strong> ديناميكيات الحشود ونقاط الاختناق (Bottleneck) وكيفية تحول التدفق إلى انهيار.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h2 class="section-title"><span class="section-number">🧱</span> حدود نطاق اليوم الثالث</h2>
+<div class="alert-box">
+<ul>
+<li>لا يغطي اليوم الثالث تفاصيل النمذجة المتقدمة (Advanced Simulation) إلا كمفهوم عام.</li>
+<li>لا يغطي تفاصيل الأنظمة المحلية أو الصياغات القانونية الدقيقة — الهدف هو إطار تشغيلي + مبادئ امتثال وتوثيق.</li>
+<li>أي تقنية مذكورة تُستخدم وفق الأنظمة والاشتراطات ذات العلاقة وبموافقات لازمة عند الحاجة.</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h2 class="section-title"><span class="section-number">📝</span> أسئلة اليوم (MCQ) مع تفسير الإجابة</h2>
+<div class="info-box">
+<p><strong>سؤال 1</strong> — متى تصبح التقنية ذات قيمة تشغيلية حقيقية؟</p>
+<ul style="margin-right: 0;">
+<li>A) عندما تكون جديدة ومكلفة</li>
+<li>B) عندما تُنتج قرارًا قابلًا للتنفيذ قبل تصعيد الخطر</li>
+<li>C) عندما تُستخدم للتوثيق فقط</li>
+<li>D) عندما تزيد عدد الكاميرات</li>
+</ul>
+</div>
+<div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: (إنذار مبكر → تدخل → منع تصعيد </strong></p></div>
+<div class="info-box">
+<p><strong>سؤال 2</strong> — أهم عنصر يسرّع التوجيه أثناء الطوارئ هو:</p>
+<ul style="margin-right: 0;">
+<li>A) زيادة عدد المتطوعين</li>
+<li>B) Grid System + لغة إشارات/أكواد موحدة</li>
+<li>C) تصوير الحدث بطائرات درون</li>
+<li>D) رفع جودة الصوت في المسرح</li>
+</ul>
+</div>
+<div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن ها تحول المكان من “وصف” إلى “إحداثية”، فتقل الأخطاء ويزيد زمن الاستجابة دقةً وسرعةً. </strong></p></div>
+<div class="info-box">
+<p><strong>سؤال 3</strong> — جمع بيانات حساسة للحضور دون سياسة خصوصية معلنة يعد:</p>
+<ul style="margin-right: 0;">
+<li>A) خيار تنظيمي</li>
+<li>B) ممارسة تشغيلية</li>
+<li>C) مخالفة قانونية</li>
+<li>D) قرار إداري داخلي</li>
+</ul>
+</div>
+<div class="success-box"><p><strong>✅ الإجابة الصحيحة(C) لماذا ؟: لأن الخصوصية وحماية البيانات شرط نظامي حساس، خاصة مع تقنيات AI والتعرف على الوجه. </strong></p></div>
+<div class="info-box">
+<p><strong>سؤال 4</strong> — أي عبارة تصف الفلسفة الصحيحة للتدريب على الطوارئ؟</p>
+<ul style="margin-right: 0;">
+<li>A) الخطة المكتوبة تكفي</li>
+<li>B) التدريب يحوّل الخطة من ورق إلى سلوك</li>
+<li>C) نؤجل التدريب لما بعد أول حدث</li>
+<li>D) التدريب يخص الفريق الطبي فقط</li>
+</ul>
+</div>
+<div class="success-box"><p><strong>✅ الإجابة الصحيحة(B) لماذا ؟: لأن الأداء تحت الضغط لا يُبنى بالشرح، بل بالتكرار والاختبار واكتشاف نقاط الفشل مسبقًا. </strong></p></div>
+</div>
+<div class="section">
+<h2 class="section-title"><span class="section-number">🔁</span> إقفال اليوم الثالث – ربط دائري</h2>
+<div class="success-box">
+<p><strong>🔁 ماذا كان يمكن أن نغيّر في حادثة The Station Nightclub Fire – 2003 لو طُبّقت أدوات اليوم الثالث؟</strong></p>
+<p><strong>لو كانت أدوات اليوم الثالث مطبّقة (تشغيليًا وقانونيًا):</strong></p>
+<ul>
+<li><strong>كان سيتم تفعيل الإخلاء المنظّم مبكرًا وتوجيه الحشود إلى مخارج بديلة بدل التكدس على مخرج واحد.</strong></li>
+<li><strong>كان سيتم تطبيق Triage بشكل أسرع لتوجيه الموارد وإنقاذ أكبر عدد ممكن خلال الدقائق الحرجة.</strong></li>
+<li><strong>كانت التقنية (إنذار مبكر/مراقبة كثافة/اتصال موحّد) ستُنتج مسار تدخل واضح قبل تصاعد الفوضى.</strong></li>
+<li><strong>كان التوثيق والامتثال سيحمي القرار ويُقلّل النزاعات بعد الحدث عبر إثبات ما تم اتخاذه من إجراءات.</strong></li>
+</ul>
+<p><strong>ملاحظة:</strong> هذا الإقفال لا يعيد سرد الحادثة، ولا يضيف معلومات جديدة؛ فقط يعيد ربط <strong>الأدوات</strong> بـ<strong>النتيجة التشغيلية</strong>.</p>
+</div>
+</div>
+<div class="alert-box" style="margin-top: 30px;">
+  <p style="font-weight: bold; font-size: 1.1em; text-align: center;">
+    🎓 النجاح في إدارة الحشود يبدأ بالفهم الصحيح للمفاهيم وينتهي بالتطبيق الدقيق للمعايير
+  </p>
+</div>
+
+<section class="section" id="infographic">
+            <h2 class="section-title">🖼️ إنفوجرافيك اليوم</h2>
+            <div class="card infographic-card">
+                <img class="infographic-img" src="Day3.png" alt="Infographic - Day 3">
+            </div>
+        </section>
+
+
+
 <div class="footer">
 <div class="footer-section">
 <h3 style="font-size: 1.5em; margin-bottom: 20px;">📚 المصدر التعليمي</h3>
@@ -507,6 +876,14 @@
 <li>التخطيط الأمني المتقدم</li>
 </ul>
 </div>
+<div style="background: rgba(255,255,255,0.12); padding: 20px; border-radius: 10px; margin: 20px 0; text-align: right;">
+<p style="font-weight: bold; margin-bottom: 10px;">🌍 المراجع الدولية المعتمدة</p>
+<ul style="text-align: right; list-style-position: inside; margin-top: 10px;">
+<li><strong>NFPA</strong> – National Fire Protection Association</li>
+<li><strong>HSE</strong> – Health and Safety Executive (UK)</li>
+<li><strong>Helbing</strong> – Dynamics of Crowds Research</li>
+</ul>
+</div>
 <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 10px; margin: 30px 0;">
 <p style="font-size: 1.3em; font-weight: bold; margin-bottom: 15px;">✍️ إعداد</p>
 <p style="font-size: 1.4em; font-weight: bold; margin-bottom: 10px;">أنس العضيبي</p>
@@ -521,6 +898,8 @@
                     © 2025 - دليل إدارة الفعاليات وسلامة الحشود
                 </p>
 </div>
+
+        
 </div>
 </div>
 </body>
