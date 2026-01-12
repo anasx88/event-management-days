@@ -465,6 +465,89 @@
             text-align: right;
         }
 
+
+
+
+/* === Practice Quizzes Row (Second line) === */
+.practice-quizzes {
+  margin: 14px 0 18px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f7faf7;
+  border: 1px solid #e3efe3;
+}
+
+.practice-quizzes .pq-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  font-weight: 800;
+  color: #1f3a2e;
+}
+
+.practice-quizzes .pq-title .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #2ecc71;
+}
+
+.practice-quizzes .pq-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.practice-quizzes a.pq-card {
+  text-decoration: none;
+  border-radius: 14px;
+  padding: 12px 10px;
+  background: #ffffff;
+  border: 1px solid #e7ece7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.practice-quizzes a.pq-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.06);
+}
+
+.practice-quizzes .pq-emoji {
+  font-size: 22px;
+}
+
+.practice-quizzes .pq-text {
+  font-weight: 800;
+  color: #173024;
+  line-height: 1.1;
+}
+
+.practice-quizzes .pq-sub {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #5b6b62;
+}
+
+@media (max-width: 780px) {
+  .practice-quizzes .pq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* === Infographic Consistency Fix === */
+.infographic-card{ padding: 14px; }
+.infographic-img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
 </style>
 </head>
 <body>
@@ -494,377 +577,643 @@
 <span class="day-txt">اليوم الخامس</span>
 </a>
 </div>
+
+<!-- =========================
+     Practice Quizzes (Row 2)
+========================== -->
+<section class="practice-quizzes" aria-label="اختبارات تجريبية">
+  <div class="pq-title">
+    <span class="dot" aria-hidden="true"></span>
+    <span>اختبارات تجريبية</span>
+  </div>
+
+  <div class="pq-grid">
+    <a class="pq-card" href="quiz1.html">
+      <span class="pq-emoji">🧪</span>
+      <span class="pq-text">الدفعة الأولى<span class="pq-sub">45 سؤال</span></span>
+    </a>
+
+    <a class="pq-card" href="quiz2.html">
+      <span class="pq-emoji">🧪</span>
+      <span class="pq-text">الدفعة الثانية<span class="pq-sub">45 سؤال</span></span>
+    </a>
+
+    <a class="pq-card" href="quiz3.html">
+      <span class="pq-emoji">🧠</span>
+      <span class="pq-text">الدفعة الثالثة<span class="pq-sub">45 سؤال</span></span>
+    </a>
+
+    <a class="pq-card" href="quiz4.html">
+      <span class="pq-emoji">🧠</span>
+      <span class="pq-text">الدفعة الرابعة<span class="pq-sub">70 سؤال</span></span>
+    </a>
+  </div>
+</section>
 <div class="header">
 <h1>📘 الملخص التدريبي المعتمد — اليوم 2</h1>
 <p>إدارة الفعاليات وسلامة الحشود</p>
 </div>
 <div class="content">
 <div class="page-title">
-  <h1>اليوم الثاني</h1>
-  <p>دورة: إدارة الفعاليات وسلامة الحشود</p>
+<h1>اليوم الثاني</h1>
+<p>دورة: إدارة الفعاليات وسلامة الحشود</p>
 </div>
-
+<!-- ===== إضافات اليوم الثاني (سد النواقص) ===== -->
+<div class="section" style="--unit-color:#dc2626;">
+<h2 class="section-title"><span class="section-number">📌 تمهيد</span> تمهيد اليوم الثاني – ربط تشغيلي</h2>
+<div class="danger-box">
+<p style="margin:0 0 10px;">
+      في اليوم الأول، ذُكرت حادثة <strong>جسر كمبوديا 2010</strong> كمثال على كيف يمكن أن تتحول الحشود إلى كارثة خلال دقائق.
+    </p>
+<p style="margin:0 0 10px;">
+      في هذا اليوم، <strong>لن نعيد سرد الحادثة</strong>، بل سنستخدمها لفهم الأسئلة التشغيلية التالية:
+    </p>
+<ul style="margin-top:10px;">
+<li>ما المؤشرات المبكرة التي سبقت الاختناق؟</li>
+<li>في أي لحظة كان يجب التدخل؟</li>
+<li>ما القرارات التي لو اتُّخذت مبكرًا لغيّرت المسار؟</li>
+<li>من كان يجب أن يملك قرار الإيقاف أو التحويل؟</li>
+</ul>
+<p style="margin:10px 0 0;">
+      اليوم الثاني مخصص للإجابة العملية على هذه الأسئلة، وليس لوصف النتيجة النهائية.
+    </p>
+</div>
+</div>
+<div class="section" style="--unit-color:#0ea5e9;">
+<h2 class="section-title"><span class="section-number">🧭 تمهيد</span> لماذا اليوم الثاني هو «قلب التشغيل»؟</h2>
+<div class="info-box">
+<ul style="margin-top: 15px;">
+<li>إذا كان اليوم الأول يضبط <strong>الفهم</strong> (الحشد/الكثافة/الاختناق)، فاليوم الثاني يضبط <strong>الفعل</strong> (التشغيل أثناء الحدث).</li>
+<li>القواعد التي تُنقذ الأرواح هنا ليست نظرية: <strong>قرار واحد صحيح في الوقت المناسب</strong> قد يمنع سلسلة فشل كاملة.</li>
+<li><strong>قاعدة ثابتة:</strong> غياب الحادث ليس دليل أمان؛ الأمان يُقاس بقدرتك على رصد المؤشرات والتدخل مبكرًا.</li>
+</ul>
+</div>
+</div>
+<div class="section" style="--unit-color:#22c55e;">
+<h2 class="section-title"><span class="section-number">🎯 أهداف</span> اليوم الثاني (Learning Objectives)</h2>
+<div class="info-box">
+<p style="margin:0 0 10px;"><strong>بنهاية اليوم سيكون المتدرب قادرًا على:</strong></p>
+<ul style="margin-top: 10px;">
+<li><strong>معرفيًا:</strong> تفسير مبادئ التشغيل أثناء الحدث (Zoning، غرفة العمليات، التكنولوجيا، الاستجابة السريعة) وربطها بمخاطر التدفق.</li>
+<li><strong>مهاريًا:</strong> تحديد نقاط الاختناق، قراءة المؤشرات المبكرة، وتنفيذ تدخلات سريعة (إعادة توجيه/إغلاق/فتح مسارات) وفق تسلسل قرار واضح.</li>
+<li><strong>سلوكيًا/قياديًا:</strong> تحمّل مسؤولية القرار تحت الضغط، وتفعيل قناة قيادة واحدة تمنع تضارب التعليمات.</li>
+</ul>
+</div>
+</div>
+<div class="section" style="--unit-color:#a855f7;">
+<h2 class="section-title"><span class="section-number">👥 الفئة</span> لمن هذا المحتوى؟ ولمن ليس؟</h2>
+<div class="info-box">
+<p style="margin:0 0 10px;"><strong>موجّه إلى:</strong> قادة ميدانيين، مشرفي سلامة، منسقي تشغيل، فرق أمن وعمليات، وغرفة قيادة الحدث.</p>
+<p style="margin:0;"><strong>غير موجّه إلى:</strong> الجمهور العام أو المتطوع غير المدرّب دون إشراف، أو من لا يملك صلاحية تدخل أثناء الحدث.</p>
+</div>
+</div>
+<div class="section" style="--unit-color:#f59e0b;">
+<h2 class="section-title"><span class="section-number">❓ أسئلة</span> أسئلة ذهنية متوقعة قبل البدء</h2>
+<div class="info-box">
+<ul style="margin-top: 10px;">
+<li>ما الفرق بين «مراقبة الحشد» و«إدارة التدفق» عمليًا أثناء الحدث؟</li>
+<li>متى أتدخل؟ وما التدخل الأقل كلفة والأسرع تأثيرًا؟</li>
+<li>كيف أمنع تضارب التعليمات بين الأمن، التشغيل، والإعلام؟</li>
+<li>ما العلامات التي تعني أنني متأخر بالفعل؟</li>
+</ul>
+</div>
+</div>
+<div class="section" style="--unit-color:#111827;">
+<h2 class="section-title"><span class="section-number">🧷 قاعدة</span> لغة القرار والمسؤولية (Decision Language)</h2>
+<div class="danger-box">
+<p style="margin:0 0 10px;"><strong>قاعدة تشغيلية:</strong> عندما تظهر مؤشرات ضغط/اختناق، لا تنتظر «تأكدًا كاملًا»؛ نفّذ تدخلًا صغيرًا سريعًا ثم قيّم الأثر.</p>
+<ul style="margin-top: 10px;">
+<li><strong>توقف/تبطئ:</strong> إيقاف إدخال تدفق جديد مؤقتًا عند نقطة الاختناق.</li>
+<li><strong>تغيّر المسار:</strong> تحويل التدفق إلى مسارات بديلة (تفريغ الضغط).</li>
+<li><strong>تفتح/تغلق:</strong> فتح بوابة إضافية أو إغلاق مسار متسبب بتقاطع خطير.</li>
+<li><strong>تعلن:</strong> رسائل فورية عبر PA/لوحات لإعادة توجيه الجمهور.</li>
+</ul>
+</div>
+</div>
 <div class="section" style="--unit-color:#4f46e5;">
-  <h2 class="section-title">
-    <span class="section-number">🧩 تمهيد</span>
+<h2 class="section-title">
+<span class="section-number">🧩 تمهيد</span>
     هدف اليوم
   </h2>
-  <div class="info-box">
-    <ul style="margin-top: 15px;">
-      <li>الانتقال المنهجي من <strong>إدارة التشغيل أثناء الحدث</strong> إلى <strong>الأمن والحماية الشخصية</strong>، ثم <strong>التواصل والإعلام</strong>، ثم <strong>الطوارئ والاستجابة السريعة</strong>.</li>
-      <li>ربط المحاور بأمثلة واقعية ومهارات عملية تُستخدم ميدانيًا وتظهر في الاختبارات.</li>
-    </ul>
-  </div>
+<div class="info-box">
+<ul style="margin-top: 15px;">
+<li>الانتقال المنهجي من <strong>إدارة التشغيل أثناء الحدث</strong> إلى <strong>الأمن والحماية الشخصية</strong>، ثم <strong>التواصل والإعلام</strong>، ثم <strong>الطوارئ والاستجابة السريعة</strong>.</li>
+<li>ربط المحاور بأمثلة واقعية ومهارات عملية تُستخدم ميدانيًا وتظهر في الاختبارات.</li>
+</ul>
 </div>
-
+</div>
 <div class="section" style="--unit-color:#6366f1;">
-  <h2 class="section-title">
-    <span class="section-number">🔗 ربط</span>
+<h2 class="section-title">
+<span class="section-number">🔗 ربط</span>
     التمهيد التشغيلي المتقدم (ربط بما سبق)
   </h2>
-
-  <div class="subsection">
-    <h3 class="subsection-title">أولًا: تقسيم الموقع إلى قطاعات – Zoning</h3>
-    <div class="info-box">
-      <p><strong>تعريف Zoning (تقسيم الموقع إلى قطاعات):</strong> هو تقسيم موقع الفعالية إلى مناطق مستقلة تشغيليًا، بحيث يكون لكل قطاع مسؤوليات واضحة وقناة قرار سريعة.</p>
-      <ul style="margin-top: 15px;">
-        <li>فريق ميداني مخصص.</li>
-        <li>قائد قطاع (Sector Leader) مسؤول عن القرار الأولي والتصعيد لغرفة العمليات.</li>
-        <li>ارتباط مباشر بغرفة العمليات (Operations Room) عبر قناة اتصال ثابتة.</li>
-      </ul>
-    </div>
-    <div class="alert-box"><strong>📌 قاعدة مهمة:</strong> الهدف من Zoning هو منع انتقال المشكلة من منطقة إلى أخرى وتحقيق السيطرة الجزئية بدل فقدان السيطرة الكاملة.</div>
-  </div>
-
-  <div class="subsection">
-    <h3 class="subsection-title">ثانيًا: غرفة العمليات أثناء الحدث</h3>
-    <div class="info-box">
-      <p><strong>تعريف غرفة العمليات (Operations Room / Joint Operations Room):</strong> هي العقل المدبر للفعالية أثناء التشغيل، وتتحول من متابعة إلى قرار لحظي.</p>
-      <ul style="margin-top: 15px;">
-        <li>استقبال البلاغات والبيانات من الميدان.</li>
-        <li>تحليل الكثافات والحركة (Density & Flow) وتحديد النقاط الحرجة (Critical Points).</li>
-        <li>اتخاذ قرارات فورية: فتح مسار، إغلاق بوابة، إعادة توجيه التدفق (Redirect Flow).</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <h3 class="subsection-title">ثالثًا: توظيف التكنولوجيا في إدارة التدفقات</h3>
-    <div class="info-box">
-      <ul style="margin-top: 15px;">
-        <li>الكاميرات الحرارية (Thermal Cameras) لرصد التكدس قبل أن يصبح اختناقًا.</li>
-        <li>تطبيقات تتبع الكثافة (Density Tracking) وخرائط حرارية (Heatmaps) لدعم القرار.</li>
-        <li>بيانات حيّة (Live Data) لاتخاذ قرارات فورية: إغلاق بوابة، فتح مسار إضافي، توجيه الجمهور.</li>
-      </ul>
-    </div>
-    <div class="alert-box"><strong>📌 قاعدة مهمة:</strong> الهدف هو الانتقال من <strong>ردّ الفعل</strong> إلى <strong>التنبؤ المبكر</strong> بالمخاطر.</div>
-  </div>
-
-  <div class="subsection">
-    <h3 class="subsection-title">رابعًا: بروتوكولات الاستجابة السريعة</h3>
-    <div class="info-box">
-      <p><strong>تعريف فرق التدخل السريع (Rapid Response Teams):</strong> فرق متجولة جاهزة للتدخل خلال دقائق لعزل المشكلة ومنع تضخمها.</p>
-      <ul style="margin-top: 15px;">
-        <li>عزل المشكلة فور ظهورها (Isolate).</li>
-        <li>كسر التكتل البشري بهدوء (Break the Cluster) دون تصعيد.</li>
-        <li>منع تضخم الحدث قبل تحوله إلى أزمة.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <h3 class="subsection-title">دراسة حالة تمهيدية: ألمانيا 2010 – تدافع نفق مهرجان</h3>
-    <div class="info-box">
-      <p><strong>(Love Parade – Duisburg, 2010)</strong></p>
-      <p><strong>خلفية الحدث:</strong> مهرجان جماهيري ضخم مع اعتماد <strong>نفق واحد</strong> كمسار دخول وخروج رئيسي للحشود، ما خلق نقطة اختناق حرجة داخل نظام التدفق.</p>
-      <p style="margin-top:10px;"><strong>وصف الواقعة:</strong></p>
-      <ul style="margin-top: 10px;">
-        <li>نفق ضيق بمدخل/مخرج واحد.</li>
-        <li>تدفق كثيف من اتجاهين متعاكسين.</li>
-        <li>توقف جزئي أدى إلى ضغط خلفي متزايد.</li>
-        <li>سقوط متتالٍ (Domino Effect) بعد سقوط أفراد في المقدمة.</li>
-      </ul>
-    </div>
-
-    <div class="danger-box">⚠️ ملاحظة سلوكية: الخوف والارتباك مؤشرات مبكرة لاحتمال وقوع كارثة.</div>
-
-    <div class="info-box">
-      <p><strong>النتائج:</strong></p>
-      <ul style="margin-top: 10px;">
-        <li>21 حالة وفاة.</li>
-        <li>أكثر من 500 إصابة.</li>
-        <li>انهيار السيطرة التشغيلية خلال دقائق.</li>
-      </ul>
-    </div>
-
-    <div class="alert-box"><strong>📌 قاعدة مهمة:</strong> التصميم الهندسي يسبق التشغيل، ولا يمكن للتشغيل تعويض خلل تصميمي جوهري.</div>
-
-    <div class="info-box">
-      <p><strong>التحليل التشغيلي (Operational Analysis):</strong></p>
-      <ul style="margin-top: 10px;">
-        <li><strong>فشل التصميم الهندسي:</strong> الموقع لم يُصمَّم لاستيعاب الكثافة المتوقعة.</li>
-        <li><strong>غياب المسارات البديلة:</strong> لا مسارات خروج إضافية ولا مناطق تفريغ ولا نقاط امتصاص للكثافة.</li>
-        <li><strong>سوء تقدير السعة الاستيعابية (Capacity Miscalculation):</strong> دون حساب عرض النفق وسرعة التدفق واحتمالات التباطؤ.</li>
-        <li><strong>تأخر التدخل:</strong> لم يتم إيقاف التدفق من المصدر في الوقت المناسب ولم تُعزل المنطقة قبل الوصول للكثافة الحرجة.</li>
-      </ul>
-    </div>
-
-    <div class="success-box">
-      <p><strong>إجراءات وقائية كان يجب توفرها:</strong></p>
-      <ul style="margin-top: 10px;">
-        <li>مسارات دخول وخروج متعددة (Multiple Ingress/Egress).</li>
-        <li>مراقبة لحظية للكثافة (Real-time Density Monitoring).</li>
-        <li>فرق تدخل متقدمة عند نقاط الاختناق.</li>
-        <li>ربط البيانات بأنظمة إنذار مبكر وتحليل ذكي (AI Analytics).</li>
-      </ul>
-    </div>
-  </div>
+<div class="subsection">
+<h3 class="subsection-title">أولًا: تقسيم الموقع إلى قطاعات – Zoning</h3>
+<div class="info-box">
+<p><strong>تعريف Zoning (تقسيم الموقع إلى قطاعات):</strong> هو تقسيم موقع الفعالية إلى مناطق مستقلة تشغيليًا، بحيث يكون لكل قطاع مسؤوليات واضحة وقناة قرار سريعة.</p>
+<ul style="margin-top: 15px;">
+<li>فريق ميداني مخصص.</li>
+<li>قائد قطاع (Sector Leader) مسؤول عن القرار الأولي والتصعيد لغرفة العمليات.</li>
+<li>ارتباط مباشر بغرفة العمليات (Operations Room) عبر قناة اتصال ثابتة.</li>
+</ul>
 </div>
-
+<div class="alert-box"><strong>📌 قاعدة مهمة:</strong> الهدف من Zoning هو منع انتقال المشكلة من منطقة إلى أخرى وتحقيق السيطرة الجزئية بدل فقدان السيطرة الكاملة.</div>
+<div class="info-box"><strong>📚 مرجع إداري:</strong> يرتبط مفهوم <strong>Zoning</strong> بمنهجيات <strong>HSE</strong> في إدارة مخاطر الفعاليات وتقسيم الموقع لضبط السيطرة وتقليل انتقال المخاطر بين المناطق.</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title">ثانيًا: غرفة العمليات أثناء الحدث</h3>
+<div class="info-box">
+<p><strong>تعريف غرفة العمليات (Operations Room / Joint Operations Room):</strong> هي العقل المدبر للفعالية أثناء التشغيل، وتتحول من متابعة إلى قرار لحظي.</p>
+<ul style="margin-top: 15px;">
+<li>استقبال البلاغات والبيانات من الميدان.</li>
+<li>تحليل الكثافات والحركة (Density &amp; Flow) وتحديد النقاط الحرجة (Critical Points).</li>
+<li>اتخاذ قرارات فورية: فتح مسار، إغلاق بوابة، إعادة توجيه التدفق (Redirect Flow).</li>
+</ul>
+</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title">ثالثًا: توظيف التكنولوجيا في إدارة التدفقات</h3>
+<div class="info-box"><strong>📚 مرجع تشغيلي:</strong> تشغيل <strong>غرفة العمليات</strong> واتخاذ قرارات مثل فتح مسار/إغلاق بوابة/تحويل التدفق يتوافق مع ممارسات <strong>HSE</strong> في إدارة مخاطر الفعاليات، ومع افتراضات “أسوأ سيناريو” في معايير <strong>NFPA</strong> عند تخطيط الإخلاء والتدفق.</div>
+<div class="info-box">
+<ul style="margin-top: 15px;">
+<li>الكاميرات الحرارية (Thermal Cameras) لرصد التكدس قبل أن يصبح اختناقًا.</li>
+<li>تطبيقات تتبع الكثافة (Density Tracking) وخرائط حرارية (Heatmaps) لدعم القرار.</li>
+<li>بيانات حيّة (Live Data) لاتخاذ قرارات فورية: إغلاق بوابة، فتح مسار إضافي، توجيه الجمهور.</li>
+</ul>
+</div>
+<div class="alert-box"><strong>📌 قاعدة مهمة:</strong> الهدف هو الانتقال من <strong>ردّ الفعل</strong> إلى <strong>التنبؤ المبكر</strong> بالمخاطر.</div>
+<div class="info-box"><strong>📚 مرجع تشغيلي وعلمي:</strong> مراقبة <strong>Density</strong> و<strong>Flow</strong> والاعتماد على مؤشرات مبكرة تدعمها إرشادات <strong>HSE</strong>، كما تفسرها نماذج ديناميكية الحشود لدى <strong>Helbing</strong> عند ارتفاع الكثافات قرب نقاط الاختناق.</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title">رابعًا: بروتوكولات الاستجابة السريعة</h3>
+<div class="info-box">
+<p><strong>تعريف فرق التدخل السريع (Rapid Response Teams):</strong> فرق متجولة جاهزة للتدخل خلال دقائق لعزل المشكلة ومنع تضخمها.</p>
+<ul style="margin-top: 15px;">
+<li>عزل المشكلة فور ظهورها (Isolate).</li>
+<li>كسر التكتل البشري بهدوء (Break the Cluster) دون تصعيد.</li>
+<li>منع تضخم الحدث قبل تحوله إلى أزمة.</li>
+</ul>
+</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title">دراسة حالة تمهيدية: ألمانيا 2010 – تدافع نفق مهرجان</h3>
+<div class="info-box"><strong>📚 مرجع تشغيلي:</strong> مفهوم <strong>Rapid Response Teams</strong> وتفعيل العزل السريع والتصعيد يتسق مع منهج <strong>HSE</strong> في تقليل أثر الحوادث عبر التدخل المبكر قبل تحولها إلى أزمة واسعة.</div>
+<div class="info-box">
+<p><strong>(Love Parade – Duisburg, 2010)</strong></p>
+<p><strong>خلفية الحدث:</strong> مهرجان جماهيري ضخم مع اعتماد <strong>نفق واحد</strong> كمسار دخول وخروج رئيسي للحشود، ما خلق نقطة اختناق حرجة داخل نظام التدفق.</p>
+<p style="margin-top:10px;"><strong>وصف الواقعة:</strong></p>
+<ul style="margin-top: 10px;">
+<li>نفق ضيق بمدخل/مخرج واحد.</li>
+<li>تدفق كثيف من اتجاهين متعاكسين.</li>
+<li>توقف جزئي أدى إلى ضغط خلفي متزايد.</li>
+<li>سقوط متتالٍ (Domino Effect) بعد سقوط أفراد في المقدمة.</li>
+</ul>
+</div>
+<div class="danger-box">⚠️ ملاحظة سلوكية: الخوف والارتباك مؤشرات مبكرة لاحتمال وقوع كارثة.</div>
+<div class="info-box">
+<p><strong>النتائج:</strong></p>
+<ul style="margin-top: 10px;">
+<li>21 حالة وفاة.</li>
+<li>أكثر من 500 إصابة.</li>
+<li>انهيار السيطرة التشغيلية خلال دقائق.</li>
+</ul>
+</div>
+<div class="alert-box"><strong>📌 قاعدة مهمة:</strong> التصميم الهندسي يسبق التشغيل، ولا يمكن للتشغيل تعويض خلل تصميمي جوهري.</div>
+<div class="info-box"><strong>📚 مرجع معياري وعلمي:</strong> تُعد نقاط الاختناق (Bottlenecks) وتدفق الاتجاهين داخل ممر ضيق من أشهر عوامل الانهيار في أبحاث <strong>Helbing</strong>، كما تؤكد معايير <strong>NFPA</strong> على أن حساب السعات ومسارات الدخول/الخروج يجب أن يُبنى على سيناريوهات الطوارئ لا على التشغيل الطبيعي.</div>
+<div class="info-box">
+<p><strong>التحليل التشغيلي (Operational Analysis):</strong></p>
+<ul style="margin-top: 10px;">
+<li><strong>فشل التصميم الهندسي:</strong> الموقع لم يُصمَّم لاستيعاب الكثافة المتوقعة.</li>
+<li><strong>غياب المسارات البديلة:</strong> لا مسارات خروج إضافية ولا مناطق تفريغ ولا نقاط امتصاص للكثافة.</li>
+<li><strong>سوء تقدير السعة الاستيعابية (Capacity Miscalculation):</strong> دون حساب عرض النفق وسرعة التدفق واحتمالات التباطؤ.</li>
+<li><strong>تأخر التدخل:</strong> لم يتم إيقاف التدفق من المصدر في الوقت المناسب ولم تُعزل المنطقة قبل الوصول للكثافة الحرجة.</li>
+</ul>
+</div>
+<div class="success-box">
+<div class="info-box"><strong>📚 مرجع علمي:</strong> توصيات الحركة مع “موجة الحشد” وتجنب الدفع العكسي والبحث عن الأطراف الأقل ضغطًا تتسق مع تفسيرات <strong>Helbing</strong> لظواهر Crowd Turbulence وBack Pressure عند الكثافات العالية.</div>
+<p><strong>إجراءات وقائية كان يجب توفرها:</strong></p>
+<ul style="margin-top: 10px;">
+<li>مسارات دخول وخروج متعددة (Multiple Ingress/Egress).</li>
+<li>مراقبة لحظية للكثافة (Real-time Density Monitoring).</li>
+<li>فرق تدخل متقدمة عند نقاط الاختناق.</li>
+<li>ربط البيانات بأنظمة إنذار مبكر وتحليل ذكي (AI Analytics).</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="section" style="--unit-color:#1e3a8a;">
-  <h2 class="section-title">
-    <span class="section-number">📘 الوحدة السادسة</span>
+<h2 class="section-title">
+<span class="section-number">📘 الوحدة السادسة</span>
     توفير الأمن والحماية الشخصية
   </h2>
-
-  <div class="subsection">
-    <h3 class="subsection-title">🔹 6.1 دور فرق الأمن وتأهيلهم</h3>
-    <div class="info-box">
-      <ul style="margin-top: 15px;">
-        <li>موظف الأمن جزء من تجربة الزائر (Visitor Experience) وليس عنصر ضبط فقط.</li>
-        <li>معايير اختيار الأفراد: ذكاء عاطفي (Emotional Intelligence) + مهارات تواصل (Communication Skills) + قدرة قراءة الموقف (Situational Awareness).</li>
-        <li>التدريب عبر تمارين محاكاة (Drills) تشمل: تدافع، إخلاء، حقيبة متروكة (Unattended Bag)، فقدان طفل…</li>
-      </ul>
-    </div>
-    <div class="info-box">
-      <p><strong>تعريف: قراءة الموقف</strong> هي القدرة على تقييم الخطر الحقيقي من السلوك الظاهري قبل اتخاذ قرار التدخل.</p>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <h3 class="subsection-title">🔹 6.2 التعامل مع التهديدات الأمنية</h3>
-    <div class="info-box">
-      <ul style="margin-top: 15px;">
-        <li>خطط أمنية متعددة الطبقات (Multi-layer Security Rings) وتوزيع مسؤوليات واضح بين الدوائر.</li>
-        <li>التفتيش الروتيني باستخدام أجهزة الكشف وتفتيش الحقائب كإجراء لا يُهمل.</li>
-        <li>مراقبة السلوكيات غير الطبيعية (Suspicious Behavior) وتفعيل الإبلاغ المبكر.</li>
-      </ul>
-    </div>
-    <div class="alert-box"><strong>📌 قاعدة مهمة:</strong> أي حقيبة/أمتعة متروكة تُعامل كخطر محتمل حتى يثبت العكس.</div>
-    <div class="info-box">
-      <p><strong>تعريف: البروتوكول الأمني الصامت</strong> إجراء يُفعّل دون إثارة انتباه الجمهور عند الاشتباه بجسم/شخص مشبوه؛ الهدف هو العزل والتحكم بلا ذعر.</p>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <h3 class="subsection-title">🔹 6.3 تدابير الحد من الإرهاب والاشتباكات</h3>
-    <div class="info-box">
-      <ul style="margin-top: 15px;">
-        <li>رفع مستوى الجاهزية + استخدام الحواجز الخرسانية وفق تصميم يوجّه التدفق ولا يغلق مسارات الطوارئ.</li>
-        <li>في الاشتباكات الفردية: تطبيق سياسة التدخل والعزل (Intervention & Isolation) لفض الاشتباك بسرعة وإخراج الأطراف خارج محيط الجمهور.</li>
-        <li>تصنيف مصادر التهديد: أخطار متعمدة وأخطار غير متعمدة.</li>
-      </ul>
-    </div>
-    <div class="info-box">
-      <p><strong>تعريف: التدخل والعزل (Intervention & Isolation)</strong> عزل مصدر المشكلة وإخراجه من محيط الجمهور بسرعة وهدوء لمنع العدوى السلوكية وتوسع الحدث.</p>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <h3 class="subsection-title">🔹 6.4 تعريف مطلوب: الشخصيات المهمة – VIP</h3>
-    <div class="info-box">
-      <p><strong>VIP (Very Important Person):</strong> أفراد ذوو حساسية عالية (رسمية/اجتماعية/اقتصادية/إعلامية) تؤثر سلامتهم على الأمن العام وسمعة الحدث، ويستلزمون طبقات حماية إضافية ومسارات دخول وخروج خاصة.</p>
-      <ul style="margin-top: 10px;">
-        <li>تخصيص مسارات دخول/خروج ومناطق انتظار منفصلة (Separate Routes/Waiting Areas).</li>
-        <li>تحديد نقاط انتقال (Transition Zones) ورفع مستوى الرصد في هذه المناطق.</li>
-      </ul>
-    </div>
-    <div class="alert-box"><strong>📌 قاعدة مهمة:</strong> التركيز داخل القاعة فقط لا يكفي؛ الممرات والبوابات ومناطق الانتقال غالبًا هي الأعلى خطورة.</div>
-  </div>
-
-  <div class="subsection">
-    <h3 class="subsection-title">🔹 6.5 دراسة حالة: مانشستر 2017</h3>
-    <div class="info-box">
-      <p><strong>(Manchester Arena Bombing, 2017)</strong></p>
-      <p><strong>خلفية الحدث:</strong> حفلة موسيقية داخل قاعة مغلقة بإجراءات أمنية مشددة داخل القاعة نفسها.</p>
-      <p style="margin-top:10px;"><strong>وصف الواقعة:</strong></p>
-      <ul style="margin-top: 10px;">
-        <li>بعد انتهاء الحفل، تجمّع الجمهور في البهو الخارجي ومناطق الخروج.</li>
-        <li>نفّذ انتحاري تفجيرًا في منطقة انتقالية خارج القاعة.</li>
-      </ul>
-    </div>
-
-    <div class="info-box">
-      <p><strong>النتائج:</strong></p>
-      <ul style="margin-top: 10px;">
-        <li>أكثر من 22 حالة وفاة.</li>
-        <li>مئات الإصابات.</li>
-        <li>صدمة مجتمعية وإعلامية واسعة.</li>
-      </ul>
-    </div>
-
-    <div class="info-box">
-      <p><strong>التحليل الأمني (Security Analysis):</strong></p>
-      <ul style="margin-top: 10px;">
-        <li><strong>تركيز أمني غير متوازن:</strong> تركيز داخل القاعة وعند نقاط التفتيش الرئيسية مقابل إهمال مناطق الخروج والبهو والمساحات الانتقالية.</li>
-        <li><strong>استهداف النقطة الأعلى ضررًا:</strong> منطقة كثافة عالية وجمهور في حالة استرخاء بعد الحدث ومساحة غير خاضعة للتفتيش المباشر.</li>
-        <li><strong>غياب مفهوم الدائرة الأمنية الموسعة:</strong> عدم تطبيق حماية متعددة الطبقات تشمل ما قبل الدخول وأثناء الحدث وما بعد الخروج.</li>
-      </ul>
-    </div>
-
-    <div class="alert-box"><strong>📌 قاعدة مهمة:</strong> الأمن لا ينتهي بانتهاء الفعالية؛ مناطق الخروج والانتقال تُعامل كنقاط حرجة (Critical Zones).</div>
-
-    <div class="success-box">
-      <p><strong>إجراءات وقائية كان يجب تعزيزها:</strong></p>
-      <ul style="margin-top: 10px;">
-        <li>توسيع نطاق التفتيش ليشمل مناطق الخروج.</li>
-        <li>تواجد أمني مرن بعد انتهاء الفعالية.</li>
-        <li>مراقبة سلوكية مستمرة في المناطق الانتقالية.</li>
-        <li>تبادل معلومات استخباراتية لحظي بين الجهات.</li>
-      </ul>
-    </div>
-  </div>
+<div class="subsection">
+<h3 class="subsection-title">🔹 6.1 دور فرق الأمن وتأهيلهم</h3>
+<div class="info-box">
+<ul style="margin-top: 15px;">
+<li>موظف الأمن جزء من تجربة الزائر (Visitor Experience) وليس عنصر ضبط فقط.</li>
+<li>معايير اختيار الأفراد: ذكاء عاطفي (Emotional Intelligence) + مهارات تواصل (Communication Skills) + قدرة قراءة الموقف (Situational Awareness).</li>
+<li>التدريب عبر تمارين محاكاة (Drills) تشمل: تدافع، إخلاء، حقيبة متروكة (Unattended Bag)، فقدان طفل…</li>
+</ul>
 </div>
-
+<div class="info-box">
+<p><strong>تعريف: قراءة الموقف</strong> هي القدرة على تقييم الخطر الحقيقي من السلوك الظاهري قبل اتخاذ قرار التدخل.</p>
+</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title">🔹 6.2 التعامل مع التهديدات الأمنية</h3>
+<div class="info-box">
+<ul style="margin-top: 15px;">
+<li>خطط أمنية متعددة الطبقات (Multi-layer Security Rings) وتوزيع مسؤوليات واضح بين الدوائر.</li>
+<li>التفتيش الروتيني باستخدام أجهزة الكشف وتفتيش الحقائب كإجراء لا يُهمل.</li>
+<li>مراقبة السلوكيات غير الطبيعية (Suspicious Behavior) وتفعيل الإبلاغ المبكر.</li>
+</ul>
+</div>
+<div class="alert-box"><strong>📌 قاعدة مهمة:</strong> أي حقيبة/أمتعة متروكة تُعامل كخطر محتمل حتى يثبت العكس.</div>
+<div class="info-box">
+<p><strong>تعريف: البروتوكول الأمني الصامت</strong> إجراء يُفعّل دون إثارة انتباه الجمهور عند الاشتباه بجسم/شخص مشبوه؛ الهدف هو العزل والتحكم بلا ذعر.</p>
+</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title">🔹 6.3 تدابير الحد من الإرهاب والاشتباكات</h3>
+<div class="info-box">
+<ul style="margin-top: 15px;">
+<li>رفع مستوى الجاهزية + استخدام الحواجز الخرسانية وفق تصميم يوجّه التدفق ولا يغلق مسارات الطوارئ.</li>
+<li>في الاشتباكات الفردية: تطبيق سياسة التدخل والعزل (Intervention &amp; Isolation) لفض الاشتباك بسرعة وإخراج الأطراف خارج محيط الجمهور.</li>
+<li>تصنيف مصادر التهديد: أخطار متعمدة وأخطار غير متعمدة.</li>
+</ul>
+</div>
+<div class="info-box">
+<p><strong>تعريف: التدخل والعزل (Intervention &amp; Isolation)</strong> عزل مصدر المشكلة وإخراجه من محيط الجمهور بسرعة وهدوء لمنع العدوى السلوكية وتوسع الحدث.</p>
+</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title">🔹 6.4 تعريف مطلوب: الشخصيات المهمة – VIP</h3>
+<div class="info-box">
+<p><strong>VIP (Very Important Person):</strong> أفراد ذوو حساسية عالية (رسمية/اجتماعية/اقتصادية/إعلامية) تؤثر سلامتهم على الأمن العام وسمعة الحدث، ويستلزمون طبقات حماية إضافية ومسارات دخول وخروج خاصة.</p>
+<ul style="margin-top: 10px;">
+<li>تخصيص مسارات دخول/خروج ومناطق انتظار منفصلة (Separate Routes/Waiting Areas).</li>
+<li>تحديد نقاط انتقال (Transition Zones) ورفع مستوى الرصد في هذه المناطق.</li>
+</ul>
+</div>
+<div class="alert-box"><strong>📌 قاعدة مهمة:</strong> التركيز داخل القاعة فقط لا يكفي؛ الممرات والبوابات ومناطق الانتقال غالبًا هي الأعلى خطورة.</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title">🔹 6.5 دراسة حالة: مانشستر 2017</h3>
+<div class="info-box">
+<p><strong>(Manchester Arena Bombing, 2017)</strong></p>
+<p><strong>خلفية الحدث:</strong> حفلة موسيقية داخل قاعة مغلقة بإجراءات أمنية مشددة داخل القاعة نفسها.</p>
+<p style="margin-top:10px;"><strong>وصف الواقعة:</strong></p>
+<ul style="margin-top: 10px;">
+<li>بعد انتهاء الحفل، تجمّع الجمهور في البهو الخارجي ومناطق الخروج.</li>
+<li>نفّذ انتحاري تفجيرًا في منطقة انتقالية خارج القاعة.</li>
+</ul>
+</div>
+<div class="info-box">
+<p><strong>النتائج:</strong></p>
+<ul style="margin-top: 10px;">
+<li>أكثر من 22 حالة وفاة.</li>
+<li>مئات الإصابات.</li>
+<li>صدمة مجتمعية وإعلامية واسعة.</li>
+</ul>
+</div>
+<div class="info-box">
+<p><strong>التحليل الأمني (Security Analysis):</strong></p>
+<ul style="margin-top: 10px;">
+<li><strong>تركيز أمني غير متوازن:</strong> تركيز داخل القاعة وعند نقاط التفتيش الرئيسية مقابل إهمال مناطق الخروج والبهو والمساحات الانتقالية.</li>
+<li><strong>استهداف النقطة الأعلى ضررًا:</strong> منطقة كثافة عالية وجمهور في حالة استرخاء بعد الحدث ومساحة غير خاضعة للتفتيش المباشر.</li>
+<li><strong>غياب مفهوم الدائرة الأمنية الموسعة:</strong> عدم تطبيق حماية متعددة الطبقات تشمل ما قبل الدخول وأثناء الحدث وما بعد الخروج.</li>
+</ul>
+</div>
+<div class="alert-box"><strong>📌 قاعدة مهمة:</strong> الأمن لا ينتهي بانتهاء الفعالية؛ مناطق الخروج والانتقال تُعامل كنقاط حرجة (Critical Zones).</div>
+<div class="success-box">
+<p><strong>إجراءات وقائية كان يجب تعزيزها:</strong></p>
+<ul style="margin-top: 10px;">
+<li>توسيع نطاق التفتيش ليشمل مناطق الخروج.</li>
+<li>تواجد أمني مرن بعد انتهاء الفعالية.</li>
+<li>مراقبة سلوكية مستمرة في المناطق الانتقالية.</li>
+<li>تبادل معلومات استخباراتية لحظي بين الجهات.</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="section" style="--unit-color:#16a34a;">
-  <h2 class="section-title">
-    <span class="section-number">📘 الوحدة السابعة</span>
+<h2 class="section-title">
+<span class="section-number">📘 الوحدة السابعة</span>
     التواصل والإعلام أثناء الحدث
   </h2>
-
-  <div class="subsection">
-    <h3 class="subsection-title">🔹 7.1 معلومة أساسية</h3>
-    <div class="info-box">
-      <ul style="margin-top: 15px;">
-        <li>التواصل يشكّل ما يقارب <strong>86%</strong> من نجاح العمليات الميدانية.</li>
-        <li>الرسائل التشغيلية يجب أن تكون: قصيرة، مباشرة، إيجابية، قابلة للتنفيذ (Short, Direct, Positive, Actionable).</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <h3 class="subsection-title">🔹 7.2 استراتيجيات التواصل مع الجمهور</h3>
-    <div class="info-box">
-      <ul style="margin-top: 15px;">
-        <li>شفافية ووضوح عبر الشاشات ومكبرات الصوت (PA System).</li>
-        <li>عند التأخير: نبلغ الجمهور بالسبب والحل المقترح لمنع الشائعات.</li>
-        <li>تحديثات منتظمة: الفراغ المعلوماتي يولّد شائعات.</li>
-      </ul>
-    </div>
-    <div class="alert-box"><strong>📌 قاعدة مهمة:</strong> تحدث عمّا تريد من الجمهور أن يفعله الآن، لا عمّا تخاف أن يحدث.</div>
-  </div>
-
-  <div class="subsection">
-    <h3 class="subsection-title">🔹 7.3 الإعلام والتواصل الاجتماعي</h3>
-    <div class="info-box">
-      <ul style="margin-top: 15px;">
-        <li>غرفة عمليات إعلامية لمراقبة المحتوى وما يكتبه الجمهور لحظيًا.</li>
-        <li>استخدام حسابات الفعالية لتوجيه الجمهور لبوابات أقل ازدحامًا (Redirect to Less Crowded Gates).</li>
-        <li>كسر الشائعات بسرعة عبر المعلومة الصحيحة من قناة واحدة.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <h3 class="subsection-title">🔹 7.4 نظام الإعلام الطارئ</h3>
-    <div class="info-box">
-      <ul style="margin-top: 15px;">
-        <li>متحدث رسمي واحد (Single Spokesperson) لتوحيد الصوت ومنع تضارب المعلومات.</li>
-        <li>بيانات جاهزة مسبقًا (Prepared Statements) لحفظ المصداقية وتقليل وقت الاستجابة.</li>
-        <li>تزامن الرسائل في المعنى والتوقيت عبر جميع القنوات.</li>
-      </ul>
-    </div>
-    <div class="alert-box"><strong>📌 قاعدة مهمة:</strong> ابدأ بتعليمات “افعل الآن” (Do-Now Instructions) ثم قدّم الشرح بعد السيطرة.</div>
-    <div class="info-box">
-      <p><strong>تعريف: الرصد الرقمي (Digital Monitoring)</strong> مراقبة وتتبع وجمع وتحليل البيانات والمحتوى الرقمي لرصد التجمعات والسلوكيات والتفاعل معها.</p>
-    </div>
-  </div>
+<div class="subsection">
+<h3 class="subsection-title">🔹 7.1 معلومة أساسية</h3>
+<div class="info-box">
+<ul style="margin-top: 15px;">
+<li>التواصل يشكّل ما يقارب <strong>86%</strong> من نجاح العمليات الميدانية.</li>
+<li>الرسائل التشغيلية يجب أن تكون: قصيرة، مباشرة، إيجابية، قابلة للتنفيذ (Short, Direct, Positive, Actionable).</li>
+</ul>
 </div>
-
+</div>
+<div class="subsection">
+<h3 class="subsection-title">🔹 7.2 استراتيجيات التواصل مع الجمهور</h3>
+<div class="info-box">
+<ul style="margin-top: 15px;">
+<li>شفافية ووضوح عبر الشاشات ومكبرات الصوت (PA System).</li>
+<li>عند التأخير: نبلغ الجمهور بالسبب والحل المقترح لمنع الشائعات.</li>
+<li>تحديثات منتظمة: الفراغ المعلوماتي يولّد شائعات.</li>
+</ul>
+</div>
+<div class="alert-box"><strong>📌 قاعدة مهمة:</strong> تحدث عمّا تريد من الجمهور أن يفعله الآن، لا عمّا تخاف أن يحدث.</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title">🔹 7.3 الإعلام والتواصل الاجتماعي</h3>
+<div class="info-box">
+<ul style="margin-top: 15px;">
+<li>غرفة عمليات إعلامية لمراقبة المحتوى وما يكتبه الجمهور لحظيًا.</li>
+<li>استخدام حسابات الفعالية لتوجيه الجمهور لبوابات أقل ازدحامًا (Redirect to Less Crowded Gates).</li>
+<li>كسر الشائعات بسرعة عبر المعلومة الصحيحة من قناة واحدة.</li>
+</ul>
+</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title">🔹 7.4 نظام الإعلام الطارئ</h3>
+<div class="info-box">
+<ul style="margin-top: 15px;">
+<li>متحدث رسمي واحد (Single Spokesperson) لتوحيد الصوت ومنع تضارب المعلومات.</li>
+<li>بيانات جاهزة مسبقًا (Prepared Statements) لحفظ المصداقية وتقليل وقت الاستجابة.</li>
+<li>تزامن الرسائل في المعنى والتوقيت عبر جميع القنوات.</li>
+</ul>
+</div>
+<div class="alert-box"><strong>📌 قاعدة مهمة:</strong> ابدأ بتعليمات “افعل الآن” (Do-Now Instructions) ثم قدّم الشرح بعد السيطرة.</div>
+<div class="info-box">
+<p><strong>تعريف: الرصد الرقمي (Digital Monitoring)</strong> مراقبة وتتبع وجمع وتحليل البيانات والمحتوى الرقمي لرصد التجمعات والسلوكيات والتفاعل معها.</p>
+</div>
+</div>
+</div>
 <div class="section" style="--unit-color:#ea580c;">
-  <h2 class="section-title">
-    <span class="section-number">📘 الوحدة الثامنة</span>
+<h2 class="section-title">
+<span class="section-number">📘 الوحدة الثامنة</span>
     إدارة الحالات الطارئة والاستجابة السريعة
   </h2>
-
-  <div class="subsection">
-    <h3 class="subsection-title">🔹 8.1 إجراءات الإسعاف والإخلاء</h3>
-    <div class="info-box">
-      <ul style="margin-top: 15px;">
-        <li>تطوير إجراءات إخلاء دقيقة وربطها بخرائط الموقع.</li>
-        <li>تقسيم الموقع إلى مربعات إخلاء عبر Grid System لتحديد مواقع البلاغات بدقة.</li>
-        <li>تطبيق نظام الفرز الطبي: الفرز (Triage) لتحديد الأولويات.</li>
-        <li>ضمان أن الأبواب تفتح للخارج تلقائيًا (Outward Opening) ومسارات الإخلاء واضحة ومضاءة.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <h3 class="subsection-title">🔹 8.2 تدريب الفرق على الاستجابة للطوارئ</h3>
-    <div class="danger-box"><p>📌 قاعدة مهمة: ارتباك الموظف يعني ارتباك الجمهور.</p></div>
-    <div class="info-box">
-      <ul style="margin-top: 15px;">
-        <li>إجراء تجارب إخلاء وهمية: تدريبات (Drills) بشكل دوري لبناء سرعة الاستجابة.</li>
-        <li>تدريب الموظفين على الهدوء ونبرة صوت “أمر” لتوجيه الجمهور.</li>
-        <li>تشغيل محاكاة متعددة الاحتمالات بسؤال ماذا لو؟ (What-if).</li>
-      </ul>
-    </div>
-    <div class="info-box">
-      <p><strong>تعريف: الذاكرة العضلية</strong> استجابة لا إرادية ناتجة عن التكرار والتدريب المسبق تجعل التصرف أسرع وأدق عند الخطر الحقيقي.</p>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <h3 class="subsection-title">🔹 8.3 تحديد النقاط الحيوية والإشارات الهامة</h3>
-    <div class="info-box">
-      <ul style="margin-top: 15px;">
-        <li>لغة إشارات + أكواد لونية موحدة (Unified Color Codes) بين الفرق الطبية والأمنية.</li>
-        <li>الهدف: تسهيل التواصل السريع وتحديد المواقع بدقة عالية عبر Grid System.</li>
-        <li>قاعدة مهمة: الأكواد تُستخدم حسب الحالة (أمنية/طوارئ/كوارث) ويجب أن تكون موحدة.</li>
-      </ul>
-    </div>
-    <div class="alert-box"><strong>📌 قاعدة مهمة:</strong> توحيد الأكواد يحوّل الفوضى إلى قرارات أسرع؛ اختلافها يضاعف زمن الاستجابة.</div>
-  </div>
-
-  <div class="subsection">
-    <h3 class="subsection-title">🔹 8.4 مهارة شخصية مهمة: ماذا تفعل عند حدوث تدافع؟</h3>
-    <div class="info-box">
-      <p><strong>أ) إنقاذ نفسك وسط الزحام الشديد — خطوات عملية</strong></p>
-      <ul style="margin-top: 10px;">
-        <li>احمِ تنفّسك أولًا: ارفع ذراعيك أمام صدرك لخلق فراغ للتنفس.</li>
-        <li>لا تقاوم التيار: لا تدفع بعكس اتجاه الحشد، خذ خطوات قصيرة ثابتة وتحرك مع الموجة.</li>
-        <li>تحرك بزاوية تدريجية نحو الحواف/الجدران حيث الضغط أقل.</li>
-        <li>ثبّت قدميك بذكاء: توازن ثابت وتجنب الانحناء والانزلاق.</li>
-        <li>إذا سقطت: وضعية الكرة لحماية الرأس والصدر ثم النهوض عند أول فراغ.</li>
-        <li>راقب إشارات الخطر: توقف مفاجئ، صراخ، سقوط متتالٍ، فقدان توازن عام ⇒ ابحث عن مساحة مفتوحة.</li>
-      </ul>
-    </div>
-
-    <div class="success-box">
-      <p><strong>ب) إن كنت منظمًا/قائد قطاع</strong></p>
-      <ul style="margin-top: 10px;">
-        <li>أوقف التدفق من المصدر فورًا (Stop at Source).</li>
-        <li>افتح مسارات تفريغ جانبية (Side Relief Routes).</li>
-        <li>استخدم مكبرات الصوت بعبارات قصيرة واضحة ومتكررة.</li>
-        <li>حدّد موقع الحدث بدقة باستخدام Grid System لتوجيه الدعم.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="subsection">
-    <h3 class="subsection-title">🔹 8.5 خلاصة مشتركة من الدراستين</h3>
-    <div class="info-box">
-      <ul style="margin-top: 10px;">
-        <li>الحشود لا تتحول إلى خطر فجأة، بل عبر سلسلة مؤشرات.</li>
-        <li>نقاط الفشل غالبًا تكون: هندسية (ألمانيا 2010) أو أمنية/تشغيلية (مانشستر 2017).</li>
-        <li>التعامل الاحترافي يعتمد على التنبؤ، لا رد الفعل.</li>
-      </ul>
-    </div>
-  </div>
+<div class="subsection">
+<h3 class="subsection-title">🔹 8.1 إجراءات الإسعاف والإخلاء</h3>
+<div class="info-box">
+<ul style="margin-top: 15px;">
+<li>تطوير إجراءات إخلاء دقيقة وربطها بخرائط الموقع.</li>
+<li>تقسيم الموقع إلى مربعات إخلاء عبر Grid System لتحديد مواقع البلاغات بدقة.</li>
+<li>تطبيق نظام الفرز الطبي: الفرز (Triage) لتحديد الأولويات.</li>
+<li>ضمان أن الأبواب تفتح للخارج تلقائيًا (Outward Opening) ومسارات الإخلاء واضحة ومضاءة.</li>
+</ul>
 </div>
-
+<div class="info-box"><strong>📚 مرجع معياري:</strong> اشتراط فتح الأبواب باتجاه الخروج ووضوح مسارات الإخلاء يرتبط مباشرة بمعايير <strong>NFPA</strong> الخاصة بسلامة الإخلاء ومسارات الخروج.</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title">🔹 8.2 تدريب الفرق على الاستجابة للطوارئ</h3>
+<div class="danger-box"><p>📌 قاعدة مهمة: ارتباك الموظف يعني ارتباك الجمهور.</p></div>
+<div class="info-box">
+<ul style="margin-top: 15px;">
+<li>إجراء تجارب إخلاء وهمية: تدريبات (Drills) بشكل دوري لبناء سرعة الاستجابة.</li>
+<li>تدريب الموظفين على الهدوء ونبرة صوت “أمر” لتوجيه الجمهور.</li>
+<li>تشغيل محاكاة متعددة الاحتمالات بسؤال ماذا لو؟ (What-if).</li>
+</ul>
+</div>
+<div class="info-box">
+<p><strong>تعريف: الذاكرة العضلية</strong> استجابة لا إرادية ناتجة عن التكرار والتدريب المسبق تجعل التصرف أسرع وأدق عند الخطر الحقيقي.</p>
+</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title">🔹 8.3 تحديد النقاط الحيوية والإشارات الهامة</h3>
+<div class="info-box">
+<ul style="margin-top: 15px;">
+<li>لغة إشارات + أكواد لونية موحدة (Unified Color Codes) بين الفرق الطبية والأمنية.</li>
+<li>الهدف: تسهيل التواصل السريع وتحديد المواقع بدقة عالية عبر Grid System.</li>
+<li>قاعدة مهمة: الأكواد تُستخدم حسب الحالة (أمنية/طوارئ/كوارث) ويجب أن تكون موحدة.</li>
+</ul>
+</div>
+<div class="alert-box"><strong>📌 قاعدة مهمة:</strong> توحيد الأكواد يحوّل الفوضى إلى قرارات أسرع؛ اختلافها يضاعف زمن الاستجابة.</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title">🔹 8.4 مهارة شخصية مهمة: ماذا تفعل عند حدوث تدافع؟</h3>
+<div class="info-box">
+<p><strong>أ) إنقاذ نفسك وسط الزحام الشديد — خطوات عملية</strong></p>
+<ul style="margin-top: 10px;">
+<li>احمِ تنفّسك أولًا: ارفع ذراعيك أمام صدرك لخلق فراغ للتنفس.</li>
+<li>لا تقاوم التيار: لا تدفع بعكس اتجاه الحشد، خذ خطوات قصيرة ثابتة وتحرك مع الموجة.</li>
+<li>تحرك بزاوية تدريجية نحو الحواف/الجدران حيث الضغط أقل.</li>
+<li>ثبّت قدميك بذكاء: توازن ثابت وتجنب الانحناء والانزلاق.</li>
+<li>إذا سقطت: وضعية الكرة لحماية الرأس والصدر ثم النهوض عند أول فراغ.</li>
+<li>راقب إشارات الخطر: توقف مفاجئ، صراخ، سقوط متتالٍ، فقدان توازن عام ⇒ ابحث عن مساحة مفتوحة.</li>
+</ul>
+</div>
+<div class="success-box">
+<p><strong>ب) إن كنت منظمًا/قائد قطاع</strong></p>
+<ul style="margin-top: 10px;">
+<li>أوقف التدفق من المصدر فورًا (Stop at Source).</li>
+<li>افتح مسارات تفريغ جانبية (Side Relief Routes).</li>
+<li>استخدم مكبرات الصوت بعبارات قصيرة واضحة ومتكررة.</li>
+<li>حدّد موقع الحدث بدقة باستخدام Grid System لتوجيه الدعم.</li>
+</ul>
+</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title">🔹 8.5 خلاصة مشتركة من الدراستين</h3>
+<div class="info-box">
+<ul style="margin-top: 10px;">
+<li>الحشود لا تتحول إلى خطر فجأة، بل عبر سلسلة مؤشرات.</li>
+<li>نقاط الفشل غالبًا تكون: هندسية (ألمانيا 2010) أو أمنية/تشغيلية (مانشستر 2017).</li>
+<li>التعامل الاحترافي يعتمد على التنبؤ، لا رد الفعل.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ===== ملحق اليوم الثاني + أسئلة اليوم ===== -->
+<div class="section" style="--unit-color:#0ea5e9;">
+<h2 class="section-title"><span class="section-number">🚦 مؤشرات</span> مؤشرات الفشل المبكر في اليوم الثاني</h2>
+<div class="danger-box">
+<ul style="margin-top: 10px;">
+<li>لا يوجد <strong>قائد قرار</strong> واحد واضح أثناء الحدث (تضارب تعليمات).</li>
+<li>لا توجد <strong>صورة تشغيلية مشتركة</strong> (خرائط تدفق/كثافة/نقاط اختناق) بين غرفة العمليات والفرق الميدانية.</li>
+<li>لا توجد <strong>عتبات تدخل</strong> (Triggers) تُفعَّل عند ظهور مؤشرات (ازدحام/توقف مفاجئ/تدفق عكسي).</li>
+<li>التعامل مع التكنولوجيا كـ «كاميرات فقط» دون تحويلها إلى <strong>قرارات</strong> (مراقبة بلا تدخل).</li>
+</ul>
+</div>
+</div>
+<div class="section" style="--unit-color:#22c55e;">
+<h2 class="section-title"><span class="section-number">🧪 تمرين</span> سيناريو تطبيقي قصير</h2>
+<div class="info-box">
+<p style="margin:0 0 10px;"><strong>السيناريو:</strong> فعالية داخل موقع يحتوي على ممر رئيسي ضيق يربط بين منطقتين، مع تدفقين متعاكسين قرب نهاية العرض.</p>
+<p style="margin:0 0 10px;"><strong>المطلوب:</strong> حدّد 3 مؤشرات مبكرة ستراقبها، ثم اختر «تدخلًا واحدًا سريعًا» تنفذه خلال 60 ثانية.</p>
+<p style="margin:0;"><strong>ملاحظة:</strong> الهدف تدريب عقل القرار، وليس كتابة خطة كاملة.</p>
+</div>
+</div>
+<div class="section" style="--unit-color:#a855f7;">
+<h2 class="section-title"><span class="section-number">📎 Glossary</span> قاموس مصطلحات اليوم الثاني</h2>
+<div class="info-box">
+<ul style="margin-top:10px;">
+<li><strong>Zoning:</strong> تقسيم الموقع إلى قطاعات تشغيلية لتوزيع المسؤوليات والتحكم بالتدفق.</li>
+<li><strong>Command &amp; Control:</strong> نمط قيادة يضمن قناة قرار واحدة وصورة تشغيلية مشتركة.</li>
+<li><strong>Situational Awareness:</strong> وعي لحظي بالمشهد (كثافة/تدفق/اختناق) وتحويله لقرار.</li>
+<li><strong>Trigger (مُحفِّز تشغيلي):</strong> شرط مُحدد مسبقًا، يؤدي تحقّقه إلى تفعيل إجراء أو تدخل معيّن ضمن نظام قرار معتمد.</li>
+<li><strong>PA System:</strong> نظام نداء عام لإصدار تعليمات فورية للجمهور.</li>
+</ul>
+</div>
+</div>
+<div class="section" style="--unit-color:#111827;">
+<h2 class="section-title"><span class="section-number">📚 مراجع</span> ربط المحاور بالمراجع الدولية</h2>
+<div class="info-box">
+<ul style="margin-top:10px;">
+<li><strong>إدارة مخارج الإخلاء والقدرة الاستيعابية:</strong> NFPA 101 (Life Safety Code).</li>
+<li><strong>إدارة المخاطر، التحكم، ومسؤوليات التشغيل:</strong> HSE (UK) Event Safety / Crowd Management guidance.</li>
+<li><strong>ديناميكية الحشود والمؤشرات المبكرة للكثافة/الاختناق:</strong> أبحاث Helbing في Crowd Dynamics.</li>
+</ul>
+<p style="margin-top:10px; opacity:0.9;">(يُستخدم هذا الربط للتأصيل العلمي دون إغراق أكاديمي؛ التفاصيل تُذكر في مواضعها عند الحاجة.)</p>
+</div>
+</div>
+<div class="section" style="--unit-color:#f59e0b;">
+<h2 class="section-title"><span class="section-number">🧱 حدود</span> حدود نطاق اليوم الثاني</h2>
+<div class="info-box">
+<ul style="margin-top:10px;">
+<li>لا يغطي هذا اليوم تصميم الموقع الهندسي التفصيلي (يُدرس ضمن التخطيط المتقدم).</li>
+<li>لا يغطي نمذجة التدفق المتقدمة (Simulation) إلا كمفهوم عام.</li>
+<li>يركّز اليوم على «التشغيل أثناء الحدث»: المراقبة، القرار، والتدخل السريع.</li>
+</ul>
+</div>
+</div>
+<div class="section" style="--unit-color:#dc2626;">
+<h2 class="section-title"><span class="section-number">📝 أسئلة</span> أسئلة اليوم (MCQ) مع تفسير الإجابة</h2>
+<div class="subsection">
+<h3 class="subsection-title item-title">1) الهدف التشغيلي الأهم من Zoning هو:</h3>
+<div class="info-box">
+<ul style="margin-top:10px;">
+<li>A) زيادة عدد المتطوعين</li>
+<li>B) تقسيم المسؤوليات والتحكم بالتدفق داخل قطاعات واضحة</li>
+<li>C) تحسين التصميم الجمالي للموقع</li>
+<li>D) تقليل الإعلانات داخل الفعالية</li>
+</ul>
+<p style="margin-top:12px;"><strong>الإجابة الصحيحة: B</strong></p>
+<p style="margin:0;">لأن Zoning يُحوّل الموقع إلى قطاعات تشغيلية تُدار بمسؤولية واضحة وتدخل أسرع عند ظهور مؤشرات الخطر.</p>
+</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title item-title">2) أفضل وصف لغرفة العمليات أثناء الحدث هو أنها:</h3>
+<div class="info-box">
+<ul style="margin-top:10px;">
+<li>A) غرفة تسجيل الحضور فقط</li>
+<li>B) مركز قرار وصورة تشغيلية مشتركة يربط الميدان بالقيادة</li>
+<li>C) مكان للضيافة والضيوف المهمين</li>
+<li>D) فريق إعلامي لإدارة المحتوى</li>
+</ul>
+<p style="margin-top:12px;"><strong>الإجابة الصحيحة: B</strong></p>
+<p style="margin:0;">غرفة العمليات تُوحّد البيانات (مراقبة/بلاغات) وتحوّلها إلى قرار وتنسيق ميداني فوري.</p>
+</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title item-title">3) عند ظهور تدفقين متعاكسين في ممر ضيق، التدخل الأسرع عادةً هو:</h3>
+<div class="info-box">
+<ul style="margin-top:10px;">
+<li>A) تجاهل الوضع حتى ينتهي العرض</li>
+<li>B) زيادة الصوت في المسرح لتشتيت الانتباه</li>
+<li>C) فصل التدفقين أو إيقاف إدخال تدفق جديد مؤقتًا لتفريغ الضغط</li>
+<li>D) إغلاق جميع المخارج فورًا</li>
+</ul>
+<p style="margin-top:12px;"><strong>الإجابة الصحيحة: C</strong></p>
+<p style="margin:0;">الفصل أو الإيقاف المؤقت يقلل الضغط فورًا ويمنع تحول التوقف إلى اختناق ضغطي.</p>
+</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title item-title">4) استخدام التكنولوجيا في إدارة التدفقات يعني أساسًا:</h3>
+<div class="info-box">
+<ul style="margin-top:10px;">
+<li>A) تصوير الحدث فقط</li>
+<li>B) مراقبة المؤشرات وتحويلها إلى قرارات وتدخلات ميدانية</li>
+<li>C) نشر المحتوى في منصات التواصل</li>
+<li>D) استبدال الفرق الميدانية بالكامل</li>
+</ul>
+<p style="margin-top:12px;"><strong>الإجابة الصحيحة: B</strong></p>
+<p style="margin:0;">القيمة التشغيلية للتكنولوجيا تتحقق عندما تُستخدم لرصد المؤشرات وتفعيل تدخلات محددة بسرعة.</p>
+</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title item-title">5) «مؤشر فشل مبكر» شائع في التشغيل أثناء الحدث هو:</h3>
+<div class="info-box">
+<ul style="margin-top:10px;">
+<li>A) وجود أكثر من قناة قرار متزامنة وتعليمات متعارضة</li>
+<li>B) وجود خرائط تدفق وتحديثات من الميدان</li>
+<li>C) تدريب الفرق على البلاغات</li>
+<li>D) وجود رسائل إرشادية للجمهور</li>
+</ul>
+<p style="margin-top:12px;"><strong>الإجابة الصحيحة: A</strong></p>
+<p style="margin:0;">تضارب القرار يخلق ارتباكًا ميدانيًا ويؤخر التدخل، ما يرفع احتمالية تحول المؤشرات إلى كارثة.</p>
+</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title item-title">6) الهدف من «نظام الإعلام الطارئ» أثناء الحدث هو:</h3>
+<div class="info-box">
+<ul style="margin-top:10px;">
+<li>A) زيادة التفاعل في وسائل التواصل</li>
+<li>B) توجيه الجمهور بمعلومات دقيقة وسريعة لمنع الذعر وتخفيف الضغط</li>
+<li>C) الإعلان عن الرعاة</li>
+<li>D) تقديم محتوى ترفيهي</li>
+</ul>
+<p style="margin-top:12px;"><strong>الإجابة الصحيحة: B</strong></p>
+<p style="margin:0;">الرسائل الطارئة تقلل الإشاعات وتساعد على إعادة توجيه الجمهور بوضوح، وهو تدخل تشغيلي مباشر.</p>
+</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title item-title">7) في حالات التدافع، الإجراء الشخصي الأهم للفرد وسط الحشد (مهارة شخصية) هو:</h3>
+<div class="info-box">
+<ul style="margin-top:10px;">
+<li>A) الجلوس على الأرض فورًا</li>
+<li>B) الدفع بقوة للخروج بأي طريقة</li>
+<li>C) حماية الصدر والتنفس قدر الإمكان والمحافظة على التوازن وتجنّب السقوط</li>
+<li>D) إغلاق العينين والانتظار</li>
+</ul>
+<p style="margin-top:12px;"><strong>الإجابة الصحيحة: C</strong></p>
+<p style="margin:0;">السقوط بداية سلسلة دهس/اختناق؛ الحفاظ على التوازن وحماية الصدر يقللان خطر الاختناق الضغطي.</p>
+</div>
+</div>
+<div class="subsection">
+<h3 class="subsection-title item-title">8) الربط الصحيح بين «الإنذار المبكر» و«الاستجابة السريعة» هو:</h3>
+<div class="info-box">
+<ul style="margin-top:10px;">
+<li>A) الإنذار المبكر يُوثّق فقط ولا يرتبط بقرار</li>
+<li>B) الاستجابة السريعة تبدأ بعد وقوع الإصابات</li>
+<li>C) الإنذار المبكر يفعّل عتبة (Trigger) تقود لتدخل سريع قبل تفاقم الوضع</li>
+<li>D) لا يمكن ربطهما لأنهما مسؤوليتان منفصلتان</li>
+</ul>
+<p style="margin-top:12px;"><strong>الإجابة الصحيحة: C</strong></p>
+<p style="margin:0;">عندما تتحقق العتبات التشغيلية، تُنفّذ تدخلات سريعة تمنع الانتقال من ضغط إلى اختناق ثم إصابات.</p>
+</div>
+</div>
+</div>
 </div>
 <!-- التذييل: المصدر التعليمي -->
+<div class="section" style="--unit-color:#16a34a;">
+<h2 class="section-title"><span class="section-number">🔁</span> ماذا كان يمكن أن نغيّر في حادثة جسر كمبوديا 2010؟</h2>
+<div class="success-box" style="font-weight:700;">
+<p style="margin:0 0 10px;">لو كانت أدوات اليوم الثاني مطبّقة:</p>
+<ul style="margin-top:10px;">
+<li>كان سيتم رصد التوقفات المبكرة.</li>
+<li>كان سيتم منع التدفقات المتعاكسة.</li>
+<li>كان سيتم اتخاذ قرار الإيقاف أو التحويل.</li>
+<li>كان سيتم التدخل قبل الوصول للكثافة القاتلة.</li>
+</ul>
+<p style="margin:10px 0 0;">
+<strong>ملاحظة:</strong> لم نعد سرد الحادثة، ولم نُدخل معلومات جديدة؛ فقط أعدنا ربط الأدوات بالنتيجة.
+    </p>
+</div>
+</div>
+<div class="alert-box" style="margin-top: 30px;">
+  <p style="font-weight: bold; font-size: 1.1em; text-align: center;">
+    🎓 النجاح في إدارة الحشود يبدأ بالفهم الصحيح للمفاهيم وينتهي بالتطبيق الدقيق للمعايير
+  </p>
+</div>
+
+<section class="section" id="infographic">
+            <h2 class="section-title">🖼️ إنفوجرافيك اليوم</h2>
+            <div class="card infographic-card">
+                <img class="infographic-img" src="Day2.png" alt="Infographic - Day 2">
+            </div>
+        </section>
+
+
+
 <div class="footer">
 <div class="footer-section">
 <h3 style="font-size: 1.5em; margin-bottom: 20px;">📚 المصدر التعليمي</h3>
@@ -892,6 +1241,14 @@
 </ul>
 </div>
 <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 10px; margin: 30px 0;">
+<div style="background: rgba(255,255,255,0.12); padding: 20px; border-radius: 10px; margin: 20px 0;">
+<p style="font-weight: bold; margin-bottom: 10px;">🌍 المراجع الدولية المعتمدة</p>
+<ul style="text-align: right; list-style-position: inside;">
+<li><strong>NFPA</strong> – National Fire Protection Association</li>
+<li><strong>HSE</strong> – Health and Safety Executive (UK)</li>
+<li><strong>Helbing</strong> – Dynamics of Crowds Research</li>
+</ul>
+</div>
 <p style="font-size: 1.3em; font-weight: bold; margin-bottom: 15px;">✍️ إعداد</p>
 <p style="font-size: 1.4em; font-weight: bold; margin-bottom: 10px;">أنس العضيبي</p>
 <p style="font-size: 1.1em; margin-top: 10px;">
@@ -905,6 +1262,8 @@
                     © 2025 - دليل إدارة الفعاليات وسلامة الحشود
                 </p>
 </div>
+
+        
 </div>
 </div>
 </body>
