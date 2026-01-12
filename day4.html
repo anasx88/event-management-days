@@ -442,7 +442,134 @@
             .days-bar{display:none;}
         }
 
-    </style>
+    /* === Practice Tests Bar (Injected) === */
+        .tests-bar{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:10px;
+            padding:14px 18px;
+            background: rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+        .tests-title{
+            font-weight:800;
+            letter-spacing:0.2px;
+            color:#ffffff;
+            opacity:0.95;
+            display:flex;
+            align-items:center;
+            gap:8px;
+        }
+        .tests-links{
+            display:flex;
+            justify-content:center;
+            gap:12px;
+            flex-wrap:wrap;
+        }
+        .test-btn{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            min-width:160px;
+            padding:10px 14px;
+            border-radius:16px;
+            text-decoration:none;
+            font-weight:800;
+            border:1px solid rgba(255,255,255,0.20);
+            background: rgba(255,255,255,0.10);
+            color:#ffffff;
+            transition: transform .12s ease, background .12s ease;
+        }
+        .test-btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,0.14); }
+        .test-btn.t1{ border-color: rgba(46, 204, 113, 0.45); }
+        .test-btn.t2{ border-color: rgba(52, 152, 219, 0.45); }
+        .test-btn.t3{ border-color: rgba(155, 89, 182, 0.45); }
+        .test-btn.t4{ border-color: rgba(241, 196, 15, 0.45); }
+
+        /* === Infographic (Injected) === */
+        .infographic-card{ padding: 14px; }
+        .infographic-img{
+            width:100%;
+            height:auto;
+            display:block;
+            border-radius:16px;
+        }
+
+
+
+/* === Practice Quizzes Row (Second line) === */
+.practice-quizzes {
+  margin: 14px 0 18px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f7faf7;
+  border: 1px solid #e3efe3;
+}
+
+.practice-quizzes .pq-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  font-weight: 800;
+  color: #1f3a2e;
+}
+
+.practice-quizzes .pq-title .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #2ecc71;
+}
+
+.practice-quizzes .pq-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.practice-quizzes a.pq-card {
+  text-decoration: none;
+  border-radius: 14px;
+  padding: 12px 10px;
+  background: #ffffff;
+  border: 1px solid #e7ece7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.practice-quizzes a.pq-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.06);
+}
+
+.practice-quizzes .pq-emoji {
+  font-size: 22px;
+}
+
+.practice-quizzes .pq-text {
+  font-weight: 800;
+  color: #173024;
+  line-height: 1.1;
+}
+
+.practice-quizzes .pq-sub {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #5b6b62;
+}
+
+@media (max-width: 780px) {
+  .practice-quizzes .pq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+</style>
 </head>
 <body>
 <button class="print-button" onclick="window.print()">
@@ -473,30 +600,1211 @@
   </a>
 </div>
 
+<!-- =========================
+     Practice Quizzes (Row 2)
+========================== -->
+<section class="practice-quizzes" aria-label="اختبارات تجريبية">
+  <div class="pq-title">
+    <span class="dot" aria-hidden="true"></span>
+    <span>اختبارات تجريبية</span>
+  </div>
+
+  <div class="pq-grid">
+    <a class="pq-card" href="quiz1.html">
+      <span class="pq-emoji">🧪</span>
+      <span class="pq-text">الدفعة الأولى<span class="pq-sub">45 سؤال</span></span>
+    </a>
+
+    <a class="pq-card" href="quiz2.html">
+      <span class="pq-emoji">🧪</span>
+      <span class="pq-text">الدفعة الثانية<span class="pq-sub">45 سؤال</span></span>
+    </a>
+
+    <a class="pq-card" href="quiz3.html">
+      <span class="pq-emoji">🧠</span>
+      <span class="pq-text">الدفعة الثالثة<span class="pq-sub">45 سؤال</span></span>
+    </a>
+
+    <a class="pq-card" href="quiz4.html">
+      <span class="pq-emoji">🧠</span>
+      <span class="pq-text">الدفعة الرابعة<span class="pq-sub">70 سؤال</span></span>
+    </a>
+  </div>
+</section>
+
 <div class="header">
 <h1>📘 الملخص التدريبي المعتمد — اليوم 4</h1>
 <p>إدارة الفعاليات وسلامة الحشود</p>
 </div>
 
 <div class="content">
+
+  <!-- 0) الإطار الذهبي لليوم الرابع -->
   <div class="section">
-    <h2 class="section-title"><span class="section-number">📅 اليوم 4</span> محتوى اليوم 4</h2>
+    <h2 class="section-title"><span class="section-number">0</span> 🔑 الإطار الذهبي لليوم الرابع</h2>
+
     <div class="subsection">
-      <h3 class="subsection-title">✅ ضع هنا وحدات ومحاور اليوم 4</h3>
+      <h3 class="subsection-title">1) لماذا هذا اليوم هو مكمّل لبقية الأيام؟</h3>
       <div class="info-box">
-        <ul style="margin-top: 15px;">
-          <li>1) الوحدة …</li>
-          <li>2) المحور 1 …</li>
-          <li>3) المحور 2 …</li>
-          <li>4) المحور 3 …</li>
+        <p>إذا كان اليومان الأول والثاني قد علّماك كيف تفهم الخطر،</p>
+        <p>واليوم الثالث قد علّمك كيف تستجيب ميدانيًا،</p>
+        <p><strong>فإن اليوم الرابع يعلّمك كيف تمنع الكارثة قبل أن تبدأ</strong></p>
+        <p>عبر الإنسان، الثقافة، والقرار الإداري بعد الحدث.</p>
+
+        <p style="margin-top:10px;"><strong>📌 أي خلل في هذا اليوم =</strong></p>
+        <ul>
+          <li>جمهور غير متعاون</li>
+          <li>فرق منهكة</li>
+          <li>أخطاء تتكرر</li>
+          <li>كوارث تُعاد بصيغ مختلفة</li>
         </ul>
       </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2) أهداف اليوم الرابع (Learning Objectives)</h3>
       <div class="alert-box">
-        <strong>ملاحظة:</strong> انسخ نفس هيكل “الوحدات والمحاور” من اليوم الأول ثم استبدل المحتوى حسب اليوم.
+        <p><strong>بنهاية هذا اليوم سيكون المتدرّب قادرًا على:</strong></p>
+        <ul>
+          <li><strong>معرفيًا:</strong>
+            <ul>
+              <li>فهم أثر الضيافة، الثقافة، والتحفيز على سلوك الحشود.</li>
+              <li>استيعاب العلاقة بين الموارد البشرية وسلامة القرار.</li>
+            </ul>
+          </li>
+          <li><strong>مهاريًا:</strong>
+            <ul>
+              <li>إدارة فرق ميدانية متعددة الثقافات.</li>
+              <li>التعامل مع طوارئ نفسية دون تصعيد.</li>
+              <li>قيادة جلسة Debriefing حقيقية.</li>
+            </ul>
+          </li>
+          <li><strong>سلوكيًا:</strong>
+            <ul>
+              <li>اتخاذ قرارات عادلة تحت ضغط.</li>
+              <li>ترسيخ ثقافة سلامة داخل الفريق.</li>
+              <li>تقبّل النقد وتحويله لتحسين.</li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
+
+
+
+  <!-- 1) مراجعة اليوم -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">1</span> مراجعة اليوم (Review)</h2>
+
+    <div class="subsection">
+      <div class="alert-box">
+        <ul>
+          <li>التأكيد أن الحوادث لا تُقاس بما حدث سابقًا: <strong>غياب الحادث ليس دليل أمان</strong>.</li>
+          <li>القرار الأمني (إيقاف العرض/تعديل التدفق) ليس قرارًا فنيًا أو تنظيميًا فقط، بل <strong>قرار سلامة</strong>.</li>
+          <li>أي خلل في: التخطيط الأمني + الاستجابة للطوارئ + التدريب قد يحوّل المخاطر المتوقعة إلى <strong>كارثة</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2) دراسة حالة رئيسية -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">2</span> دراسة حالة رئيسية: مهرجان أستروورلد 2021</h2>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.1 خلفية الحدث</h3>
+      <div class="info-box">
+        <ul>
+          <li>مهرجان غنائي في هيوستن – تكساس، بحضور جماهيري ضخم.</li>
+          <li>مساحة مفتوحة مخصصة للحفلات، مع مسرح رئيسي واحد جذب أعلى كثافة.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.2 وصف الواقعة (ما الذي حدث؟)</h3>
+      <div class="info-box">
+        <ul>
+          <li>أثناء الحفل الرئيسي اندفع الجمهور باتجاه المسرح.</li>
+          <li>تشكّلت موجة حشود قاتلة (Crowd Surge) نتيجة ضغط خلفي شديد.</li>
+          <li>فقد كثير من الحاضرين القدرة على الحركة أو التنفّس.</li>
+          <li>سقط أشخاص أرضًا وتعرّضوا للدهس دون قدرة على النهوض.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2.3 النتائج (Outcomes)</h3>
+      <div class="danger-box">
+        <ul>
+          <li>10 حالات وفاة بسبب الاختناق الضغطي (Compressive Asphyxia).</li>
+          <li>مئات الإصابات بدرجات مختلفة.</li>
+          <li>اعتُبر الحادث كارثة حشود جماهيرية (Mass Casualty Event).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3) التحليل التشغيلي -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">3</span> التحليل التشغيلي (Operational Analysis)</h2>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.1 موجة الحشود (Crowd Surge)</h3>
+      <div class="info-box">
+        <p><strong>تعريف Crowd Surge:</strong> اندفاع مفاجئ وقوي للحشود في اتجاه واحد، يؤدي لفقدان السيطرة الفردية وتحول الحشد إلى “كتلة ضغط”.</p>
+      </div>
+      <div class="alert-box">
+        <ul>
+          <li>اندفع الجمهور نحو المسرح.</li>
+          <li>لم تكن هناك مسارات امتصاص كافية للكثافة.</li>
+          <li>لم يتم كسر الموجة في بدايتها.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.2 فشل إدارة الكثافة (Density Management Failure)</h3>
+      <div class="alert-box">
+        <ul>
+          <li>تجاوزت الكثافة الحد الآمن (أكثر من 5–6 أشخاص/م²).</li>
+          <li>لم تُفعّل إجراءات إيقاف التدفق من المصدر في الوقت المناسب.</li>
+          <li>غياب نقاط فصل بين الجماهير الأمامية والخلفية.</li>
+        </ul>
+      </div>
+      <div class="info-box" style="margin-top:15px;">
+        <strong>📚 مرجع علمي:</strong>
+        ترتبط حدود الكثافة الحرجة وظواهر فقدان السيطرة وتراكم الضغط الخلفي بأبحاث <strong>Helbing</strong> في Dynamics of Crowds، والتي تشرح انتقال الحشد من حركة منظمة إلى “كتلة ضغط” عند تجاوز العتبات الحرجة.
+      </div>
+
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.3 ضعف الاستجابة للطوارئ</h3>
+      <div class="alert-box">
+        <ul>
+          <li>تأخر التعرف على خطورة الوضع ميدانيًا.</li>
+          <li>عدم إيقاف العرض فور ظهور المؤشرات الخطرة.</li>
+          <li>صعوبة وصول الفرق الطبية للمصابين داخل الحشد.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3.4 تجاهل المؤشرات التحذيرية المبكرة</h3>
+      <div class="danger-box">
+        <ul>
+          <li>صراخ واستغاثة متكرر.</li>
+          <li>سقوط أشخاص أمام المسرح.</li>
+          <li>فقدان توازن جماعي في الصفوف الأمامية.</li>
+        </ul>
+        <div style="margin-top:10px;">
+          <strong>الخطأ الحاسم:</strong> لم تُعامل هذه المؤشرات كإشارات “توقف فوري”.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4) التحليل القانوني -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">4</span> التحليل القانوني (Legal &amp; Liability Analysis)</h2>
+
+    <div class="subsection">
+      <h3 class="subsection-title">4.1 الدعاوى القضائية</h3>
+      <div class="info-box">
+        <ul>
+          <li>رُفعت عشرات الدعاوى ضد: منظمي المهرجان، الشركة المسؤولة عن التشغيل، وبعض المشاركين والفنانين.</li>
+          <li>التهم شملت: الإهمال، سوء التخطيط، الفشل في إدارة الحشود، عدم إيقاف الفعالية عند الخطر.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">4.2 نقطة قانونية مهمة (قاعدة أمريكية)</h3>
+      <div class="alert-box">
+        <strong>قاعدة:</strong> في القوانين الأمريكية: المنظم مسؤول عن سلامة الجمهور حتى لو لم يكن هو سبب السلوك الجماهيري.
+      </div>
+    </div>
+  </div>
+
+  <!-- 5) الاستنباطات -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">5</span> الاستنباطات التشغيلية (Lessons Learned)</h2>
+    <div class="subsection">
+      <div class="success-box">
+        <ul>
+          <li>موجات الحشود أخطر من التدافع التقليدي.</li>
+          <li>الكثافة العالية + موسيقى صاخبة + تحفيز جماهيري = خطر مضاعف.</li>
+          <li>إيقاف العرض قرار أمني وليس فنيًا.</li>
+          <li>التأخر في القرار قد يحوّل حادثًا محدودًا إلى كارثة جماعية.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6) إجراءات وقائية -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">6</span> إجراءات وقائية كان يجب تطبيقها (Preventive Measures)</h2>
+    <div class="subsection">
+      <div class="alert-box">
+        <ul>
+          <li>تقسيم الجمهور أمام المسرح إلى قطاعات بحواجز مرنة.</li>
+          <li>مراقبة لحظية للكثافة (Real-time Density Monitoring).</li>
+          <li>صلاحية فورية لإيقاف العرض عند تجاوز الكثافة الآمنة.</li>
+          <li>تدريب الفرق على التعامل مع موجة الحشود (Crowd Surge) تحديدًا.</li>
+          <li>تمكين الجمهور من الخروج الجانبي بدل الدفع للأمام فقط.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 6.1) الإغلاق الدائري -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">6.1</span> 🔁 ماذا كان يمكن أن نغيّر في حادثة Astroworld 2021؟</h2>
+    <div class="subsection">
+      <div class="success-box" style="font-weight:bold;">
+        <ul>
+          <li>كان سيتم رصد مؤشرات الاختناق المبكر (تكدّس + توقف تدفق + سقوط/صرخات) قبل الوصول لنقطة الانهيار.</li>
+          <li>كان سيتم تفعيل قرار <strong>الإيقاف/التحويل</strong> مبكرًا بدل الاستمرار مع تصاعد الضغط الخلفي.</li>
+          <li>كان سيتم إدارة التدفق كمنظومة (Stop at Source + فتح مسارات تفريغ + تفريغ مرحلي) بدل تضخم الكتلة أمام المسرح.</li>
+          <li>كان سيتم رفع جاهزية غرفة العمليات والاتصال الميداني لتقليل زمن الاستجابة وتوجيه فرق التدخل بسرعة.</li>
+          <li>كان سيتم تقليل فرص <strong>Crowd Surge</strong> عبر ضبط السعات، الفصل بين المسارات، ومعالجة نقاط الاختناق التشغيلية.</li>
+        </ul>
+        <div style="margin-top:12px;">
+          <strong>ملاحظة:</strong> لم نعد سرد الحادثة، ولم نُدخل معلومات جديدة؛ فقط ربطنا أدوات اليوم بالنتيجة.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7) إضافات اليوم -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">7</span> إضافات اليوم (قواعد مثبتة)</h2>
+
+    <div class="subsection">
+      <h3 class="subsection-title">7.1 أسباب الفشل (تلخيص)</h3>
+      <div class="info-box">
+        <ul>
+          <li>بسبب الإهمال.</li>
+          <li>عدم تخطيط أمني.</li>
+          <li>عدم الاستجابة للطوارئ.</li>
+          <li>عدم كفاية التدريب.</li>
+          <li>جميع المخاطر المتوقعة.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">7.2 قاعدة مهمة جدًا (توثيق/أرشفة)</h3>
+      <div class="alert-box">
+        ✅ لابد من أخذ نسخة قانونية لضمان الحقوق وأرشفتها لأن المستند القانوني هو ما يحسم النزاعات لاحقًا.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">7.3 الامتثال الاستباقي (Pre-Compliance)</h3>
+      <div class="alert-box">
+        <ul>
+          <li>الاستباق للاشتراطات التنظيمية والصحية والأمنية والدفاع المدني.</li>
+          <li>تعيين مسؤول امتثال (Compliance Officer) لضمان عدم وجود ثغرات قد تؤدي إلى مساءلة قانونية.</li>
+        </ul>
+        <div style="margin-top:10px;"><strong>قاعدة:</strong> ✅ تعيين مسؤول امتثال ضروري.</div>
+      <div class="info-box" style="margin-top:15px;">
+        <strong>📚 مرجع حوكمة:</strong>
+        يتسق مفهوم الامتثال الاستباقي مع نهج <strong>HSE</strong> في إدارة المخاطر والالتزام التنظيمي، كما تُؤطر متطلبات سلامة الخروج والإخلاء مبادئ <strong>NFPA</strong> عند الحديث عن مسارات الإخلاء وسعاتها.
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 8) سؤال تدريبي -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">8</span> سؤال تدريبي قانوني تطبيقي</h2>
+
+    <div class="subsection">
+      <h3 class="subsection-title">⏱️ ما المدة القانونية للاحتفاظ بوثائق الفعالية؟</h3>
+
+      <div class="success-box">
+        <strong>القاعدة العامة (Best Practice دوليًا):</strong>
+        <ul>
+          <li>✅ الاحتفاظ بوثائق الفعالية مدة لا تقل عن 5 إلى 7 سنوات بعد انتهاء الفعالية.</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <strong>ما المقصود بوثائق الفعالية؟</strong>
+        <ul>
+          <li>خطط إدارة الحشود</li>
+          <li>خطط الطوارئ والإخلاء</li>
+          <li>تقييم المخاطر (Risk Assessment)</li>
+          <li>تصاريح الجهات الرسمية</li>
+          <li>عقود المنظمين والمقاولين</li>
+          <li>سجلات التدريب (Drills)</li>
+          <li>تقارير الحوادث والإصابات</li>
+          <li>تسجيلات الكاميرات (CCTV)</li>
+          <li>سجلات الاتصالات وغرفة العمليات</li>
+          <li>خطط الأمن والحماية</li>
+          <li>محاضر الاجتماعات التشغيلية</li>
+        </ul>
+      </div>
+      <div class="info-box" style="margin-top:15px;">
+        <strong>📚 مرجع إداري:</strong>
+        تُعد وثائق الحدث (خصوصًا Risk Assessment وخطط الطوارئ) من عناصر الحوكمة والتوثيق في منهجيات <strong>HSE</strong> لإدارة المخاطر وإثبات العناية الواجبة.
+      </div>
+
+
+      <div class="alert-box">
+        <strong>لماذا 5–7 سنوات؟</strong>
+        <ul>
+          <li>مدة التقادم القانوني: دعاوى مدنية قد تُرفع خلال 2–6 سنوات وقد تمتد (إصابة متأخرة/قاصر/إخفاء).</li>
+          <li>مسؤولية جنائية/إدارية عند وفاة أو إصابات جسيمة: قد يُعاد فتح الملف.</li>
+          <li>الدعاوى الجماعية تمتد سنوات (مثل Astroworld 2021 وManchester 2017).</li>
+          <li>التأمين: قد يطلب وثائق الحدث بعد سنوات، وغيابها قد يعني رفض التعويض.</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <strong>مدد مختلفة حسب نوع الوثيقة (احترافي جدًا)</strong>
+        <ul>
+          <li>خطط الطوارئ وإدارة الحشود: 7 سنوات</li>
+          <li>تقارير الحوادث والإصابات: 7–10 سنوات</li>
+          <li>CCTV: 90 يوم – 1 سنة (حسب الأنظمة)</li>
+          <li>عقود وتشغيل: 5–7 سنوات</li>
+          <li>تصاريح رسمية: 5 سنوات</li>
+          <li>سجلات التدريب: 5 سنوات</li>
+        </ul>
+        <div style="margin-top:10px;">
+          📌 إذا وقع حادث جسيم: يُمنع حذف التسجيلات نهائيًا حتى انتهاء التحقيقات.
+        </div>
+      </div>
+
+      <div class="danger-box">
+        ⚠️ حذف/فقدان الوثائق بعد وقوع حادث قد يُفسّر كـ <strong>إتلاف أدلة</strong> حتى لو لم يكن مقصودًا.
+      </div>
+
+      <div class="success-box">
+        <strong>التوصية النهائية</strong>
+        <ul>
+          <li>الحد الأدنى الآمن: 5 سنوات</li>
+          <li>الاحترافي الموصى به: 7 سنوات</li>
+          <li>وفيات/إصابات: لا حذف حتى إغلاق الملفات القانونية</li>
+          <li>تختلف حسب قوانين الدولة.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9) حسابات اليوم -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">9</span> حسابات اليوم (أسئلة كثافة/بوابات)</h2>
+
+    <div class="subsection">
+      <h3 class="subsection-title">9.1 حساب الكثافة: مساحة 200م² ودخول 900 شخص</h3>
+
+      <div class="info-box">
+        <strong>المعادلة الأساسية:</strong>
+        <ul>
+          <li>الكثافة = عدد الأشخاص ÷ المساحة</li>
+          <li>الكثافة = 900 ÷ 200 = <strong>4.5 شخص/م²</strong></li>
+        </ul>
+      </div>
+
+      <div class="danger-box">
+        🔴 <strong>4.5 شخص/م² = كثافة خطرة جدًا</strong>
+        <ul>
+          <li>تلاصق شديد</li>
+          <li>فقدان الحركة الذاتية</li>
+          <li>ارتفاع احتمال التعثر والسقوط</li>
+          <li>خطر انضغاط صدري (Crowd Crush)</li>
+          <li>أي توقف أو اندفاع قد يسبب إصابات جسيمة أو وفيات</li>
+        </ul>
+      </div>
+
+      <div class="success-box">
+        <strong>المرجع المهني السريع</strong>
+        <div class="density-levels">
+          <div class="density-card density-low">2 شخص/م²<br/>ازدحام يمكن السيطرة عليه</div>
+          <div class="density-card density-medium">4 شخص/م²<br/>خطر متوسط</div>
+          <div class="density-card density-high">6 شخص/م²<br/>فقدان السيطرة بالكامل</div>
+        </div>
+      <div class="info-box" style="margin-top:15px;">
+        <strong>📚 مرجع علمي:</strong>
+        يعتمد فهم مستويات الكثافة وتأثيرها على السلوك (خصوصًا عند 4–6 أشخاص/م²) على نماذج ديناميكيات الحشود في أبحاث <strong>Helbing</strong>.
+      </div>
+
+      </div>
+
+      <div class="alert-box">
+        <strong>ماذا يعني ذلك تشغيليًا؟</strong>
+        <ul>
+          <li>❌ يمنع الاستمرار في الإدخال</li>
+          <li>✅ إيقاف التدفق فورًا</li>
+          <li>✅ فتح مسارات بديلة أو توسيع المساحة</li>
+          <li>✅ تفريغ مرحلي (Phased Release)</li>
+          <li>✅ فرق تدخل سريع</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">9.2 سؤال: فعالية تتسع 5000 شخص—كم بوابة دخول؟</h3>
+
+      <div class="info-box">
+        ✅ يعتمد على 3 عوامل:
+        <ul>
+          <li>عدد الحضور (5000)</li>
+          <li>زمن الإدخال بالدقائق</li>
+          <li>نوع إجراءات الدخول (تذاكر فقط أم تفتيش)</li>
+        </ul>
+      </div>
+
+      <div class="alert-box">
+        <strong>القاعدة العامة للحساب:</strong>
+        <ul>
+          <li>عدد البوابات = عدد الحضور ÷ (زمن الإدخال بالدقائق × قدرة البوابة بالشخص/دقيقة)</li>
+          <li>ثم التقريب للأعلى + إضافة بوابة احتياطية (على الأقل).</li>
+        </ul>
+      </div>
+      <div class="info-box" style="margin-top:15px;">
+        <strong>📚 مرجع معياري:</strong>
+        عند اعتماد معدلات تدفق محافظة للتخطيط في سيناريوهات الطوارئ، يُوصى بالرجوع إلى مبادئ حساب السعات ومسارات الخروج في <strong>NFPA</strong> لتجنب الافتراضات المتفائلة.
+      </div>
+
+
+      <div class="info-box">
+        <strong>سيناريو “تذاكر/مسح إلكتروني فقط”</strong>
+        <ul>
+          <li>قدرة البوابة التقريبية: 11 شخص/دقيقة</li>
+          <li>زمن الإدخال: 60 دقيقة</li>
+          <li>الحساب: 5000 ÷ (60×11) = 7.6</li>
+          <li>النتيجة: 8 بوابات</li>
+          <li>التوصية التشغيلية: 9 بوابات (بوابة احتياط)</li>
+        </ul>
+      </div>
+
+      <div class="success-box">
+        <strong>قاعدة مهمة للتخطيط الصحيح</strong>
+        <ul>
+          <li>لازم يكون لديك: زمن الإدخال بالدقائق</li>
+          <li>قدرة البوابة بالشخص/دقيقة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10) مصادر تدريبية ضمن اليوم -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">10</span> مصادر تدريبية ضمن اليوم</h2>
+    <div class="subsection">
+      <div class="resources-grid">
+        <div class="resource-item">📘 كتاب: التعامل مع أصحاب الشخصيات الصعبة</div>
+        <div class="resource-item">✍️ المؤلفان: د. ريك برنكمان &amp; دريك كيرشنر</div>
+        <div class="resource-item">🎥 فيديو تدريبي: TtEQ-haj_g0</div>
+      </div>
+      <div class="info-box">
+        <ul>
+          <li><strong>رابط الفيديو:</strong> https://www.youtube.com/watch?v=TtEQ-haj_g0</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11) الوحدة الحادية عشرة -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">11</span> الوحدة الحادية عشرة: التعامل مع الجمهور والثقافات المتنوعة</h2>
+
+    <div class="subsection">
+      <h3 class="subsection-title">جوهر الوحدة</h3>
+      <div class="info-box">
+        <p>في هذه الوحدة ننتقل من <strong>إدارة الحشود كأجسام</strong> إلى <strong>إدارة البشر كمشاعر وسلوكيات</strong>.</p>
+        <p>كثير من الحوادث لا تبدأ بسبب فشل هندسي أو أمني، بل بسبب:</p>
+        <ul>
+<li>توتر نفسي</li>
+<li>سوء تواصل</li>
+<li>شعور بعدم الاحترام</li>
+</ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">11.1 استراتيجيات الضيافة وإشراك الجمهور</h3>
+      <div class="alert-box">
+        <p><strong>الضيافة ليست مجاملة… بل أداة إدارة حشود ذكية.</strong></p>
+        <p>الضيافة في الفعاليات ليست سلوكًا شكليًا، بل وسيلة وقاية تشغيلية، لأن الجمهور الذي يشعر بالاحترام:</p>
+        <ul>
+<li>يتعاون</li>
+<li>يلتزم</li>
+<li>يخفّف العبء على الفرق الأمنية</li>
+</ul>
+        <hr class="hr"/>
+        <p><strong>شرح النقاط الأساسية</strong></p>
+        <p><strong>1️⃣ أنت في الأساس لخدمة الجمهور</strong></p>
+        <p>هذه القناعة تغيّر جذريًا:</p>
+        <ul>
+<li>نبرة الصوت</li>
+<li>لغة الجسد</li>
+<li>أسلوب التوجيه</li>
+</ul>
+        <p>فالخدمة تُنتج قبولًا، بينما الأوامر الجافة تُنتج مقاومة وتوترًا.</p>
+
+        <p style="margin-top:10px;"><strong>2️⃣ تدريب فرق العمل على حسن الضيافة والاستقبال</strong></p>
+        <p>التدريب يجب أن يشمل:</p>
+        <ul>
+<li>كيفية الترحيب</li>
+<li>كيفية الرد على الاستفسارات</li>
+<li>كيفية تهدئة الشخص المتوتر</li>
+<li>كيفية الاعتذار دون تحميل المسؤولية</li>
+</ul>
+        <p><strong>ملاحظة مهمة:</strong> أسوأ ما يمكن أن يواجهه الجمهور هو موظف غاضب أو متعالٍ.</p>
+
+        <p style="margin-top:10px;"><strong>3️⃣ الضيافة كقيمة دينية وأخلاقية</strong></p>
+        <p>الضيافة من تعاليم ديننا، وهي:</p>
+        <ul>
+<li>تعزز القناعة الداخلية</li>
+<li>تحوّل السلوك من إجراء وظيفي إلى التزام أخلاقي</li>
+</ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">11.2 إدارة الطوارئ النفسية والاجتماعية</h3>
+      <div class="alert-box">
+        <p><strong>لماذا هذه الطوارئ أخطر أحيانًا؟</strong></p>
+        <ul>
+<li>تنتشر بسرعة</li>
+<li>تحرّك الحشود عاطفيًا</li>
+<li>قد تُحدث تدافعًا بلا سبب مادي</li>
+</ul>
+        <hr class="hr"/>
+        <p><strong>محاور التعامل</strong></p>
+
+        <p><strong>1️⃣ بروتوكولات ضياع الأطفال أو فقدان الأشخاص</strong></p>
+        <p>يجب أن يكون التعامل:</p>
+        <ul>
+<li>سريعًا</li>
+<li>هادئًا</li>
+<li>منظمًا</li>
+<li>بدون إثارة ذعر</li>
+</ul>
+        <p><strong>أي ارتباك في هذه الحالات = ذعر جماعي محتمل.</strong></p>
+
+        <p style="margin-top:10px;"><strong>2️⃣ بروتوكولات حالات الهلع والصدمة</strong></p>
+        <p>تشمل:</p>
+        <ul>
+<li>نوبات هلع</li>
+<li>صراخ</li>
+<li>إغماء</li>
+<li>ردود فعل غير متوقعة</li>
+</ul>
+        <p>ويجب تدريب الفرق على:</p>
+        <ul>
+<li>التهدئة</li>
+<li>العزل الإيجابي</li>
+<li>الدعم النفسي الأولي</li>
+</ul>
+
+        <p style="margin-top:10px;"><strong>3️⃣ وجود غرف هادئة (Quiet Rooms)</strong></p>
+        <p>الغرف الهادئة:</p>
+        <ul>
+<li>تقلل التوتر</li>
+<li>تمنع انتقال الذعر</li>
+<li>تُشعر الشخص بالأمان</li>
+</ul>
+        <p><strong>هذه الغرف ليست رفاهية… بل أداة وقاية.</strong></p>
+
+        <p style="margin-top:10px;"><strong>4️⃣ وجود مختصين في الدعم النفسي</strong></p>
+        <p>وجود المختص:</p>
+        <ul>
+<li>يسرّع الاحتواء</li>
+<li>يمنع أخطاء التعامل</li>
+<li>يدعم الفرق الميدانية نفسيًا</li>
+</ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">11.3 الذكاء الثقافي واحترام التنوع</h3>
+      <div class="alert-box">
+        <p><strong>الذكاء الثقافي = سلامة ناعمة</strong></p>
+        <p>عدم احترام ثقافة الضيف قد يؤدي إلى:</p>
+        <ul>
+<li>سوء فهم</li>
+<li>تصعيد لفظي</li>
+<li>إساءة إعلامية</li>
+<li>فقدان سمعة الحدث</li>
+</ul>
+        <hr class="hr"/>
+        <p><strong>شرح النقاط الأساسية</strong></p>
+
+        <p><strong>1️⃣ احترام ثقافات الأشخاص</strong></p>
+        <p>يشمل:</p>
+        <ul>
+<li>أسلوب التخاطب</li>
+<li>لغة الجسد</li>
+<li>المسافة الشخصية</li>
+<li>طريقة التوجيه</li>
+</ul>
+
+        <p style="margin-top:10px;"><strong>2️⃣ مراعاة الجانب الديني</strong></p>
+        <p>مثل:</p>
+        <ul>
+<li>أوقات الصلاة</li>
+<li>أماكن العبادة</li>
+<li>الخصوصية</li>
+</ul>
+        <p>وهذا يعكس احترامًا حقيقيًا لا مجاملة شكلية.</p>
+
+        <p style="margin-top:10px;"><strong>3️⃣ تنويع خيارات الطعام</strong></p>
+        <p>لأسباب:</p>
+        <ul>
+<li>دينية</li>
+<li>صحية</li>
+<li>ثقافية</li>
+</ul>
+        <p>وإهمالها قد يُعد إساءة غير مقصودة.</p>
+
+        <p style="margin-top:10px;"><strong>4️⃣ المرونة أمام الثقافات المتضاربة</strong></p>
+        <p>في الفعاليات الكبرى ومتعددة الجنسيات قد تتقاطع ثقافات مختلفة أو متعارضة مع البيئة المحلية.</p>
+        <p>التعامل الاحترافي يقتضي:</p>
+        <ul>
+<li>استيعاب التنوع دون صدام</li>
+<li>الحفاظ على النظام دون استفزاز</li>
+<li>تحقيق التوازن بين احترام الضيف والالتزام بالضوابط العامة</li>
+</ul>
+        <p><strong>الذكاء الثقافي هنا ليس تنازلًا… بل إدارة ذكية للاختلاف.</strong></p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">النشاط التدريبي: وضع خطة استقبال لوفد دولي</h3>
+      <div class="info-box">
+        <p><strong>الهدف:</strong></p>
+        <ul>
+<li>اختبار فهم الضيافة</li>
+<li>قياس الذكاء الثقافي</li>
+<li>ربط النظرية بالواقع</li>
+</ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">الخلاصة التنفيذية للوحدة 11</h3>
+      <div class="info-box">
+        <ul>
+<li>الجمهور شريك لا خصم</li>
+<li>الطوارئ النفسية قد تُشعل الحشود</li>
+<li>الذكاء الثقافي يحمي الحدث بصمت</li>
+<li>الاحترام = وقاية</li>
+</ul>
+        <p style="margin-top:10px;"><strong>في إدارة الفعاليات:</strong> أنت لا تدير جمهورًا… بل تدير مشاعر بشر.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">الخلاصة التشغيلية القيادية للوحدة 11</h3>
+      <div class="alert-box">
+        <p><strong>🔑 الحقيقة القيادية:</strong> الجمهور الذي يشعر بالاحترام أقل توترًا… أقل خطورة… أكثر تعاونًا.</p>
+        <p><strong>ما الذي يجب أن تضمنه القيادة؟</strong></p>
+        <ul>
+<li>ثقافة خدمة لا ثقافة أوامر</li>
+<li>تواصل إنساني محترم</li>
+<li>استيعاب التنوع الثقافي دون صدام</li>
+<li>احتواء الطوارئ النفسية بسرعة</li>
+</ul>
+        <p><strong>مخاطر الإهمال</strong></p>
+        <ul>
+<li>تصعيد لفظي</li>
+<li>هلع جماعي</li>
+<li>تدافع بلا سبب مادي</li>
+<li>إساءة إعلامية وفقدان سمعة</li>
+</ul>
+        <p><strong>قرار قيادي حاسم:</strong> الاحترام ليس سلوكًا أخلاقيًا فقط، بل إجراء سلامة وقائي.</p>
+      </div>
+    </div>
+  </div>
+
+
+<!-- 12) الوحدة الثانية عشرة -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">12</span> الوحدة الثانية عشرة: إدارة الموارد البشرية والفرق الميدانية</h2>
+
+    <div class="subsection">
+      <h3 class="subsection-title">جوهر الوحدة</h3>
+      <div class="info-box">
+        <p>أي خطة – مهما كانت قوية – تنجح أو تفشل بالإنسان الذي ينفّذها.</p>
+        <p>في سلامة الحشود: <strong>الخطأ البشري ليس تفصيلاً… بل قد يتحول إلى حادث جماعي.</strong></p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">أهداف الوحدة</h3>
+      <div class="alert-box">
+        <p><strong>1️⃣ اختيار الكوادر المناسبة وتدريبهم</strong></p>
+        <p>ليس الهدف ملء شواغر، بل بناء خط دفاع بشري قادر على اتخاذ القرار تحت الضغط.</p>
+
+        <p style="margin-top:10px;"><strong>2️⃣ تنظيم الفرق والورديات بفاعلية</strong></p>
+        <p>لمنع:</p>
+        <ul>
+<li>الإرهاق</li>
+<li>تداخل الصلاحيات</li>
+<li>غياب المسؤولية</li>
+</ul>
+
+        <p style="margin-top:10px;"><strong>3️⃣ تحفيز الفرق لضمان الأداء الحقيقي</strong></p>
+        <p>الفريق غير المحفّز:</p>
+        <ul>
+<li>يتباطأ</li>
+<li>يفقد الانتباه</li>
+<li>يطبّق التعليمات شكليًا لا عمليًا</li>
+</ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">12.1 معايير اختيار وتدريب الكوادر</h3>
+      <div class="alert-box">
+        <p><strong>🔍 اختيار الكوادر</strong></p>
+        <p>نبحث عن:</p>
+        <ul>
+<li>الهدوء</li>
+<li>سرعة البديهة</li>
+<li>ضبط النفس</li>
+</ul>
+        <p><strong>القاعدة الذهبية:</strong> الكوادر الهادئة تحمي الحشود أكثر من الكوادر الصارمة.</p>
+
+        <hr class="hr"/>
+        <p><strong>🎯 التدريب الميداني</strong></p>
+        <p>يشمل:</p>
+        <ul>
+<li>تدريب موقعي</li>
+<li>محاكاة سيناريوهات واقعية</li>
+<li>وضوح الدور والمسؤولية لكل فرد</li>
+</ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">12.2 الهيكل التنظيمي ونظام الورديات</h3>
+      <div class="alert-box">
+        <p><strong>🧱 الهيكل التنظيمي الهرمي</strong></p>
+        <ul>
+<li>قائد واضح</li>
+<li>تسلسل أوامر معروف</li>
+<li>لا اجتهاد فردي وقت الأزمات</li>
+</ul>
+        <p><strong>⏱️ نظام الورديات</strong> ليس رفاهية، بل إجراء سلامة:</p>
+        <ul>
+<li>الإرهاق يقلل التركيز</li>
+<li>قلة النوم تزيد الأخطاء</li>
+</ul>
+        <p><strong>ملاحظة تشغيلية:</strong> الموظف المرهق أخطر من الموظف قليل الخبرة.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">12.3 سيكولوجية التحفيز (المحرّك النفسي للأداء الميداني)</h3>
+      <div class="alert-box">
+        <p><strong>🔥 التحفيز كمنظومة متكاملة</strong></p>
+        <p>التحفيز لا يقتصر على وجبات وراحات، بل يشمل:</p>
+        <ul>
+<li>الرفاهية الجسدية</li>
+<li>السلامة النفسية</li>
+<li>الاحترام المتبادل</li>
+<li>الإحساس بقيمة الدور</li>
+</ul>
+        <p>الفرق التي تعمل في بيئة إنسانية محترمة تُظهر التزامًا أعلى وتقلّ لديها الأخطاء الناتجة عن الإرهاق أو الضغط.</p>
+
+        <hr class="hr"/>
+        <p><strong>🗣️ الاجتماعات التحفيزية (Briefings)</strong></p>
+        <p>يجب أن تُعقد:</p>
+        <ul>
+          <li><strong>قبل الوردية:</strong> لتوحيد الفهم ورفع الجاهزية.</li>
+          <li><strong>أثناء الوردية:</strong> لتصحيح المسار ومتابعة المؤشرات.</li>
+          <li><strong>بعد الوردية:</strong> للتفريغ النفسي واستخلاص الدروس.</li>
+        </ul>
+        <p>هذه الاجتماعات تمنع:</p>
+        <ul>
+<li>سوء الفهم</li>
+<li>التراخي التدريجي</li>
+<li>تراكم الأخطاء الصامتة</li>
+</ul>
+
+        <hr class="hr"/>
+        <p><strong>🎯 الهدف الجوهري من التحفيز</strong></p>
+        <p>ليس رفع المعنويات فقط، بل ضمان الأداء الميداني العالي تحت الضغط.</p>
+        <p>التحفيز الصحيح:</p>
+        <ul>
+<li>يمنع الانزلاق إلى الأداء الشكلي</li>
+<li>يحافظ على اليقظة وسط الزحام</li>
+<li>يحوّل التعليمات من نصوص إلى سلوك فعلي</li>
+</ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">الخلاصة التنفيذية للوحدة 12</h3>
+      <div class="info-box">
+        <ul>
+<li>الإنسان هو خط الدفاع الأول</li>
+<li>اختيار خاطئ = خطر</li>
+<li>تنظيم ضعيف = فوضى</li>
+<li>تحفيز غائب = أداء شكلي</li>
+<li>تحفيز ذكي = جاهزية مستمرة وأداء حقيقي</li>
+</ul>
+        <p style="margin-top:10px;"><strong>ملاحظة منهجية:</strong> كما أن الوقود عالي الجودة يضمن استمرار المحرك في أقسى الظروف، فإن سيكولوجية التحفيز هي الوقود الذي يحمي الفرق الميدانية من الاحتراق النفسي ومن الأداء الباهت وسط ضغوط الحشود.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">الخلاصة التشغيلية القيادية للوحدة 12</h3>
+      <div class="alert-box">
+        <p><strong>🔑 الحقيقة القيادية:</strong> الخطة لا تفشل على الورق… بل تفشل عند التنفيذ البشري.</p>
+        <p><strong>ما الذي يجب أن تضمنه القيادة؟</strong></p>
+        <ul>
+<li>اختيار كوادر هادئة لا منفعلة</li>
+<li>هيكل أوامر واضح بلا اجتهاد فردي</li>
+<li>نظام ورديات يمنع الإرهاق</li>
+<li>تحفيز مستمر يمنع الأداء الشكلي</li>
+</ul>
+        <p><strong>مخاطر الإهمال</strong></p>
+        <ul>
+<li>قرارات متأخرة</li>
+<li>فقدان تركيز</li>
+<li>تنفيذ شكلي للتعليمات</li>
+<li>أخطاء بشرية متراكمة</li>
+</ul>
+        <p><strong>قرار قيادي حاسم:</strong> الموظف المرهق أخطر من الموظف قليل الخبرة.</p>
+      </div>
+    </div>
+  </div>
+
+
+<!-- 13) الوحدة الثالثة عشرة -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">13</span> الوحدة الثالثة عشرة: تقييم الأداء وتحليل النتائج بعد الفعالية</h2>
+
+    <div class="subsection">
+      <h3 class="subsection-title">جوهر الوحدة</h3>
+      <div class="info-box">
+        <p>هذه الوحدة تفصل بين: <strong>فعالية تُنسى</strong> و<strong>فعالية تتطوّر</strong>.</p>
+        <p><strong>القاعدة الذهبية:</strong> ما لا يُقاس بعد الفعالية… يتكرّر في الفعالية التالية.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">13.1 جمع الأدلة وتحليل التغذية الراجعة</h3>
+      <div class="alert-box">
+        <p><strong>📊 مفهوم الدليل</strong></p>
+        <p>الدليل ليس رأيًا ولا انطباعًا، بل بيانات قابلة للقياس والتحليل.</p>
+        <p>الفرق بين الرأي والدليل: هو الفرق بين الشعور بالنجاح والتحقق الحقيقي من السلامة.</p>
+
+        <hr class="hr"/>
+        <p><strong>🧾 مصادر الأدلة</strong></p>
+        <ul>
+<li>تقارير الفرق الميدانية</li>
+<li>تسجيلات الكاميرات</li>
+<li>سجلات الدخول والخروج</li>
+<li>بلاغات الطوارئ</li>
+<li>ملاحظات الجمهور</li>
+</ul>
+
+        <hr class="hr"/>
+        <p><strong>📐 القياس الكمي الاحترافي (الحد الأدنى المطلوب)</strong></p>
+        <p>يجب أن يشمل التقييم ما يُعرف بـ <strong>ثالوث القياس التشغيلي</strong>:</p>
+        <ul>
+<li>الكثافة (عدد الأفراد لكل متر مربع)</li>
+<li>التدفق (معدل الحركة في الممرات والمخارج)</li>
+<li>زمن الإخلاء (الوقت الفعلي للخروج الآمن)</li>
+</ul>
+        <p>هذه المؤشرات تُربط دائمًا بـ: المساحة، المسافات، سعة الممرات والمخارج.</p>
+
+        <hr class="hr"/>
+        <p><strong>🧠 تحليل ديناميكيات الجمهور</strong></p>
+        <p>يشمل فهم: ميل الجمهور لاتباع الحشود، البحث عن أقصر المسارات، التجمهر حول الأحداث الجانبية، والسلوك التفاعلي تحت الضغط.</p>
+
+        <hr class="hr"/>
+        <p><strong>🎥 البيانات اللحظية</strong></p>
+        <p>تحليل تسجيلات الكاميرات والبيانات المستخرجة من الأنظمة الذكية لاكتشاف:</p>
+        <ul>
+<li>نقاط الاختناق</li>
+<li>لحظات فقدان السيطرة</li>
+<li>القرارات المتأخرة</li>
+</ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">13.2 جلسات المصارحة (Debriefing)</h3>
+      <div class="alert-box">
+        <p><strong>🗣️ مفهوم الجلسات</strong></p>
+        <p>جلسات المصارحة: ليست لومًا، وليست تبريرًا، بل تفريغ منظم للوقائع.</p>
+
+        <hr class="hr"/>
+        <p><strong>🔍 منهجية الجلسة</strong></p>
+        <p>تُدار الجلسة وفق مبدأ: <strong>الشفافية الكاملة أولًا</strong>، مع التركيز على الإخفاقات قبل النجاحات والقرارات المتأخرة قبل القرارات الصحيحة.</p>
+
+        <hr class="hr"/>
+        <p><strong>❓ الأسئلة المحورية</strong></p>
+        <ul>
+          <li>ما الذي نجح؟ ولماذا؟</li>
+          <li>ما الذي لم ينجح؟ ولماذا؟</li>
+          <li>أين كدنا نخسر السيطرة؟</li>
+          <li>ما القرار الذي كان يجب اتخاذه أسرع؟</li>
+        </ul>
+
+        <hr class="hr"/>
+        <p><strong>📄 التوثيق الرسمي</strong></p>
+        <p>لا تكتمل جلسة المصارحة إلا بوجود <strong>تقرير ختامي رسمي</strong> يُحفظ كمرجع تشغيلي/فني/قانوني ويُستخدم مباشرة في تطوير الفعاليات القادمة.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">13.3 التطوير المستمر (Kaizen) وتحديث الإجراءات</h3>
+      <div class="alert-box">
+        <p><strong>♻️ ما المقصود بـ Kaizen؟</strong></p>
+        <p><strong>Kaizen</strong> تعني: التحسين المستمر بخطوات صغيرة ثابتة بدل انتظار تغييرات صادمة بعد حادث كبير.</p>
+
+        <p style="margin-top:10px;"><strong>🛠️ كيف يُطبّق Kaizen بعد الفعالية؟</strong></p>
+        <ul>
+<li>تحويل كل ملاحظة إلى فرصة تحسين</li>
+<li>تعديل إجراءات الدخول أو الإخلاء</li>
+<li>تحديث التدريب بناءً على أخطاء واقعية</li>
+<li>تحسين توزيع الموارد</li>
+</ul>
+        <p><strong>لماذا هذا المحور حاسم؟</strong></p>
+        <ul>
+<li>يمنع تكرار نفس الخطأ</li>
+<li>يرفع الجاهزية تدريجيًا</li>
+<li>يبني نظامًا يتعلم ذاتيًا</li>
+</ul>
+        <p><strong>المنظمة التي لا تطوّر إجراءاتها بعد كل فعالية… تتآكل بصمت.</strong></p>
+
+        <hr class="hr"/>
+        <p><strong>📘 مخرجات Kaizen</strong></p>
+        <p>الهدف النهائي هو الوصول إلى <strong>إجراءات تشغيل قياسية (SOPs)</strong> تكون: واضحة، مكتوبة، قابلة للتكرار، ومستقلة عن الأفراد.</p>
+
+        <hr class="hr"/>
+        <p><strong>⚠️ تحذيرات تشغيلية هامة</strong></p>
+        <p><strong>❌ فخ الجمال الشكلي:</strong> من أخطر أخطاء التقييم التركيز على جمال الحدث وتجاهل سلامة الحدث.</p>
+        <p><strong>❌ تزييف النجاح:</strong> مرور الحدث دون حادث لا يعني بالضرورة نجاحًا؛ قد يكون مجرد حظ. النجاح الحقيقي هو القدرة على إدارة أسوأ سيناريو لا الاكتفاء بعدم وقوعه.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">النشاط التدريبي</h3>
+      <div class="info-box">
+        <p><strong>تحليل فعالية افتراضية:</strong></p>
+        <ul>
+<li>استخراج 5 نقاط قوة</li>
+<li>استخراج 5 نقاط ضعف</li>
+<li>اقتراح 3 تحسينات قابلة للتنفيذ فورًا</li>
+</ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">الخلاصة التنفيذية للوحدة 13</h3>
+      <div class="info-box">
+        <ul>
+<li>التقييم يحوّل التجربة إلى معرفة رقمية</li>
+<li>المصارحة توثق الحقيقة ولا تجمّلها</li>
+<li>Kaizen يبني إجراءات تشغيل قياسية (SOPs)</li>
+<li>سلامة الحدث هي المعيار الحقيقي للنجاح</li>
+<li>ما بعد الفعالية أهم مما قبلها</li>
+</ul>
+        <p style="margin-top:10px;"><strong>في إدارة الفعاليات:</strong> آخر حدث… هو أول درس للحدث القادم.</p>
+        <p style="margin-top:10px;"><strong>تشبيه منهجي:</strong> تقييم الأداء بعد الفعالية يشبه الصندوق الأسود للطائرة؛ لا يهتم بجمال الرحلة، بل يسجّل أدق التفاصيل ليمنع الكارثة القادمة.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">الخلاصة التشغيلية القيادية للوحدة 13</h3>
+      <div class="alert-box">
+        <p><strong>🔑 الحقيقة القيادية:</strong> النجاح الحقيقي يُقاس بعد انتهاء الحدث لا أثناءه.</p>
+        <p><strong>ما الذي يجب أن تضمنه القيادة؟</strong></p>
+        <ul>
+<li>تقييم رقمي (كثافة – تدفق – زمن إخلاء)</li>
+<li>جلسات مصارحة شفافة بلا تزييف</li>
+<li>تقرير ختامي رسمي محفوظ</li>
+<li>تحويل الأخطاء إلى إجراءات تشغيل قياسية (SOPs)</li>
+</ul>
+        <p><strong>مخاطر الإهمال</strong></p>
+        <ul>
+<li>تكرار نفس الأخطاء</li>
+<li>وهم النجاح</li>
+<li>الاعتماد على الحظ</li>
+<li>فشل مفاجئ في فعالية لاحقة</li>
+</ul>
+        <p><strong>قرار قيادي حاسم:</strong> مرور الحدث دون حادث لا يعني أنه كان آمنًا.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">🧩 التكامل التنفيذي (الخارطة الكاملة)</h3>
+      <div class="info-box">
+        <div style="overflow:auto;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>البُعد</th>
+                <th>الخطر إذا أُهمل</th>
+                <th>النتيجة إذا أُدير</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>الجمهور</td>
+                <td>توتر – هلع – تدافع</td>
+                <td>تعاون – التزام</td>
+              </tr>
+              <tr>
+                <td>الفرق</td>
+                <td>أخطاء بشرية</td>
+                <td>تنفيذ عالي الجودة</td>
+              </tr>
+              <tr>
+                <td>التقييم</td>
+                <td>تكرار الفشل</td>
+                <td>تعلّم مؤسسي</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="margin-top:12px;"><strong>🧠 القاعدة الذهبية للقيادة:</strong> سلامة الفعاليات لا تُدار بقرار واحد، بل بمنظومة مترابطة: احترام → يهدّئ الجمهور، تحفيز → يثبت الفرق، تقييم → يحمي المستقبل.</p>
+        <p><strong>🏁 الخلاصة القيادية:</strong> أنت لا تدير حدثًا… بل منظومة بشرية. السلامة تبدأ من المشاعر، وتُحمى بالإنسان، وتُصان بالتقييم بعد الحدث.</p>
+      </div>
+    </div>
+  </div>
+
+
+<!-- 14) أسئلة اليوم -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">14</span> أسئلة اليوم (MCQ)</h2>
+
+    <div class="subsection">
+      <div class="info-box">
+        <p><strong>س1)</strong> أي عبارة تمثل القاعدة التشغيلية الأساسية التي تتكرر في هذا اليوم؟</p>
+        <ul>
+          <li>(A) زيادة عدد رجال الأمن تكفي لمنع الكوارث.</li>
+          <li>(B) غياب الحادث في الماضي دليل أن الموقع آمن.</li>
+          <li>(C) غياب الحادث ليس دليل أمان.</li>
+          <li>(D) القرار الفني أهم من قرار السلامة أثناء العرض.</li>
+        </ul>
+        <p><strong>✅ الإجابة الصحيحة (C) لماذا ؟:</strong> لأن السلامة تُقاس بالتصميم والتحكم بالمخاطر، لا بنتيجة سابقة قد تكون “حظًا” أو ظرفًا مختلفًا؛ والاعتماد على الماضي يخلق اطمئنانًا كاذبًا يمنع التدخل المبكر.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="info-box">
+        <p><strong>س2)</strong> ما التعريف الأدق لموجة الحشود <strong>Crowd Surge</strong> كما عُرض في دراسة Astroworld؟</p>
+        <ul>
+          <li>(A) تدافع فردي بسبب شجار محدود.</li>
+          <li>(B) ضغط خلفي ينتقل كموجة داخل الحشد ويُفقد الأفراد القدرة على الحركة/التنفس.</li>
+          <li>(C) ازدحام عادي عند بوابة دخول فقط.</li>
+          <li>(D) ركض جماعي منظم باتجاه مخرج.</li>
+        </ul>
+        <p><strong>✅ الإجابة الصحيحة (B) لماذا ؟:</strong> لأن الخطر في <strong>Crowd Surge</strong> ليس “الحركة السريعة” بل انتقال الضغط الخلفي داخل كتلة بشرية متماسكة، ما يؤدي لاختناق ضغطي وسقوط متسلسل حتى دون نية عدوانية.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="info-box">
+        <p><strong>س3)</strong> عند عرض المعادلات، ما التسلسل الصحيح الذي اعتمدناه دائمًا؟</p>
+        <ul>
+          <li>(A) تعريف نظري → قصة → نتيجة فقط.</li>
+          <li>(B) المعادلة → الناتج → تفسير تشغيلي → قرار ميداني.</li>
+          <li>(C) الناتج → المعادلة → قرار ميداني بدون تفسير.</li>
+          <li>(D) قرار ميداني → تفسير → معادلة.</li>
+        </ul>
+        <p><strong>✅ الإجابة الصحيحة (B) لماذا ؟:</strong> لأن الهدف من الحسابات هو إنتاج قرار تنفيذي قابل للتطبيق فورًا؛ بدون تفسير تشغيلي تصبح الأرقام حفظًا بلا أثر، وبدون قرار ميداني تصبح معرفة غير مُستخدمة.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="info-box">
+        <p><strong>س4)</strong> ما أقل مدة احترافية للاحتفاظ بالوثائق التشغيلية والقانونية للفعالية كما ثبّتناه في هذا اليوم؟</p>
+        <ul>
+          <li>(A) سنة واحدة فقط.</li>
+          <li>(B) سنتان.</li>
+          <li>(C) 3–4 سنوات.</li>
+          <li>(D) 5–7 سنوات (مع منع الحذف عند وقوع حادث حتى إغلاق الملف).</li>
+        </ul>
+        <p><strong>✅ الإجابة الصحيحة (D) لماذا ؟:</strong> لأن الوثائق هي خط الدفاع الأول عند التحقيقات والمطالبات، ولأن مدد التقاضي/المراجعة قد تمتد؛ وعند وقوع حادث يصبح حذف أي دليل مخاطرة قانونية وتشغيلية.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="info-box">
+        <p><strong>س5)</strong> أي خيار يصف “قرار إيقاف العرض” في بيئة الحشود كما ورد في مراجعة اليوم؟</p>
+        <ul>
+          <li>(A) قرار فني يخص فريق الصوت فقط.</li>
+          <li>(B) قرار تنظيمي شكلي لا علاقة له بالسلامة.</li>
+          <li>(C) قرار سلامة/أمن يُتخذ لمنع تصاعد الخطر.</li>
+          <li>(D) قرار يُترك للجمهور ليحسمه تلقائيًا.</li>
+        </ul>
+        <p><strong>✅ الإجابة الصحيحة (C) لماذا ؟:</strong> لأن إيقاف العرض أو تعديل التدفق يُستخدم كأداة تحكم بالمخاطر عند ظهور مؤشرات الانهيار، والتأخر فيه قد يحوّل حادثًا محدودًا إلى كارثة جماعية.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="info-box">
+        <p><strong>س6)</strong> ما الهدف الأساسي من إدراج تحليل قانوني لمسؤولية المنظّم ضمن هذا اليوم؟</p>
+        <ul>
+          <li>(A) رفع الطابع الإعلامي للبرنامج.</li>
+          <li>(B) توضيح أن القرارات التشغيلية لها تبعات مساءلة، وأن التوثيق والتدريب جزء من واجب العناية.</li>
+          <li>(C) استبدال التدريب الميداني بالنصوص القانونية.</li>
+          <li>(D) التركيز على العقوبات فقط دون إجراءات.</li>
+        </ul>
+        <p><strong>✅ الإجابة الصحيحة (B) لماذا ؟:</strong> لأن سلامة الحشود ليست “نوايا” بل مسؤولية قابلة للتقييم؛ وإثبات الجاهزية يعتمد على خطط مكتوبة، تدريب، إدارة مخاطر، وتوثيق يُظهر اتخاذ قرارات مناسبة في الوقت المناسب.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="info-box">
+        <p><strong>س7)</strong> عند التعامل مع موجة حشود، أي إجراء يمثل “إيقاف الخطر من المصدر” (Stop at Source)؟</p>
+        <ul>
+          <li>(A) دفع الحشد للأمام لتفريغه أسرع.</li>
+          <li>(B) فتح مسارات جانبية دون ضبط المصدر.</li>
+          <li>(C) إيقاف/تقليل التدفق القادم إلى منطقة الاختناق أولًا.</li>
+          <li>(D) تصوير الحدث لتوثيق المشكلة فقط.</li>
+        </ul>
+        <p><strong>✅ الإجابة الصحيحة (C) لماذا ؟:</strong> لأن معالجة الاختناق تتطلب تقليل التغذية المستمرة للكتلة البشرية؛ فتح مخارج بدون ضبط المصدر قد لا يكفي إذا استمر الضغط الخلفي في الارتفاع.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="info-box">
+        <p><strong>س8)</strong> لماذا أُدرجت وحدات (11، 12، 13) داخل اليوم الرابع ضمن هذا البناء؟</p>
+        <ul>
+          <li>(A) لأنها خارج سياق سلامة الحشود تمامًا.</li>
+          <li>(B) لأنها تُحوّل الدروس من “تحليل حادث” إلى “منظومة تشغيل”: التعامل مع الجمهور، الفرق الميدانية، وما بعد الحدث.</li>
+          <li>(C) لأنها بديل عن دراسة الحالة.</li>
+          <li>(D) لأنها تركز على الدعاية والتسويق.</li>
+        </ul>
+        <p><strong>✅ الإجابة الصحيحة (B) لماذا ؟:</strong> لأن منع الكوارث لا يكتمل بتحليل الحوادث فقط؛ بل يحتاج سلوك فرق، تواصل مع جمهور متنوع، وإطار تحسين مستمر بعد الفعالية لضمان عدم تكرار الفشل.</p>
+      </div>
+    </div>
+
+  </div>
+<div class="alert-box" style="margin-top: 30px;">
+  <p style="font-weight: bold; font-size: 1.1em; text-align: center;">
+    🎓 النجاح في إدارة الحشود يبدأ بالفهم الصحيح للمفاهيم وينتهي بالتطبيق الدقيق للمعايير
+  </p>
 </div>
+
+<section class="section" id="infographic">
+            <h2 class="section-title">🖼️ إنفوجرافيك اليوم</h2>
+            <div class="card infographic-card">
+                <img class="infographic-img" src="Day4.png" alt="Infographic - Day 4">
+            </div>
+        </section>
+
+
+
 
 <!-- التذييل: المصدر التعليمي -->
 <div class="footer">
@@ -525,6 +1833,17 @@
 <li>التخطيط الأمني المتقدم</li>
 </ul>
 </div>
+<div class="footer-section" style="margin-top:20px;">
+  <h3 style="font-size: 1.5em; margin-bottom: 15px;">🌍 المراجع الدولية المعتمدة</h3>
+  <div style="background: rgba(255,255,255,0.12); padding: 20px; border-radius: 10px; margin: 10px 0; text-align: right;">
+    <ul style="text-align: right; list-style-position: inside; margin-top: 10px;">
+      <li><strong>NFPA</strong> – National Fire Protection Association</li>
+      <li><strong>HSE</strong> – Health and Safety Executive (UK)</li>
+      <li><strong>Helbing</strong> – Dynamics of Crowds Research</li>
+    </ul>
+  </div>
+</div>
+
 <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 10px; margin: 30px 0;">
 <p style="font-size: 1.3em; font-weight: bold; margin-bottom: 15px;">✍️ إعداد</p>
 <p style="font-size: 1.4em; font-weight: bold; margin-bottom: 10px;">أنس العضيبي</p>
@@ -539,6 +1858,63 @@
                     © 2025 - دليل إدارة الفعاليات وسلامة الحشود
                 </p>
 </div>
+
+
+  <!-- 15) إضافات إلزامية في نهاية اليوم الرابع -->
+  <div class="section">
+    <h2 class="section-title"><span class="section-number">15</span> إضافات إلزامية في نهاية اليوم الرابع</h2>
+
+    <div class="subsection">
+      <h3 class="subsection-title">1) سيناريو تطبيقي بسيط</h3>
+      <div class="alert-box">
+        <p><strong>حدث افتراضي:</strong> فعالية خارجية متعددة الثقافات (8,000 زائر) + فرق ميدانية (200) + ازدحام عند بوابة رئيسية.</p>
+        <p><strong>السؤال:</strong> أين ينهار اليوم الرابع لو أُهمل؟</p>
+        <ul>
+          <li>ضيافة ضعيفة → توتر/احتكاك → مقاومة للتوجيه.</li>
+          <li>غياب احتواء الطوارئ النفسية → هلع ينتشر بلا سبب مادي.</li>
+          <li>فريق منهك/غير محفّز → قرارات متأخرة وأخطاء بشرية.</li>
+          <li>لا Debriefing ولا Kaizen → تكرار الأخطاء في الفعالية التالية.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">2) قاموس مصطلحات اليوم الرابع (Glossary)</h3>
+      <div class="info-box">
+        <ul>
+          <li><strong>Hospitality:</strong> الضيافة كأداة تشغيلية لإدارة السلوك وتخفيف التوتر.</li>
+          <li><strong>Debriefing:</strong> جلسة مصارحة منظمة لاستخلاص ما حدث وتوثيق الدروس بدون لوم.</li>
+          <li><strong>Kaizen:</strong> تحسين مستمر بخطوات صغيرة ثابتة تمنع تراكم الأخطاء وتبنّي SOPs.</li>
+          <li><strong>Cultural Sensitivity:</strong> حساسية ثقافية تمنع سوء الفهم والتصعيد وتحمي السمعة.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">3) ربط بالمراجع العلمية (تأصيل سريع)</h3>
+      <div class="info-box">
+        <ul>
+          <li><strong>HSE / Human Factors:</strong> السلوك البشري، الإرهاق، وضوح الأدوار، وتأثيرها على الأخطاء الميدانية.</li>
+          <li><strong>ISO / Kaizen:</strong> التحسين المستمر، التوثيق، وإجراءات التشغيل القياسية (SOPs).</li>
+          <li><strong>مبادئ إدارة السلوك الجمعي:</strong> أثر التواصل والاحترام على الالتزام والتعاون وتخفيف المخاطر.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection-title">4) حدود نطاق اليوم الرابع (Scope Boundaries)</h3>
+      <div class="alert-box">
+        <ul>
+          <li>لا نعلّم علاجًا نفسيًا؛ ندرّب على <strong>الاحتواء الأولي</strong> وإدارة الموقف دون تصعيد.</li>
+          <li>لا نحل نزاعات قانونية؛ ندرّب على <strong>القرار الإداري</strong> وحفظ الأدلة والتوثيق.</li>
+          <li>نركّز على: الضيافة/الثقافة/التحفيز/المصارحة/التحسين المستمر كمنظومة تمنع تكرار الأخطاء.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+        
 </div>
 </div>
 </body>
