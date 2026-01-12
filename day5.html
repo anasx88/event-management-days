@@ -442,61 +442,337 @@
             .days-bar{display:none;}
         }
 
-    </style>
+    /* === Practice Tests Bar (Injected) === */
+        .tests-bar{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:10px;
+            padding:14px 18px;
+            background: rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+        .tests-title{
+            font-weight:800;
+            letter-spacing:0.2px;
+            color:#ffffff;
+            opacity:0.95;
+            display:flex;
+            align-items:center;
+            gap:8px;
+        }
+        .tests-links{
+            display:flex;
+            justify-content:center;
+            gap:12px;
+            flex-wrap:wrap;
+        }
+        .test-btn{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            min-width:160px;
+            padding:10px 14px;
+            border-radius:16px;
+            text-decoration:none;
+            font-weight:800;
+            border:1px solid rgba(255,255,255,0.20);
+            background: rgba(255,255,255,0.10);
+            color:#ffffff;
+            transition: transform .12s ease, background .12s ease;
+        }
+        .test-btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,0.14); }
+        .test-btn.t1{ border-color: rgba(46, 204, 113, 0.45); }
+        .test-btn.t2{ border-color: rgba(52, 152, 219, 0.45); }
+        .test-btn.t3{ border-color: rgba(155, 89, 182, 0.45); }
+        .test-btn.t4{ border-color: rgba(241, 196, 15, 0.45); }
+
+        /* === Infographic (Injected) === */
+        .infographic-card{ padding: 14px; }
+        .infographic-img{
+            width:100%;
+            height:auto;
+            display:block;
+            border-radius:16px;
+        }
+
+
+
+/* === Practice Quizzes Row (Second line) === */
+.practice-quizzes {
+  margin: 14px 0 18px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f7faf7;
+  border: 1px solid #e3efe3;
+}
+
+.practice-quizzes .pq-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  font-weight: 800;
+  color: #1f3a2e;
+}
+
+.practice-quizzes .pq-title .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #2ecc71;
+}
+
+.practice-quizzes .pq-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.practice-quizzes a.pq-card {
+  text-decoration: none;
+  border-radius: 14px;
+  padding: 12px 10px;
+  background: #ffffff;
+  border: 1px solid #e7ece7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.practice-quizzes a.pq-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.06);
+}
+
+.practice-quizzes .pq-emoji {
+  font-size: 22px;
+}
+
+.practice-quizzes .pq-text {
+  font-weight: 800;
+  color: #173024;
+  line-height: 1.1;
+}
+
+.practice-quizzes .pq-sub {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #5b6b62;
+}
+
+@media (max-width: 780px) {
+  .practice-quizzes .pq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+</style>
 </head>
 <body>
 <button class="print-button" onclick="window.print()">
         🖨️ طباعة الدليل كـ PDF
     </button>
-<div class="container">
 
-<div class="days-bar" aria-label="تنقّل أيام البرنامج">
-  <a class="day-btn" href="index.html" title="اليوم الأول">
-    <span class="day-ico" aria-hidden="true">①</span>
-    <span class="day-txt">اليوم الأول</span>
-  </a>
-  <a class="day-btn" href="day2.html" title="اليوم الثاني">
-    <span class="day-ico" aria-hidden="true">②</span>
-    <span class="day-txt">اليوم الثاني</span>
-  </a>
-  <a class="day-btn" href="day3.html" title="اليوم الثالث">
-    <span class="day-ico" aria-hidden="true">③</span>
-    <span class="day-txt">اليوم الثالث</span>
-  </a>
-  <a class="day-btn" href="day4.html" title="اليوم الرابع">
-    <span class="day-ico" aria-hidden="true">④</span>
-    <span class="day-txt">اليوم الرابع</span>
-  </a>
-  <a class="day-btn active" href="day5.html" title="اليوم الخامس">
-    <span class="day-ico" aria-hidden="true">⑤</span>
-    <span class="day-txt">اليوم الخامس</span>
-  </a>
-</div>
+
+<div class="container">
+<!-- =========================
+     Practice Quizzes (Row 2)
+========================== -->
+<section class="practice-quizzes" aria-label="اختبارات تجريبية">
+  <div class="pq-title">
+    <span class="dot" aria-hidden="true"></span>
+    <span>اختبارات تجريبية</span>
+  </div>
+
+  <div class="pq-grid">
+    <a class="pq-card" href="quiz1.html">
+      <span class="pq-emoji">🧪</span>
+      <span class="pq-text">الدفعة الأولى<span class="pq-sub">45 سؤال</span></span>
+    </a>
+
+    <a class="pq-card" href="quiz2.html">
+      <span class="pq-emoji">🧪</span>
+      <span class="pq-text">الدفعة الثانية<span class="pq-sub">45 سؤال</span></span>
+    </a>
+
+    <a class="pq-card" href="quiz3.html">
+      <span class="pq-emoji">🧠</span>
+      <span class="pq-text">الدفعة الثالثة<span class="pq-sub">45 سؤال</span></span>
+    </a>
+
+    <a class="pq-card" href="quiz4.html">
+      <span class="pq-emoji">🧠</span>
+      <span class="pq-text">الدفعة الرابعة<span class="pq-sub">70 سؤال</span></span>
+    </a>
+  </div>
+</section>
 
 <div class="header">
 <h1>📘 الملخص التدريبي المعتمد — اليوم 5</h1>
 <p>إدارة الفعاليات وسلامة الحشود</p>
 </div>
-
 <div class="content">
-  <div class="section">
-    <h2 class="section-title"><span class="section-number">📅 اليوم 5</span> محتوى اليوم 5</h2>
-    <div class="subsection">
-      <h3 class="subsection-title">✅ ضع هنا وحدات ومحاور اليوم 5</h3>
-      <div class="info-box">
-        <ul style="margin-top: 15px;">
-          <li>1) الوحدة …</li>
-          <li>2) المحور 1 …</li>
-          <li>3) المحور 2 …</li>
-          <li>4) المحور 3 …</li>
-        </ul>
-      </div>
-      <div class="alert-box">
-        <strong>ملاحظة:</strong> انسخ نفس هيكل “الوحدات والمحاور” من اليوم الأول ثم استبدل المحتوى حسب اليوم.
-      </div>
-    </div>
-  </div>
+<div class="section">
+<h2 class="section-title"><span class="section-number">📅 اليوم 5</span> محتوى اليوم 5</h2>
+<div class="subsection">
+<h3 class="subsection-title">✅ ضع هنا وحدات ومحاور اليوم 5</h3>
+<div class="info-box">
+<h3 class="section-title">الوحدات والمحاور – اليوم الخامس</h3>
+<p><b>تنبيه تشغيلي:</b> اليوم الخامس ليس “معلومات جديدة” بقدر ما هو <b>إغلاق الحلقة التشغيلية</b>: كيف نُقيّم ما حدث، كيف نحمي المجتمع من أثر الحدث، وكيف نُثبت التعلم داخل النظام بدل أن يبقى في ذاكرة الأفراد.</p>
+<hr style="border:none;border-top:1px solid #eee;margin:14px 0;"/>
+<h4 style="margin:0 0 8px;color:#1f7a8c;">الوحدة الثالثة عشرة: تقييم الأداء وتحليل النتائج بعد الفعالية</h4>
+<p><b>تمهيد الوحدة:</b> عند انتهاء الفعالية وخروج الجمهور لا يكون العمل قد اكتمل بعد. هنا تبدأ المراجعة المنظمة للأداء بهدف تحويل التجربة إلى تحسينات تمنع تكرار المشكلات وتدعم سلامة الفعاليات القادمة.</p>
+<p><b>نواتج التعلّم:</b></p>
+<ul>
+<li>تفسير أهمية التقييم بعد انتهاء الفعالية (حتى لو لم تقع إصابات).</li>
+<li>التمييز بين <b>التقييم التشغيلي</b> وأشكال التقييم الأخرى.</li>
+<li>تحليل الأداء اعتمادًا على بيانات وملاحظات موثوقة.</li>
+<li>تحويل نتائج التقييم إلى تحسينات عملية قابلة للتطبيق.</li>
+</ul>
+<h5 style="margin:10px 0 6px;">13.1 لماذا يبدأ التقييم بعد انتهاء الفعالية؟</h5>
+<ul>
+<li>أثناء الحدث: التركيز على السيطرة على المتغيرات اللحظية.</li>
+<li>بعد الحدث: تتوفر مساحة لتحليل تسلسل الأحداث دون ضغط مباشر.</li>
+<li>القاعدة الذهبية: <b>غياب الحادث ليس دليل أمان</b>؛ قد يكون “حظًا” أو ظرفًا مختلفًا.</li>
+</ul>
+<div class="alert-box">
+<b>مثال توضيحي (مؤشر يجب ألا يُهمل):</b>
+  انتهت فعالية دون إصابات، لكن ظهر تكدّس مؤقت عند نقطة دخول/عبور. هذا التكدّس—even بدون ضرر—هو إشارة تستحق التحليل قبل أن تتحول إلى خطر في فعالية لاحقة.
 </div>
+<h5 style="margin:10px 0 6px;">13.2 التقييم التشغيلي: ماذا نقيّم وكيف؟</h5>
+<p>التقييم التشغيلي يركّز على <b>النظام أثناء التشغيل</b> (وليس الأشخاص أو النوايا)، ومن عناصره:</p>
+<ul>
+<li>تدفّق الحشود (Flow) في النقاط الحساسة.</li>
+<li>وضوح قنوات التواصل وسرعة وصول المعلومة.</li>
+<li>توقيت اتخاذ القرار وفعالية تنفيذ الإجراء.</li>
+</ul>
+<p><b>خطوات التقييم التشغيلي (حد أدنى):</b></p>
+<ol>
+<li>جمع البيانات والملاحظات الموثوقة.</li>
+<li>مراجعة الأحداث زمنيًا (Timeline).</li>
+<li>تحديد نقاط القوة والضعف (System View).</li>
+<li>صياغة توصيات قابلة للتحويل إلى إجراءات (SOP/Checklists).</li>
+</ol>
+<h5 style="margin:10px 0 6px;">13.3 التحسين المستمر بعد الحدث (Kaizen)</h5>
+<p><b>Kaizen</b> تعني: <b>التحسين المستمر بخطوات صغيرة ثابتة</b> بدل انتظار تغييرات صادمة متأخرة بعد حادث كبير. في إدارة الفعاليات، Kaizen هو الفرق بين <b>منظمة تتعلّم</b> ومنظمة <b>تكرّر أخطاءها</b>.</p>
+<p><b>كيف نُطبّق Kaizen بعد الفعالية؟</b></p>
+<ul>
+<li>تحويل كل ملاحظة إلى <b>فرصة تحسين</b> (لا إلى لوم).</li>
+<li>تعديل إجراءات الدخول/الإخلاء بحسب الواقع.</li>
+<li>تحديث التدريب بناءً على أخطاء واقعية.</li>
+<li>تحسين توزيع الموارد وفق الدروس المستفادة.</li>
+</ul>
+<p><b>لماذا هذا المحور حاسم؟</b></p>
+<ul>
+<li>يمنع تكرار نفس الخطأ بصيغ مختلفة.</li>
+<li>يرفع الجاهزية تدريجيًا دون صدمات متأخرة.</li>
+<li>يبني نظامًا يتعلّم ذاتيًا بدل الاعتماد على الأفراد.</li>
+</ul>
+<div class="info-box">
+<b>قانون تنفيذي:</b> المنظمة التي لا تُطوّر إجراءاتها بعد كل فعالية… <b>تتآكل بصمت</b>.
+</div>
+<hr style="border:none;border-top:1px solid #eee;margin:14px 0;"/>
+<h4 style="margin:0 0 8px;color:#1f7a8c;">الوحدة الرابعة عشرة: الاستدامة وأثر الفعاليات على المجتمع</h4>
+<p><b>تمهيد الوحدة:</b> الفعالية لا تنتهي آثارها بتفكيك الموقع. القرارات التشغيلية تترك أثرًا مباشرًا وغير مباشر على المجتمع المحيط؛ قد يكون أثرًا إيجابيًا طويل المدى أو عبئًا متكررًا يتراكم مع الزمن.</p>
+<p><b>نواتج التعلّم:</b></p>
+<ul>
+<li>تفسير مفهوم الاستدامة في سياق الفعاليات.</li>
+<li>التمييز بين الأثر المؤقت والأثر طويل المدى.</li>
+<li>تحليل القرار التشغيلي من زاوية أثره المجتمعي.</li>
+<li>ربط الاستدامة بجودة التخطيط والتشغيل.</li>
+</ul>
+<h5 style="margin:10px 0 6px;">14.1 مفهوم الاستدامة في إدارة الفعاليات</h5>
+<p>الاستدامة = تنظيم حدث يحقق أهدافه دون إحداث أضرار مستمرة على المجتمع أو البيئة أو الموارد. وتشمل ثلاثة أبعاد مترابطة:</p>
+<ul>
+<li>البعد الاجتماعي (علاقة الحدث بالمجتمع والسكان).</li>
+<li>البعد البيئي (إدارة الموارد والنفايات والطاقة).</li>
+<li>البعد التشغيلي (قابلية تكرار الحدث دون تصاعد المخاطر أو التكاليف).</li>
+</ul>
+<h5 style="margin:10px 0 6px;">14.2 أثر الفعاليات على المجتمع المحلي</h5>
+<ul>
+<li>حركة المرور والازدحام.</li>
+<li>الضوضاء واستخدام المرافق العامة.</li>
+<li>تقبل السكان وتفاعلهم مع الحدث.</li>
+</ul>
+<div class="alert-box">
+<b>مثال توضيحي:</b> فعالية متكررة في حي سكني دون إدارة دخول/خروج تُولّد توترًا مجتمعيًا وشكاوى متراكمة—even لو كانت آمنة داخل الموقع.
+</div>
+<h5 style="margin:10px 0 6px;">14.3 الاستدامة كجزء من التخطيط والتشغيل</h5>
+<ul>
+<li>اختيار موقع يقلّل ضغط المرور على الأحياء.</li>
+<li>توزيع الحشود لمنع تكدّس متكرر في نفس النقاط.</li>
+<li>استخدام بنية تحتية قائمة بدل حلول مؤقتة مكلفة.</li>
+<li>خطط واضحة لإدارة النفايات والطاقة.</li>
+</ul>
+<hr style="border:none;border-top:1px solid #eee;margin:14px 0;"/>
+<h4 style="margin:0 0 8px;color:#1f7a8c;">الوحدة الخامسة عشرة: الخاتمة والمراجعة الشاملة</h4>
+<p><b>تمهيد الوحدة:</b> هذه محطة ختامية لربط مفاهيم الدورة ورؤية الصورة الكاملة. الهدف: ترسيخ الفهم وتحويل المعرفة إلى ممارسة واعية—والاستعداد للاختبار النهائي بثقة.</p>
+<p><b>محاور المراجعة:</b></p>
+<ul>
+<li>ترابط مراحل إدارة الفعالية: التخطيط → التجهيز → التشغيل → المتابعة → التقييم.</li>
+<li>القرار وتأثيره الآني والمستقبلي.</li>
+<li>التعلم من التجربة بوصفه “نظام” لا “حادثة”.</li>
+</ul>
+<div class="info-box">
+<b>قاعدة اليوم الخامس:</b> النجاح ليس أن “يمر الحدث دون حادث”، بل أن يكون النظام قادرًا على إدارة أسوأ سيناريو… ثم <b>يتعلم</b> ويُحسّن نفسه بعده.
+</div>
+<hr style="border:none;border-top:1px solid #eee;margin:14px 0;"/>
+<h4 style="margin:0 0 8px;color:#1f7a8c;">سيناريو تطبيقي بسيط (بدون أسئلة اختبارية)</h4>
+<div class="alert-box">
+<b>سيناريو:</b> فعالية حضرية (مدينة) انتهت بلا إصابات، لكن ظهرت 3 مؤشرات: (1) تكدّس متكرر عند بوابة واحدة، (2) تضارب بلاغات من ميدانين، (3) شكاوى سكان من ضوضاء وازدحام.
+  <br/><br/>
+<b>مطلوب منك اليوم:</b>
+<ul>
+<li>حدّد: ما الذي ستوثّقه كـ “دليل”؟</li>
+<li>حدّد: ما هو “التقييم التشغيلي” الذي ستفعله أولًا؟</li>
+<li>اقترح: تعديل Kaizen واحد صغير قابل للتطبيق قبل الفعالية التالية.</li>
+<li>حدّد: أثر مجتمعي واحد يجب معالجته ضمن الاستدامة.</li>
+</ul>
+</div>
+<h4 style="margin:0 0 8px;color:#1f7a8c;">قاموس مصطلحات اليوم الخامس (Glossary)</h4>
+<ul>
+<li><b>Operational Evaluation</b> – التقييم التشغيلي</li>
+<li><b>Debriefing</b> – جلسة مصارحة/تفريغ منظم بعد الحدث</li>
+<li><b>Kaizen</b> – التحسين المستمر بخطوات صغيرة ثابتة</li>
+<li><b>Sustainability</b> – الاستدامة وأثر الحدث طويل المدى</li>
+<li><b>SOP</b> – إجراءات تشغيل قياسية</li>
+</ul>
+<h4 style="margin:0 0 8px;color:#1f7a8c;">ربط بالمراجع والمعايير (مختصر)</h4>
+<ul>
+<li><b>HSE</b>: Human Factors &amp; Communication (عوامل بشرية، تواصل، جاهزية الفرق).</li>
+<li><b>ISO / Continuous Improvement</b>: مبادئ التحسين المستمر وتوثيق الإجراءات.</li>
+<li>مبادئ تحليل السلوك الجمعي: تفسير المؤشرات المبكرة وربطها بالقرار.</li>
+</ul>
+<h4 style="margin:0 0 8px;color:#1f7a8c;">حدود نطاق اليوم الخامس (Scope Boundaries)</h4>
+<ul>
+<li>لا يُغطي هذا اليوم التحقيقات القانونية التفصيلية أو تحديد المسؤوليات الجنائية.</li>
+<li>لا يقدّم علاجًا نفسيًا؛ يقدّم إطار “دعم أولي + إحالة” عند الحاجة.</li>
+<li>يركّز على القرار الإداري والتحسين التشغيلي وتوثيق الدروس.</li>
+</ul>
+</div>
+<div class="alert-box">
+<b>ملاحظة:</b> تم ترحيل <b>بنك أسئلة MCQ</b> إلى صفحة مستقلة (ستُعتمد لاحقًا) حتى يبقى هذا اليوم مرجعًا تدريبيًا تشغيليًا واضحًا بدون تشتيت.
+</div>
+</div>
+</div>
+</div>
+
+<div class="alert-box" style="margin-top: 30px;">
+  <p style="font-weight: bold; font-size: 1.1em; text-align: center;">
+    🎓 النجاح في إدارة الحشود يبدأ بالفهم الصحيح للمفاهيم وينتهي بالتطبيق الدقيق للمعايير
+  </p>
+</div>
+
+<section class="section" id="infographic">
+            <h2 class="section-title">🖼️ إنفوجرافيك اليوم</h2>
+            <div class="card infographic-card">
+                <img class="infographic-img" src="Day5.png" alt="Infographic - Day 5">
+            </div>
+        </section>
+
 
 <!-- التذييل: المصدر التعليمي -->
 <div class="footer">
@@ -539,6 +815,8 @@
                     © 2025 - دليل إدارة الفعاليات وسلامة الحشود
                 </p>
 </div>
+
+        
 </div>
 </div>
 </body>
